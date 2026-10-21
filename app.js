@@ -8,7 +8,6 @@
   var DEFAULT_TARGET = '2028-03-31T23:59:59';
   var SPAN_DAYS = 1095;            // шкала давления растянута на три года
   var KEY = {
-    target: 'puzyr.target.v1',
     sound: 'puzyr.sound.v1',
     lang: 'puzyr.lang.v1',
     visits: 'puzyr.visits.v1'
@@ -23,7 +22,6 @@
     ru: {
       station: 'Станция наблюдения',
       deadline: 'До разрыва',
-      date: 'Дата',
       sound: 'Звук',
       pressure: 'Давление в пузыре',
       hpa: 'гПа',
@@ -35,7 +33,7 @@
       passport: 'Паспорт наблюдения',
       passStarted: 'Наблюдение начато',
       passChecks: 'Отметок наблюдателя',
-      passDefault: 'Дедлайн по умолчанию',
+      passDefault: 'Дедлайн разрыва',
       passSource: 'Источник котировок',
       disclaimer: 'комментарии наблюдателя, а не инвестиционный совет',
       colTicker: 'Тикер',
@@ -44,15 +42,9 @@
       colNote: 'Наблюдение',
       sourceNote: 'Источник прогноза: гадание на кофейной гуще. Котировки: Yahoo Finance и CoinGecko, обновляются автоматически.',
       localTime: 'по местному времени',
-      consoleTitle: 'Установка даты разрыва',
-      fieldLabel: 'Дата и время',
-      fieldHint: 'Дата сохранится в этом браузере. Ею же можно поделиться ссылкой: ',
-      cancel: 'Отмена',
-      apply: 'Применить',
       burstTitle: 'Протокол разрыва',
       burstHeadline: 'ПУЗЫРЬ ЛОПНУЛ',
       replay: 'Ещё раз',
-      setDate: 'Новая дата',
       share: 'Поделиться',
       copied: 'Ссылка скопирована',
       fresh: 'только что',
@@ -108,19 +100,11 @@
         'Пузырь лопнул ровно в срок. Никто не заметил. График продолжил расти, как ни в чём не бывало.',
         'Разрыв прошёл без помех. Мембрана была тонкой, показания честными, а выводы сделаны позже.',
         'Пузырь лопнул. Три фонда назвали это здоровой коррекцией и сразу купили просадку.'
-      ],
-      presets: [
-        { label: '+1 час', seconds: 3600 },
-        { label: '+1 день', seconds: 86400 },
-        { label: '+1 неделя', seconds: 604800 },
-        { label: '+1 месяц', seconds: 2592000 },
-        { label: '+1 год', seconds: 31536000 }
       ]
     },
     en: {
       station: 'Observation station',
       deadline: 'Until rupture',
-      date: 'Date',
       sound: 'Sound',
       pressure: 'Pressure in the bubble',
       hpa: 'hPa',
@@ -132,7 +116,7 @@
       passport: 'Observation passport',
       passStarted: 'Observation started',
       passChecks: "Observer's marks",
-      passDefault: 'Default deadline',
+      passDefault: 'Rupture deadline',
       passSource: 'Quote source',
       disclaimer: 'observer notes, not investment advice',
       colTicker: 'Ticker',
@@ -141,15 +125,9 @@
       colNote: 'Observation',
       sourceNote: 'Forecast source: coffee grounds. Quotes: Yahoo Finance and CoinGecko, refreshed automatically.',
       localTime: 'local time',
-      consoleTitle: 'Set the rupture date',
-      fieldLabel: 'Date and time',
-      fieldHint: 'The date stays in this browser. You can share it as a link: ',
-      cancel: 'Cancel',
-      apply: 'Apply',
       burstTitle: 'Rupture protocol',
       burstHeadline: 'THE BUBBLE BURST',
       replay: 'Again',
-      setDate: 'New date',
       share: 'Share',
       copied: 'Link copied',
       fresh: 'just now',
@@ -199,13 +177,6 @@
         'The bubble burst exactly on time. Nobody noticed. The chart kept rising as if nothing had happened.',
         'The rupture went without a hitch. The membrane was thin, the readings honest, the conclusions late.',
         'The bubble burst. Three funds called it a healthy correction and bought the dip immediately.'
-      ],
-      presets: [
-        { label: '+1 hour', seconds: 3600 },
-        { label: '+1 day', seconds: 86400 },
-        { label: '+1 week', seconds: 604800 },
-        { label: '+1 month', seconds: 2592000 },
-        { label: '+1 year', seconds: 31536000 }
       ]
     }
   };
@@ -270,37 +241,13 @@
 
   /* ---------------- Состояние приложения ---------------- */
 
-  var target = loadTarget();
+  /* Дедлайн фиксирован: дату нельзя установить, изменить или подсунуть ссылкой. */
+  var target = new Date(DEFAULT_TARGET);
   var soundOn = localStorage.getItem(KEY.sound) !== 'off';
   var market = null;
   var chartKey = 'bubble';
   var burstFired = false;
-  var lastClock = '';
   var lastSecond = -1;
-
-  function loadTarget() {
-    var params = new URLSearchParams(location.search);
-    var fromUrl = params.get('to');
-    if (fromUrl) {
-      var parsed = new Date(fromUrl);
-      if (!isNaN(parsed.getTime())) {
-        localStorage.setItem(KEY.target, parsed.toISOString());
-        return parsed;
-      }
-    }
-    var saved = localStorage.getItem(KEY.target);
-    if (saved) {
-      var d = new Date(saved);
-      if (!isNaN(d.getTime())) return d;
-    }
-    return new Date(DEFAULT_TARGET);
-  }
-
-  function formatLocalInput(date) {
-    var pad = function (n) { return (n < 10 ? '0' : '') + n; };
-    return date.getFullYear() + '-' + pad(date.getMonth() + 1) + '-' + pad(date.getDate()) +
-      'T' + pad(date.getHours()) + ':' + pad(date.getMinutes());
-  }
 
   /* ---------------- Русские склонения ---------------- */
 
@@ -736,33 +683,8 @@
     $('#deadlineValue').textContent = fmtShortDate(target);
     if (market) { renderTabs(); renderLog(); }
     renderStamp();
-    renderPresets();
     tick();
     drawChart();
-  }
-
-  /* ---------------- Настройки ---------------- */
-
-  function renderPresets() {
-    var wrap = $('#presets');
-    if (!wrap) return;
-    wrap.innerHTML = t('presets').map(function (p) {
-      return '<button class="tab" type="button" data-seconds="' + p.seconds + '">' + p.label + '</button>';
-    }).join('');
-  }
-
-  function openConsole() {
-    var input = $('#dateInput');
-    input.value = formatLocalInput(target);
-    $('#console').showModal();
-  }
-
-  function setTarget(date) {
-    target = date;
-    localStorage.setItem(KEY.target, date.toISOString());
-    burstFired = false;
-    $('#slip').hidden = true;
-    applyLang();
   }
 
   /* ---------------- Тост ---------------- */
@@ -832,23 +754,6 @@
     setInterval(tick, 1000);
     setInterval(renderStamp, 60000);
 
-    $('#dateBtn').addEventListener('click', openConsole);
-    $('#consoleForm').addEventListener('submit', function (e) {
-      var submitter = e.submitter;
-      if (!submitter || submitter.value !== 'apply') return;
-      var value = $('#dateInput').value;
-      if (!value) return;
-      var d = new Date(value);
-      if (!isNaN(d.getTime())) setTarget(d);
-    });
-    $('#presets').addEventListener('click', function (e) {
-      var btn = e.target.closest('[data-seconds]');
-      if (!btn) return;
-      var d = new Date(Date.now() + parseInt(btn.getAttribute('data-seconds'), 10) * 1000);
-      setTarget(d);
-      $('#console').close();
-    });
-
     $('#soundBtn').addEventListener('click', function () {
       soundOn = !soundOn;
       localStorage.setItem(KEY.sound, soundOn ? 'on' : 'off');
@@ -878,15 +783,15 @@
       var bubble = $('#bubble');
       if (bubble) bubble.style.setProperty('--bubble-scale', '0.05');
       setTimeout(function () {
-        burstFired = false;
-        var d = new Date(Date.now() + 4000);
-        setTarget(d);
-        toast(lang === 'ru' ? 'Пузырь надут заново' : 'Bubble re-inflated');
+        pop();
+        var flash = $('#burstFlash');
+        if (flash) { flash.classList.remove('go'); void flash.offsetWidth; flash.classList.add('go'); }
+        renderSlipStats();
+        $('#slip').hidden = false;
       }, 500);
     });
-    $('#slipDate').addEventListener('click', function () { $('#slip').hidden = true; openConsole(); });
     $('#slipShare').addEventListener('click', function () {
-      var url = location.origin + location.pathname + '?to=' + formatLocalInput(target);
+      var url = location.origin + location.pathname;
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(url).then(function () { toast(t('copied')); },
           function () { toast(url); });

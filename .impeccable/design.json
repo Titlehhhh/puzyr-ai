@@ -140,13 +140,6 @@
       "css": ".ds-card { background: #0E1116; border: 1px solid #232830; border-radius: 2px; padding: 18px; color: #E7E3D7; font-family: \"Jost\", system-ui, sans-serif; } .ds-card-title { margin: 0; font-size: 12px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: #8A93A0; }"
     },
     {
-      "name": "Поле даты",
-      "kind": "input",
-      "description": "Единственное поле на сайте: дата разрыва в консоли установки.",
-      "html": "<label class=\"ds-field\"><span>ДАТА И ВРЕМЯ</span><input type=\"datetime-local\" value=\"2028-03-31T23:59\"></label>",
-      "css": ".ds-field { display: block; } .ds-field span { display: block; margin-bottom: 8px; font-family: \"Jost\", system-ui, sans-serif; font-size: 11px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: #8A93A0; } .ds-field input { width: 100%; padding: 12px 13px; background: #0C0F13; color: #E7E3D7; border: 1px solid #333A45; border-radius: 2px; font-family: \"JetBrains Mono\", ui-monospace, monospace; font-size: 15px; color-scheme: dark; } .ds-field input:focus-visible { outline: 2px solid #8A93A0; outline-offset: 3px; }"
-    },
-    {
       "name": "Прибор",
       "kind": "custom",
       "description": "Главный объект страницы: безель, циферблат со шкалой давления, стеклянное окно с пузырём.",

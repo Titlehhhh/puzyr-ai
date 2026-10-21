@@ -29,7 +29,6 @@
       <span data-i18n="deadline">До разрыва</span>
       <b id="deadlineValue" class="mono">31.03.2028 23:59</b>
     </p>
-    <button class="tool" id="dateBtn" type="button" data-i18n="date">Дата</button>
     <button class="tool" id="soundBtn" type="button" aria-pressed="true" data-i18n="sound">Звук</button>
     <button class="tool" id="langBtn" type="button">EN</button>
   </div>
@@ -171,22 +170,6 @@
   <p class="base-right"><span id="clockNow" class="mono">—</span> <span data-i18n="localTime">по местному времени</span></p>
 </footer>
 
-<dialog class="console" id="console">
-  <form method="dialog" id="consoleForm">
-    <h2 data-i18n="consoleTitle">Установка даты разрыва</h2>
-    <label class="field">
-      <span data-i18n="fieldLabel">Дата и время</span>
-      <input type="datetime-local" id="dateInput" required>
-    </label>
-    <p class="field-hint" data-i18n="fieldHint">Дата сохранится в этом браузере. Ею же можно поделиться ссылкой: <code>?to=2028-03-31T23:59</code></p>
-    <div class="presets" id="presets"></div>
-    <div class="console-actions">
-      <button class="tool wide" value="cancel" type="submit" formnovalidate data-i18n="cancel">Отмена</button>
-      <button class="tool wide primary" value="apply" type="submit" data-i18n="apply">Применить</button>
-    </div>
-  </form>
-</dialog>
-
 <div class="slip" id="slip" hidden>
   <div class="slip-card">
     <p class="slip-head" data-i18n="burstTitle">Протокол разрыва</p>
@@ -195,7 +178,6 @@
     <dl class="slip-stats" id="slipStats"></dl>
     <div class="slip-actions">
       <button class="tool wide" id="slipReplay" type="button" data-i18n="replay">Ещё раз</button>
-      <button class="tool wide" id="slipDate" type="button" data-i18n="setDate">Новая дата</button>
       <button class="tool wide primary" id="slipShare" type="button" data-i18n="share">Поделиться</button>
     </div>
   </div>
