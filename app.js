@@ -34,7 +34,7 @@
       journalTitle: 'Журнал наблюдений',
       passport: 'Паспорт наблюдения',
       passStarted: 'Наблюдение начато',
-      passChecks: 'Проверок прогноза',
+      passChecks: 'Отметок наблюдателя',
       passDefault: 'Дедлайн по умолчанию',
       passSource: 'Источник котировок',
       disclaimer: 'комментарии наблюдателя, а не инвестиционный совет',
@@ -60,7 +60,7 @@
       hoursAgo: 'ч назад',
       daysAgo: 'дн назад',
       statsLife: 'Дней с разрыва',
-      statsChecks: 'Проверок прогноза',
+      statsChecks: 'Отметок наблюдателя',
       statsIndex: 'Индекс на разрыве',
       statsNotes: 'Записей в журнале',
       days: 'день',
@@ -131,7 +131,7 @@
       journalTitle: 'Observer log',
       passport: 'Observation passport',
       passStarted: 'Observation started',
-      passChecks: 'Forecast checks',
+      passChecks: "Observer's marks",
       passDefault: 'Default deadline',
       passSource: 'Quote source',
       disclaimer: 'observer notes, not investment advice',
@@ -157,7 +157,7 @@
       hoursAgo: 'h ago',
       daysAgo: 'd ago',
       statsLife: 'Days since rupture',
-      statsChecks: 'Forecast checks',
+      statsChecks: "Observer's marks",
       statsIndex: 'Index at rupture',
       statsNotes: 'Log entries',
       days: 'day',
@@ -215,15 +215,17 @@
 
   /* ---------------- Состояния пузыря ---------------- */
 
+  /* Порядок важен: состояния идут по возрастанию порога, и поиск берёт
+     первое, у которого дней_осталось <= max. Поэтому calm стоит последним. */
   var STATES = [
-    { id: 'calm',     max: 365,    line: 'calm' },
-    { id: 'growth',   max: 90,     line: 'growth' },
-    { id: 'warm',     max: 30,     line: 'warm' },
-    { id: 'nervous',  max: 7,      line: 'nervous' },
-    { id: 'panic',    max: 1,      line: 'panic' },
-    { id: 'critical', max: 1 / 24, line: 'critical' },
-    { id: 'final',    max: 0,      line: 'final' },
-    { id: 'burst',    max: -1,     line: 'burst' }
+    { id: 'burst',    max: -1,     line: 'burst' },
+    { id: 'final',    max: 1 / 24, line: 'final' },
+    { id: 'critical', max: 1,      line: 'critical' },
+    { id: 'panic',    max: 7,      line: 'panic' },
+    { id: 'nervous',  max: 30,     line: 'nervous' },
+    { id: 'warm',     max: 90,     line: 'warm' },
+    { id: 'growth',   max: 365,    line: 'growth' },
+    { id: 'calm',     max: Infinity, line: 'calm' }
   ];
 
   /* Заметки наблюдателя к каждому тикеру. Это шутка, а не факт о компании. */
@@ -435,7 +437,10 @@
     if (marker) marker.style.setProperty('--marker-rot', (angle + 51.3).toFixed(2) + 'deg');
 
     var bubble = $('#bubble');
-    if (bubble) bubble.style.setProperty('--bubble-scale', (0.62 + progress * 0.38).toFixed(3));
+    // После разрыва пузырь не надувается обратно: состояние необратимо.
+    if (bubble && state !== 'burst') {
+      bubble.style.setProperty('--bubble-scale', (0.62 + progress * 0.38).toFixed(3));
+    }
 
     document.body.dataset.state = state;
     var chip = $('#stateChip');
@@ -801,10 +806,8 @@
   /* ---------------- Запуск ---------------- */
 
   function init() {
-    lang = localStorage.getItem(KEY.lang) || (navigator.language || '').toLowerCase().indexOf('ru') === 0 ? 'ru' : 'ru';
     var stored = localStorage.getItem(KEY.lang);
-    if (stored === 'ru' || stored === 'en') lang = stored;
-    else lang = 'ru';
+    lang = (stored === 'ru' || stored === 'en') ? stored : 'ru';
 
     var visits = parseInt(localStorage.getItem(KEY.visits) || '0', 10) + 1;
     localStorage.setItem(KEY.visits, String(visits));

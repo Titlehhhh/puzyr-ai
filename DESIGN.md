@@ -14,6 +14,31 @@ colors:
   signal: "#E0432A"
   amber: "#D9A441"
   up: "#4FA97A"
+  bezel-high: "#454D57"
+  bezel-mid: "#363D46"
+  bezel-low: "#1B1F25"
+  line-hover: "#3A414B"
+  tick: "#79818D"
+  selection: "#2B313A"
+  white: "#FFFFFF"
+  ink: "#000000"
+  film-red: "hsl(6 62% 60% / .30)"
+  film-amber: "hsl(38 66% 64% / .30)"
+  film-olive: "hsl(72 54% 58% / .26)"
+  film-green: "hsl(158 48% 56% / .28)"
+  film-cyan: "hsl(196 56% 60% / .30)"
+  film-violet: "hsl(268 48% 60% / .28)"
+  film-rose: "hsl(326 58% 60% / .30)"
+  rim-red: "hsl(6 82% 68%)"
+  rim-amber: "hsl(38 86% 72%)"
+  rim-olive: "hsl(72 70% 66%)"
+  rim-green: "hsl(158 66% 64%)"
+  rim-cyan: "hsl(196 74% 68%)"
+  rim-violet: "hsl(268 66% 68%)"
+  rim-rose: "hsl(326 76% 68%)"
+  mark-red: "hsl(6 72% 64%)"
+  mark-amber: "hsl(40 78% 68%)"
+  mark-green: "hsl(158 56% 60%)"
 typography:
   display:
     fontFamily: "Jost, system-ui, sans-serif"
@@ -26,11 +51,38 @@ typography:
     fontSize: "26px"
     fontWeight: 500
     lineHeight: 1.2
+  slip-title:
+    fontFamily: "Jost, system-ui, sans-serif"
+    fontSize: "clamp(28px, 6vw, 40px)"
+    fontWeight: 300
+    lineHeight: 1.1
+  value:
+    fontFamily: "JetBrains Mono, ui-monospace, monospace"
+    fontSize: "20px"
+    fontWeight: 400
+  dialog-title:
+    fontFamily: "Jost, system-ui, sans-serif"
+    fontSize: "17px"
+    fontWeight: 400
   body:
     fontFamily: "Jost, system-ui, sans-serif"
     fontSize: "15px"
     fontWeight: 400
     lineHeight: 1.6
+  note:
+    fontFamily: "Jost, system-ui, sans-serif"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: 1.6
+  meta:
+    fontFamily: "Jost, system-ui, sans-serif"
+    fontSize: "13px"
+    fontWeight: 400
+  caption:
+    fontFamily: "Jost, system-ui, sans-serif"
+    fontSize: "12px"
+    fontWeight: 500
+    letterSpacing: "0.16em"
   label:
     fontFamily: "Jost, system-ui, sans-serif"
     fontSize: "11px"
@@ -239,11 +291,13 @@ components:
 
 ### Прибор (signature component)
 - Безель из тонированной стали, внутри циферблат со шкалой 950–1250 гПа, красной зоной
-  и белым указателем давления. В центре стеклянное окно 198px с пузырём. Слои прибора
-  нарисованы псевдоэлементами, чтобы в DOM не было вложенных «карточек».
-- Пузырь: 152px, тонкоплёночная интерференция конусным градиентом, тёмная середина,
-  спектральный ободок и один блик сверху слева. Размер 0.62–1.0 шкалы задаёт остаток
-  времени.
+  и белым указателем давления. В центре стеклянное окно clamp(140px, 52%, 198px)
+  с пузырём. Слои прибора нарисованы псевдоэлементами, чтобы в DOM не было вложенных
+  «карточек».
+- Пузырь: 77% от окна (≈152px на десктопе), тонкоплёночная интерференция конусным
+  градиентом, тёмная середина, спектральный ободок и один блик сверху слева. Размер
+  0.62–1.0 шкалы задаёт остаток времени. Трещины мембраны нарисованы поверх плёнки,
+  а не на циферблате, и появляются с фазами нестабильности.
 
 ## Do's and Don'ts
 
