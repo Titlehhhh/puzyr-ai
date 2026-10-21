@@ -554,7 +554,7 @@ body[data-state="burst"]    .cracks path { opacity: 1; stroke: var(--signal); }
 }
 .slip-stats {
   margin: 0 0 24px;
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   gap: 16px 24px;
   padding-top: 18px;
   border-top: 1px solid var(--rule);

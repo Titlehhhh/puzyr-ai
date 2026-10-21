@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-21T08:45:00Z",
+  "title": "Design System: ПУЗЫРЬ AI",
+  "extensions": {
+    "colorMeta": {
+      "plate": {
+        "role": "neutral",
+        "displayName": "Стальная плита",
+        "canonical": "oklch(19% 0.012 260)",
+        "tonalRamp": [
+          "oklch(15% 0.010 260)",
+          "oklch(19% 0.012 260)",
+          "oklch(26% 0.014 258)",
+          "oklch(34% 0.016 256)",
+          "oklch(44% 0.016 254)",
+          "oklch(56% 0.014 252)",
+          "oklch(70% 0.012 250)",
+          "oklch(86% 0.008 248)"
+        ]
+      },
+      "ivory": {
+        "role": "neutral",
+        "displayName": "Гравировка",
+        "canonical": "oklch(91% 0.012 90)",
+        "tonalRamp": [
+          "oklch(15% 0.008 90)",
+          "oklch(28% 0.010 88)",
+          "oklch(40% 0.012 86)",
+          "oklch(54% 0.013 84)",
+          "oklch(68% 0.013 86)",
+          "oklch(80% 0.012 88)",
+          "oklch(91% 0.012 90)",
+          "oklch(97% 0.006 92)"
+        ]
+      },
+      "signal": {
+        "role": "primary",
+        "displayName": "Вермильон сигнала",
+        "canonical": "oklch(61% 0.19 33)",
+        "tonalRamp": [
+          "oklch(15% 0.045 30)",
+          "oklch(28% 0.085 31)",
+          "oklch(40% 0.125 32)",
+          "oklch(50% 0.16 33)",
+          "oklch(61% 0.19 33)",
+          "oklch(73% 0.15 38)",
+          "oklch(85% 0.08 45)",
+          "oklch(95% 0.03 55)"
+        ]
+      },
+      "amber": {
+        "role": "secondary",
+        "displayName": "Янтарь предупреждения",
+        "canonical": "oklch(74% 0.13 78)",
+        "tonalRamp": [
+          "oklch(15% 0.035 75)",
+          "oklch(28% 0.065 76)",
+          "oklch(40% 0.095 77)",
+          "oklch(55% 0.12 78)",
+          "oklch(74% 0.13 78)",
+          "oklch(83% 0.10 82)",
+          "oklch(91% 0.055 88)",
+          "oklch(97% 0.02 92)"
+        ]
+      },
+      "up": {
+        "role": "tertiary",
+        "displayName": "Зелёный прибора",
+        "canonical": "oklch(66% 0.11 160)",
+        "tonalRamp": [
+          "oklch(15% 0.030 158)",
+          "oklch(28% 0.055 159)",
+          "oklch(40% 0.075 159)",
+          "oklch(53% 0.095 160)",
+          "oklch(66% 0.11 160)",
+          "oklch(77% 0.085 162)",
+          "oklch(88% 0.045 165)",
+          "oklch(96% 0.015 168)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Гравированный отсчёт", "purpose": "Человекочитаемый ответ «когда лопнет». Единственный крупный заголовок." },
+      "headline": { "displayName": "Показание", "purpose": "Давление в пузыре, значение индекса, статистика протокола." },
+      "body": { "displayName": "Текст прибора", "purpose": "Пояснения, подписи, шутки. Максимум 68 знаков в строке." },
+      "label": { "displayName": "Маркировка", "purpose": "Надписи панелей, колонки журнала, состояние прибора." },
+      "measurement": { "displayName": "Измерение", "purpose": "Часы, цены, дельты, оси графика, даты. Только цифры." }
+    },
+    "shadows": [
+      { "name": "instrument", "value": "0 30px 64px rgba(0,0,0,.6)", "purpose": "Стальной безель стоит на плите, а не парит." },
+      { "name": "protocol", "value": "0 40px 100px rgba(0,0,0,.75)", "purpose": "Лист протокола разрыва над затемнённой страницей." },
+      { "name": "console", "value": "0 40px 90px rgba(0,0,0,.7)", "purpose": "Модальная консоль установки даты." },
+      { "name": "dial-inset", "value": "inset 0 10px 34px rgba(0,0,0,.85)", "purpose": "Вдавленность циферблата, где сходятся шкала и стекло." },
+      { "name": "film-volume", "value": "inset -12px -14px 30px rgba(0,0,0,.38)", "purpose": "Объём мыльной плёнки внутри пузыря." }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "cubic-bezier(.22, 1, .36, 1)", "purpose": "Единственная кривая: экспоненциальное затухание без отскока." },
+      { "name": "duration-quick", "value": "150ms", "purpose": "Смена состояния кнопки, чипа, вкладки." },
+      { "name": "duration-continuous", "value": "900ms", "purpose": "Движение указателя давления и размера пузыря, непрерывное проявление." },
+      { "name": "duration-breathe", "value": "7s", "purpose": "Медленное дыхание пузыря. Отключается при prefers-reduced-motion." }
+    ],
+    "breakpoints": [
+      { "name": "stack", "value": "1080px" },
+      { "name": "compact", "value": "720px" },
+      { "name": "coarse-pointer", "value": "pointer: coarse" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Кнопка основная",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Единственная залитая кнопка на странице: главное действие в протоколе разрыва.",
+      "html": "<button class=\"ds-btn-primary\">ПОДЕЛИТЬСЯ</button>",
+      "css": ".ds-btn-primary { background: #E7E3D7; color: #12151A; border: 1px solid #E7E3D7; border-radius: 2px; padding: 0 20px; height: 38px; font-family: \"Jost\", system-ui, sans-serif; font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; cursor: pointer; transition: background .15s ease; } .ds-btn-primary:hover { background: #FFFFFF; } .ds-btn-primary:focus-visible { outline: 2px solid #8A93A0; outline-offset: 3px; }"
+    },
+    {
+      "name": "Кнопка вторичная",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Пластина на пластине: действия рейки и консоли.",
+      "html": "<button class=\"ds-btn-secondary\">ДАТА</button>",
+      "css": ".ds-btn-secondary { background: #15191F; color: #A2AAB6; border: 1px solid #232830; border-radius: 2px; padding: 0 13px; height: 34px; font-family: \"Jost\", system-ui, sans-serif; font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; cursor: pointer; transition: color .15s ease, border-color .15s ease, background .15s ease; } .ds-btn-secondary:hover { color: #E7E3D7; border-color: #3A414B; background: #1A1F26; } .ds-btn-secondary:focus-visible { outline: 2px solid #8A93A0; outline-offset: 3px; }"
+    },
+    {
+      "name": "Чип и вкладка",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Маркировка прибора и переключатель серии на барографе.",
+      "html": "<button class=\"ds-tab\" aria-selected=\"true\">ИНДЕКС</button>",
+      "css": ".ds-tab { background: transparent; color: #8A93A0; border: 1px solid #232830; border-radius: 2px; padding: 5px 11px; font-family: \"Jost\", system-ui, sans-serif; font-size: 11px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; transition: color .15s ease, background .15s ease, border-color .15s ease; } .ds-tab:hover { color: #E7E3D7; border-color: #3A414B; } .ds-tab[aria-selected=\"true\"] { background: #E7E3D7; border-color: #E7E3D7; color: #12151A; } .ds-tab:focus-visible { outline: 2px solid #8A93A0; outline-offset: 3px; }"
+    },
+    {
+      "name": "Панель",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Плоская пластина с волосяной рамкой: барограф и журнал.",
+      "html": "<section class=\"ds-card\"><h2 class=\"ds-card-title\">ЖУРНАЛ НАБЛЮДЕНИЙ</h2></section>",
+      "css": ".ds-card { background: #0E1116; border: 1px solid #232830; border-radius: 2px; padding: 18px; color: #E7E3D7; font-family: \"Jost\", system-ui, sans-serif; } .ds-card-title { margin: 0; font-size: 12px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: #8A93A0; }"
+    },
+    {
+      "name": "Поле даты",
+      "kind": "input",
+      "description": "Единственное поле на сайте: дата разрыва в консоли установки.",
+      "html": "<label class=\"ds-field\"><span>ДАТА И ВРЕМЯ</span><input type=\"datetime-local\" value=\"2028-03-31T23:59\"></label>",
+      "css": ".ds-field { display: block; } .ds-field span { display: block; margin-bottom: 8px; font-family: \"Jost\", system-ui, sans-serif; font-size: 11px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: #8A93A0; } .ds-field input { width: 100%; padding: 12px 13px; background: #0C0F13; color: #E7E3D7; border: 1px solid #333A45; border-radius: 2px; font-family: \"JetBrains Mono\", ui-monospace, monospace; font-size: 15px; color-scheme: dark; } .ds-field input:focus-visible { outline: 2px solid #8A93A0; outline-offset: 3px; }"
+    },
+    {
+      "name": "Прибор",
+      "kind": "custom",
+      "description": "Главный объект страницы: безель, циферблат со шкалой давления, стеклянное окно с пузырём.",
+      "html": "<div class=\"ds-port\"><div class=\"ds-glass\"><div class=\"ds-bubble\"></div></div></div>",
+      "css": ".ds-port { position: relative; width: 396px; height: 396px; border-radius: 50%; padding: 15px; background: linear-gradient(148deg, #454D57 0%, #1B1F25 42%, #363D46 100%); box-shadow: 0 30px 64px rgba(0,0,0,.6); } .ds-port::before { content: \"\"; position: absolute; inset: 15px; border-radius: 50%; background: radial-gradient(circle at 50% 34%, #14181F 0%, #0A0C10 62%); box-shadow: inset 0 10px 34px rgba(0,0,0,.85); } .ds-glass { position: absolute; left: 50%; top: 50%; width: 198px; height: 198px; transform: translate(-50%,-50%); border-radius: 50%; overflow: hidden; box-shadow: inset 0 0 0 1px rgba(231,227,215,.2); } .ds-glass::before { content: \"\"; position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 50% 44%, #151A22 0 38%, #07090D 100%); } .ds-bubble { position: absolute; left: 50%; top: 50%; width: 152px; height: 152px; transform: translate(-50%,-50%) scale(.82); border-radius: 50%; } .ds-bubble::before { content: \"\"; position: absolute; inset: 0; border-radius: 50%; background: conic-gradient(from 210deg, hsl(6 62% 60%/.3), hsl(38 66% 64%/.3), hsl(72 54% 58%/.26), hsl(158 48% 56%/.28), hsl(196 56% 60%/.3), hsl(268 48% 60%/.28), hsl(326 58% 60%/.3), hsl(6 62% 60%/.3)), radial-gradient(circle closest-side, rgba(7,9,13,.9) 0 18%, transparent 64%); filter: blur(3px); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Ночная вахта метеостанции",
+    "overview": "Страница живёт как прибор на ночной вахте: стальная плита под подсветкой, гравированные цифры на циферблате, красная зона на шкале, бумажный барабан барографа. Здесь нет декора ради декора: каждый элемент либо часть прибора, либо данные, либо подпись к ним. Плотность средняя, но не удушливо: слева один большой физический объект с числовым отсчётом под ним, справа крупный ответ словами, ниже график и журнал. Поверхность тёмная, потому что прибор ночной. Отдельно стоит пузырь: единственное мягкое и цветное пятно на странице, у него есть физика, размер и состояние.",
+    "keyCharacteristics": [
+      "Один физический объект как главный элемент, а не набор карточек.",
+      "Тонкая линия и гравировка вместо теней и бликов.",
+      "Цвет разрешён только пузырю и сигнальным состояниям.",
+      "Данные читаются раньше декора: сначала ответ, потом прибор."
+    ],
+    "rules": [
+      { "name": "The One Chromatic Object Rule", "body": "Цвет принадлежит пузырю. Вне пузыря цветом помечается только состояние: вермильон означает разрыв, янтарь — внимание, зелёный — рост. Пурпур, циана и радужные градиенты в интерфейсе не появляются никогда.", "section": "colors" },
+      { "name": "The Ink Rule", "body": "Панели и таблицы не имеют рамок-«карточек», вложенных друг в друга: иерархия строится волосяными линиями и типографикой.", "section": "colors" },
+      { "name": "The Word First Rule", "body": "Ответ на вопрос «когда лопнет» пишется словами крупным планом, а цифры идут вторым уровнем. На странице не может быть двух равноправных крупных чисел.", "section": "typography" },
+      { "name": "The Measurement Font Rule", "body": "Моноширинный шрифт достаётся только измерениям: время, цена, дельта, ось, дата. Тексты, подписи и шутки набираются Jost.", "section": "typography" },
+      { "name": "The Engraved Depth Rule", "body": "Тень на карточке или панели запрещена. Тень разрешена только физическим объектам и только с уходом вниз-вправо.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do держать ответ словами крупным планом: «1 год 5 месяцев 12 дней», точное время идёт вторым уровнем.",
+      "Do оставлять пузырь единственным цветным объектом и настраивать его размер и окраску по остатку времени.",
+      "Do разделять панели волосяными линиями, а не тенями.",
+      "Do показывать честные данные: пустая строка вместо выдуманной цифры.",
+      "Do держать мелкий текст не меньше 11px, а подписи приборов с контрастом не ниже 4.5:1."
+    ],
+    "donts": [
+      "Don't ставить эйдж над заголовком, градиентный текст, стеклянные карточки и вложенные карточки.",
+      "Don't использовать пурпурно-циановые градиенты, неоновое свечение и орбы на фоне.",
+      "Don't рисовать пузырь мультяшной маской: состояние показывают шкала, цвет и текст.",
+      "Don't крутить бегущую строку с котировками: котировки обновляются текстом, а не движением.",
+      "Don't превращать подписи в журнале в утверждения о компаниях: это сатира наблюдателя."
+    ]
+  }
+}

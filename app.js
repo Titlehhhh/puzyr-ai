@@ -59,7 +59,7 @@
       minAgo: 'мин назад',
       hoursAgo: 'ч назад',
       daysAgo: 'дн назад',
-      statsLife: 'Пузырь прожил',
+      statsLife: 'Дней с разрыва',
       statsChecks: 'Проверок прогноза',
       statsIndex: 'Индекс на разрыве',
       statsNotes: 'Записей в журнале',
@@ -155,7 +155,7 @@
       minAgo: 'min ago',
       hoursAgo: 'h ago',
       daysAgo: 'd ago',
-      statsLife: 'Bubble lived',
+      statsLife: 'Days since rupture',
       statsChecks: 'Forecast checks',
       statsIndex: 'Index at rupture',
       statsNotes: 'Log entries',
@@ -672,6 +672,27 @@
 
   /* ---------------- Финал ---------------- */
 
+  function slipStats() {
+    var points = seriesPoints('bubble');
+    var indexValue = points.length ? points[points.length - 1][1] : null;
+    var visits = parseInt(localStorage.getItem(KEY.visits) || '1', 10);
+    var since = Math.max(0, Math.round((Date.now() - target.getTime()) / 86400000));
+    return [
+      [t('statsLife'), since + ' ' + (lang === 'ru' ? plural(since, 'день', 'дня', 'дней') : pluralEn(since, 'day'))],
+      [t('statsChecks'), String(visits)],
+      [t('statsIndex'), indexValue === null ? '—' : fmtNumber(indexValue)],
+      [t('statsNotes'), market && market.quotes ? String(market.quotes.length) : '—']
+    ];
+  }
+
+  function renderSlipStats() {
+    var wrap = $('#slipStats');
+    if (!wrap) return;
+    wrap.innerHTML = slipStats().map(function (s) {
+      return '<div><dt>' + s[0] + '</dt><dd>' + s[1] + '</dd></div>';
+    }).join('');
+  }
+
   function fireBurst() {
     burstFired = true;
     pop();
@@ -680,23 +701,10 @@
     var bubble = $('#bubble');
     if (bubble) bubble.style.setProperty('--bubble-scale', '0.05');
 
-    var points = seriesPoints('bubble');
-    var indexValue = points.length ? points[points.length - 1][1] : null;
-    var visits = parseInt(localStorage.getItem(KEY.visits) || '1', 10);
-    var lived = Math.max(0, Math.round((Date.now() - target.getTime()) / 86400000));
-
     var jokes = t('jokes');
     var joke = jokes[Math.floor(Math.random() * jokes.length)];
 
-    var stats = [
-      [t('statsLife'), lived + ' ' + (lang === 'ru' ? plural(lived, 'день', 'дня', 'дней') : pluralEn(lived, 'day'))],
-      [t('statsChecks'), String(visits)],
-      [t('statsIndex'), indexValue === null ? '—' : fmtNumber(indexValue)],
-      [t('statsNotes'), market && market.quotes ? String(market.quotes.length) : '—']
-    ];
-    $('#slipStats').innerHTML = stats.map(function (s) {
-      return '<div><dt>' + s[0] + '</dt><dd>' + s[1] + '</dd></div>';
-    }).join('');
+    renderSlipStats();
     $('#slipJoke').textContent = joke;
     $('#slip').hidden = false;
   }
@@ -772,6 +780,7 @@
         renderLog();
         renderStamp();
         drawChart();
+        if (burstFired) renderSlipStats();
       })
       .catch(function () {
         renderLog();
