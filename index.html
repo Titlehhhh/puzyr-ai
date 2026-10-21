@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru" data-lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ПУЗЫРЬ AI — станция наблюдения за пузырём</title>
+<meta name="description" content="Обратный отсчёт до лопания ИИ-пузыря с настоящими котировками AI-компаний. Дедлайн по умолчанию: 31 марта 2028.">
+<meta property="og:title" content="ПУЗЫРЬ AI — обратный отсчёт до лопания ИИ-пузыря">
+<meta property="og:description" content="Станция наблюдения: давление в пузыре, отсчёт до разрыва и настоящий индекс пузыря по биржевым данным.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#12151A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%97%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-state="calm">
+
+<div class="plate" aria-hidden="true"></div>
+
+<header class="rail">
+  <div class="brand">
+    <span class="mark" aria-hidden="true"></span>
+    <span class="brand-name">ПУЗЫРЬ&nbsp;AI</span>
+    <span class="brand-sub" data-i18n="station">Станция наблюдения</span>
+  </div>
+
+  <div class="rail-tools">
+    <p class="deadline">
+      <span data-i18n="deadline">До разрыва</span>
+      <b id="deadlineValue" class="mono">31.03.2028 23:59</b>
+    </p>
+    <button class="tool" id="dateBtn" type="button" data-i18n="date">Дата</button>
+    <button class="tool" id="soundBtn" type="button" aria-pressed="true" data-i18n="sound">Звук</button>
+    <button class="tool" id="langBtn" type="button">EN</button>
+  </div>
+</header>
+
+<main class="deck">
+
+  <section class="instrument">
+    <div class="port">
+      <div class="face">
+        <svg class="scale" viewBox="0 0 420 420" role="img" aria-label="Шкала давления в пузыре">
+          <path class="scale-track" d="M 91.2 328.8 A 168 168 0 1 1 328.8 328.8"/>
+          <path class="scale-red" d="M 328.8 91.2 A 168 168 0 0 1 328.8 328.8"/>
+          <g class="ticks">
+            <path d="M 91.2 328.8 L 103.9 316.1"/><path d="M 54.8 274.3 L 71.4 267.4"/>
+            <path d="M 42 210 L 60 210"/><path d="M 54.8 145.7 L 71.4 152.6"/>
+            <path d="M 91.2 91.2 L 103.9 103.9"/><path d="M 145.7 54.8 L 152.6 71.4"/>
+            <path d="M 210 42 L 210 60"/><path d="M 274.3 54.8 L 267.4 71.4"/>
+            <path d="M 328.8 91.2 L 316.1 103.9"/><path d="M 365.2 145.7 L 348.6 152.6"/>
+            <path d="M 378 210 L 360 210"/><path d="M 365.2 274.3 L 348.6 267.4"/>
+            <path d="M 328.8 328.8 L 316.1 316.1"/>
+          </g>
+          <g class="scale-nums">
+            <text x="119" y="308">950</text><text x="78" y="214">1000</text>
+            <text x="119" y="119">1050</text><text x="210" y="86">1100</text>
+            <text x="301" y="119">1150</text><text x="342" y="214">1200</text>
+            <text x="301" y="308">1250</text>
+          </g>
+          <g class="marker" id="marker">
+            <path d="M 92.9 116.2 l -7 -14 l 14 0 z"/>
+          </g>
+          <g class="cracks" id="cracks" aria-hidden="true">
+            <path d="M 210 62 l -8 30 16 14 -10 26 18 16"/>
+            <path d="M 210 62 l 14 24 -12 16"/>
+            <path d="M 96 178 l 28 6 10 18 22 -6 10 20"/>
+            <path d="M 132 196 l 16 22 -6 18 20 14"/>
+            <path d="M 330 150 l -24 10 -8 20 -20 -6"/>
+          </g>
+        </svg>
+        <div class="glass">
+          <div class="bubble" id="bubble">
+            <span class="bubble-face" aria-hidden="true"></span>
+          </div>
+          <div class="burst-flash" id="burstFlash" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gauge">
+      <p class="gauge-label" data-i18n="pressure">Давление в пузыре</p>
+      <p class="gauge-value"><b id="pressureValue" class="mono">1 013</b> <span class="mono" data-i18n="hpa">гПа</span></p>
+      <p class="gauge-state" id="stateChip" data-state="calm" data-i18n="stateCalm">Устойчив</p>
+    </div>
+
+    <p class="state-line" id="stateLine">Пузырь держит форму. Давление в норме, наблюдатель на месте.</p>
+
+    <div class="passport">
+      <h2 class="panel-title" data-i18n="passport">Паспорт наблюдения</h2>
+      <dl>
+        <div>
+          <dt data-i18n="passStarted">Наблюдение начато</dt>
+          <dd id="passStarted" class="mono">—</dd>
+        </div>
+        <div>
+          <dt data-i18n="passChecks">Проверок прогноза</dt>
+          <dd id="passChecks" class="mono">—</dd>
+        </div>
+        <div>
+          <dt data-i18n="passDefault">Дедлайн по умолчанию</dt>
+          <dd class="mono">31.03.2028</dd>
+        </div>
+        <div>
+          <dt data-i18n="passSource">Источник котировок</dt>
+          <dd>Yahoo Finance, CoinGecko</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="count">
+      <h1 class="human" id="humanMain">1 год 5 месяцев 12 дней</h1>
+      <p class="count-sub">
+        <b class="mono" id="humanClock">03:20:40</b>
+        <span class="sep" aria-hidden="true">·</span>
+        <span class="mono" id="targetDate">31 марта 2028, 23:59</span>
+        <span class="sep" aria-hidden="true">·</span>
+        <span data-i18n="untilBreak">до разрыва мембраны</span>
+      </p>
+      <p class="count-note" id="countNote">Пузырь отклонился от равновесия. Отсчёт идёт с той минуты, когда рынок перестал объяснять рост выручки.</p>
+  </section>
+
+  <section class="panel">
+
+    <div class="barograph">
+      <div class="barograph-head">
+        <h2 class="panel-title" data-i18n="chartTitle">Барограф: индекс пузыря</h2>
+        <div class="tabs" id="tabs" role="tablist"></div>
+      </div>
+      <div class="plot" id="plot">
+        <svg id="chart" role="img" aria-label="График индекса пузыря"></svg>
+        <p class="plot-empty" id="plotEmpty" hidden data-i18n="noData">Данные ещё не загрузились</p>
+      </div>
+      <div class="barograph-foot">
+        <p class="readout-inline">
+          <span class="readout-name" id="chartName">Индекс пузыря</span>
+          <b class="mono" id="chartValue">—</b>
+          <span class="mono delta" id="chartDelta">—</span>
+          <span class="window-label" id="chartWindow"></span>
+        </p>
+        <p class="stamp" id="dataStamp" data-i18n="stamp">данные не загружены</p>
+      </div>
+    </div>
+
+    <div class="journal">
+      <div class="journal-head">
+        <h2 class="panel-title" data-i18n="journalTitle">Журнал наблюдений</h2>
+        <p class="disclaimer" data-i18n="disclaimer">комментарии наблюдателя, а не инвестиционный совет</p>
+      </div>
+      <table class="log">
+        <thead>
+          <tr>
+            <th scope="col" data-i18n="colTicker">Тикер</th>
+            <th scope="col" data-i18n="colPrice">Цена</th>
+            <th scope="col" data-i18n="colChange">Изм.</th>
+            <th scope="col" data-i18n="colNote">Наблюдение</th>
+          </tr>
+        </thead>
+        <tbody id="logBody">
+          <tr class="log-empty"><td colspan="4" data-i18n="noData">Данные ещё не загрузились</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer class="base">
+  <p data-i18n="sourceNote">Источник прогноза: гадание на кофейной гуще. Котировки: Yahoo Finance и CoinGecko, обновляются автоматически.</p>
+  <p class="base-right"><span id="clockNow" class="mono">—</span> <span data-i18n="localTime">по местному времени</span></p>
+</footer>
+
+<dialog class="console" id="console">
+  <form method="dialog" id="consoleForm">
+    <h2 data-i18n="consoleTitle">Установка даты разрыва</h2>
+    <label class="field">
+      <span data-i18n="fieldLabel">Дата и время</span>
+      <input type="datetime-local" id="dateInput" required>
+    </label>
+    <p class="field-hint" data-i18n="fieldHint">Дата сохранится в этом браузере. Ею же можно поделиться ссылкой: <code>?to=2028-03-31T23:59</code></p>
+    <div class="presets" id="presets"></div>
+    <div class="console-actions">
+      <button class="tool wide" value="cancel" type="submit" formnovalidate data-i18n="cancel">Отмена</button>
+      <button class="tool wide primary" value="apply" type="submit" data-i18n="apply">Применить</button>
+    </div>
+  </form>
+</dialog>
+
+<div class="slip" id="slip" hidden>
+  <div class="slip-card">
+    <p class="slip-head" data-i18n="burstTitle">Протокол разрыва</p>
+    <h2 class="slip-title" data-i18n="burstHeadline">ПУЗЫРЬ ЛОПНУЛ</h2>
+    <p class="slip-joke" id="slipJoke"></p>
+    <dl class="slip-stats" id="slipStats"></dl>
+    <div class="slip-actions">
+      <button class="tool wide" id="slipReplay" type="button" data-i18n="replay">Ещё раз</button>
+      <button class="tool wide" id="slipDate" type="button" data-i18n="setDate">Новая дата</button>
+      <button class="tool wide primary" id="slipShare" type="button" data-i18n="share">Поделиться</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
