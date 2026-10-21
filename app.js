@@ -71,6 +71,7 @@
       seconds: 'секунда',
       lessMinute: 'меньше минуты',
       tabs: { bubble: 'Индекс', nvda: 'NVIDIA', gspc: 'S&P 500', bitcoin: 'Bitcoin' },
+      seriesNames: { bubble: 'Индекс пузыря', nvda: 'NVIDIA', gspc: 'S&P 500', bitcoin: 'Bitcoin' },
       states: {
         calm: 'Устойчив',
         growth: 'Наполняется',
@@ -167,6 +168,7 @@
       seconds: 'second',
       lessMinute: 'less than a minute',
       tabs: { bubble: 'Index', nvda: 'NVIDIA', gspc: 'S&P 500', bitcoin: 'Bitcoin' },
+      seriesNames: { bubble: 'Bubble index', nvda: 'NVIDIA', gspc: 'S&P 500', bitcoin: 'Bitcoin' },
       states: {
         calm: 'Steady', growth: 'Filling', warm: 'Above norm', nervous: 'Unstable',
         panic: 'Critical', critical: 'Emergency', final: 'Final', burst: 'Burst'
@@ -530,7 +532,8 @@
       '<rect x="' + padL + '" y="' + (padT - 4) + '" width="' + plotW + '" height="' + (plotH + 4) + '" fill="url(#fade)"/>' +
       labels;
 
-    var name = (market.series[chartKey] && market.series[chartKey].label) || '';
+    var name = (I18N[lang].seriesNames && I18N[lang].seriesNames[chartKey]) ||
+      (market.series[chartKey] && market.series[chartKey].label) || '';
     var value = points[points.length - 1][1];
     var first = points[0][1];
     var change = first ? ((value / first) - 1) * 100 : 0;
@@ -551,9 +554,14 @@
 
   function fmtNumber(n) {
     var rounded = Math.abs(n) >= 100 ? Math.round(n * 10) / 10 : Math.round(n * 100) / 100;
-    var parts = String(rounded).split('.');
-    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
-    return parts.join(',');
+    var s = String(rounded);
+    var dot = s.indexOf('.');
+    var intPart = dot === -1 ? s : s.slice(0, dot);
+    var frac = dot === -1 ? '' : s.slice(dot);
+    if (lang === 'en') {
+      return intPart.replace(/\B(?=(\d{3})+(?!\d))/g, ',') + frac;
+    }
+    return intPart.replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + frac.replace('.', ',');
   }
 
   function fmtDate(iso) {
@@ -722,6 +730,7 @@
     $('#targetDate').textContent = fmtDateLong(target);
     $('#deadlineValue').textContent = fmtShortDate(target);
     if (market) { renderTabs(); renderLog(); }
+    renderStamp();
     renderPresets();
     tick();
     drawChart();

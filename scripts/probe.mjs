@@ -102,6 +102,16 @@ const expression = `(() => {
 const res = await send('Runtime.evaluate', { expression, returnByValue: true });
 console.log(JSON.stringify(JSON.parse(res.result.result.value), null, 1));
 
+const clickSel = process.argv[6];
+if (clickSel) {
+  await send('Runtime.evaluate', {
+    expression: `(() => { const el = document.querySelector(${JSON.stringify(clickSel)}); if (el) el.click(); return !!el; })()`,
+    returnByValue: true,
+  });
+  await sleep(1200);
+  console.log('клик: ' + clickSel);
+}
+
 const shotPath = process.argv[5];
 if (shotPath) {
   const shot = await send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: false });
