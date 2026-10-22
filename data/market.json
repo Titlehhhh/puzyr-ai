@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-22T05:22:22.755Z",
+ "generatedAt": "2026-10-22T10:39:10.873Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -2146,24 +2146,6 @@
    "observedAt": "2026-10-21"
   },
   {
-   "symbol": "ETH",
-   "name": "Ethereum",
-   "price": 2440.5541,
-   "changePct": -1.3,
-   "changePctWindow": 5.17,
-   "currency": "USD",
-   "observedAt": "2026-10-22"
-  },
-  {
-   "symbol": "BTC",
-   "name": "Bitcoin",
-   "price": 82803.0489,
-   "changePct": -1.52,
-   "changePctWindow": 6.66,
-   "currency": "USD",
-   "observedAt": "2026-10-22"
-  },
-  {
    "symbol": "ORCL",
    "name": "Oracle Corp",
    "price": 129.13,
@@ -2180,6 +2162,24 @@
    "changePctWindow": 0.52,
    "currency": "USD",
    "observedAt": "2026-10-21"
+  },
+  {
+   "symbol": "BTC",
+   "name": "Bitcoin",
+   "price": 82004.2737,
+   "changePct": -2.47,
+   "changePctWindow": 5.63,
+   "currency": "USD",
+   "observedAt": "2026-10-22"
+  },
+  {
+   "symbol": "ETH",
+   "name": "Ethereum",
+   "price": 2406.5516,
+   "changePct": -2.67,
+   "changePctWindow": 3.71,
+   "currency": "USD",
+   "observedAt": "2026-10-22"
   }
  ]
 }
