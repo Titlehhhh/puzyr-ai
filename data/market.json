@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T14:53:49.210Z",
+ "generatedAt": "2026-10-24T18:07:30.510Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -2164,9 +2164,9 @@
   {
    "symbol": "BTC",
    "name": "Bitcoin",
-   "price": 80226.366,
-   "changePct": -1.08,
-   "changePctWindow": 3.7,
+   "price": 80184.3036,
+   "changePct": -1.13,
+   "changePctWindow": 3.64,
    "currency": "USD",
    "observedAt": "2026-10-24"
   },
@@ -2180,15 +2180,6 @@
    "observedAt": "2026-10-23"
   },
   {
-   "symbol": "ETH",
-   "name": "Ethereum",
-   "price": 2345.0023,
-   "changePct": -1.67,
-   "changePctWindow": 1.78,
-   "currency": "USD",
-   "observedAt": "2026-10-24"
-  },
-  {
    "symbol": "SMCI",
    "name": "Super Micro Computer",
    "price": 32.94,
@@ -2196,6 +2187,15 @@
    "changePctWindow": -4.19,
    "currency": "USD",
    "observedAt": "2026-10-23"
+  },
+  {
+   "symbol": "ETH",
+   "name": "Ethereum",
+   "price": 2321.3951,
+   "changePct": -2.66,
+   "changePctWindow": 0.76,
+   "currency": "USD",
+   "observedAt": "2026-10-24"
   }
  ]
 }
