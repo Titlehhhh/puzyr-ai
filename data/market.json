@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T18:07:30.510Z",
+ "generatedAt": "2026-10-24T20:46:25.600Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -2144,6 +2144,15 @@
    "observedAt": "2026-10-23"
   },
   {
+   "symbol": "BTC",
+   "name": "Bitcoin",
+   "price": 80471.953,
+   "changePct": -0.78,
+   "changePctWindow": 4.01,
+   "currency": "USD",
+   "observedAt": "2026-10-24"
+  },
+  {
    "symbol": "AMZN",
    "name": "Amazon.com Inc",
    "price": 248,
@@ -2162,15 +2171,6 @@
    "observedAt": "2026-10-23"
   },
   {
-   "symbol": "BTC",
-   "name": "Bitcoin",
-   "price": 80184.3036,
-   "changePct": -1.13,
-   "changePctWindow": 3.64,
-   "currency": "USD",
-   "observedAt": "2026-10-24"
-  },
-  {
    "symbol": "GOOGL",
    "name": "Alphabet Inc",
    "price": 320.21,
@@ -2180,6 +2180,15 @@
    "observedAt": "2026-10-23"
   },
   {
+   "symbol": "ETH",
+   "name": "Ethereum",
+   "price": 2343.9013,
+   "changePct": -1.71,
+   "changePctWindow": 1.74,
+   "currency": "USD",
+   "observedAt": "2026-10-24"
+  },
+  {
    "symbol": "SMCI",
    "name": "Super Micro Computer",
    "price": 32.94,
@@ -2187,15 +2196,6 @@
    "changePctWindow": -4.19,
    "currency": "USD",
    "observedAt": "2026-10-23"
-  },
-  {
-   "symbol": "ETH",
-   "name": "Ethereum",
-   "price": 2321.3951,
-   "changePct": -2.66,
-   "changePctWindow": 0.76,
-   "currency": "USD",
-   "observedAt": "2026-10-24"
   }
  ]
 }
