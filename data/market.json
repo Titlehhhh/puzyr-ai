@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-25T05:19:11.122Z",
+ "generatedAt": "2026-10-25T10:09:04.431Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -2074,15 +2074,6 @@
    "observedAt": "2026-10-23"
   },
   {
-   "symbol": "ETH",
-   "name": "Ethereum",
-   "price": 2365.4295,
-   "changePct": 0.38,
-   "changePctWindow": 3.33,
-   "currency": "USD",
-   "observedAt": "2026-10-25"
-  },
-  {
    "symbol": "PLTR",
    "name": "Palantir Technologies",
    "price": 196.75,
@@ -2099,15 +2090,6 @@
    "changePctWindow": 70.03,
    "currency": "USD",
    "observedAt": "2026-10-23"
-  },
-  {
-   "symbol": "BTC",
-   "name": "Bitcoin",
-   "price": 80823.0279,
-   "changePct": 0.02,
-   "changePctWindow": 5.88,
-   "currency": "USD",
-   "observedAt": "2026-10-25"
   },
   {
    "symbol": "AVGO",
@@ -2135,6 +2117,15 @@
    "changePctWindow": 13.78,
    "currency": "USD",
    "observedAt": "2026-10-23"
+  },
+  {
+   "symbol": "BTC",
+   "name": "Bitcoin",
+   "price": 80257.6506,
+   "changePct": -0.68,
+   "changePctWindow": 5.14,
+   "currency": "USD",
+   "observedAt": "2026-10-25"
   },
   {
    "symbol": "CRM",
@@ -2171,6 +2162,15 @@
    "changePctWindow": -0.82,
    "currency": "USD",
    "observedAt": "2026-10-23"
+  },
+  {
+   "symbol": "ETH",
+   "name": "Ethereum",
+   "price": 2325.801,
+   "changePct": -1.31,
+   "changePctWindow": 1.6,
+   "currency": "USD",
+   "observedAt": "2026-10-25"
   },
   {
    "symbol": "SMCI",
