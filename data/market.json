@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-25T14:22:09.187Z",
+ "generatedAt": "2026-10-25T17:52:08.756Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -2092,6 +2092,24 @@
    "observedAt": "2026-10-23"
   },
   {
+   "symbol": "ETH",
+   "name": "Ethereum",
+   "price": 2354.792,
+   "changePct": -0.08,
+   "changePctWindow": 2.87,
+   "currency": "USD",
+   "observedAt": "2026-10-25"
+  },
+  {
+   "symbol": "BTC",
+   "name": "Bitcoin",
+   "price": 80721.4209,
+   "changePct": -0.11,
+   "changePctWindow": 5.75,
+   "currency": "USD",
+   "observedAt": "2026-10-25"
+  },
+  {
    "symbol": "AVGO",
    "name": "Broadcom Inc",
    "price": 321.68,
@@ -2128,15 +2146,6 @@
    "observedAt": "2026-10-23"
   },
   {
-   "symbol": "BTC",
-   "name": "Bitcoin",
-   "price": 80229.5869,
-   "changePct": -0.72,
-   "changePctWindow": 5.11,
-   "currency": "USD",
-   "observedAt": "2026-10-25"
-  },
-  {
    "symbol": "AMZN",
    "name": "Amazon.com Inc",
    "price": 248,
@@ -2153,15 +2162,6 @@
    "changePctWindow": -2.85,
    "currency": "USD",
    "observedAt": "2026-10-23"
-  },
-  {
-   "symbol": "ETH",
-   "name": "Ethereum",
-   "price": 2329.9446,
-   "changePct": -1.13,
-   "changePctWindow": 1.78,
-   "currency": "USD",
-   "observedAt": "2026-10-25"
   },
   {
    "symbol": "GOOGL",
