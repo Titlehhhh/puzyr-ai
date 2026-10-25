@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-25T00:33:12.291Z",
+ "generatedAt": "2026-10-25T05:19:11.122Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -2074,6 +2074,15 @@
    "observedAt": "2026-10-23"
   },
   {
+   "symbol": "ETH",
+   "name": "Ethereum",
+   "price": 2365.4295,
+   "changePct": 0.38,
+   "changePctWindow": 3.33,
+   "currency": "USD",
+   "observedAt": "2026-10-25"
+  },
+  {
    "symbol": "PLTR",
    "name": "Palantir Technologies",
    "price": 196.75,
@@ -2092,20 +2101,11 @@
    "observedAt": "2026-10-23"
   },
   {
-   "symbol": "ETH",
-   "name": "Ethereum",
-   "price": 2356.2232,
-   "changePct": -0.01,
-   "changePctWindow": 2.93,
-   "currency": "USD",
-   "observedAt": "2026-10-25"
-  },
-  {
    "symbol": "BTC",
    "name": "Bitcoin",
-   "price": 80794.9464,
-   "changePct": -0.02,
-   "changePctWindow": 5.85,
+   "price": 80823.0279,
+   "changePct": 0.02,
+   "changePctWindow": 5.88,
    "currency": "USD",
    "observedAt": "2026-10-25"
   },
