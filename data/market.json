@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-26T06:10:44.488Z",
+ "generatedAt": "2026-10-26T12:57:27.930Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -2067,6 +2067,15 @@
    "observedAt": "2026-10-23"
   },
   {
+   "symbol": "BTC",
+   "name": "Bitcoin",
+   "price": 80257.1969,
+   "changePct": 0.26,
+   "changePctWindow": 5.9,
+   "currency": "USD",
+   "observedAt": "2026-10-26"
+  },
+  {
    "symbol": "ARM",
    "name": "Arm Holdings",
    "price": 210.33,
@@ -2076,20 +2085,11 @@
    "observedAt": "2026-10-23"
   },
   {
-   "symbol": "BTC",
-   "name": "Bitcoin",
-   "price": 80029.3228,
-   "changePct": -0.02,
-   "changePctWindow": 5.6,
-   "currency": "USD",
-   "observedAt": "2026-10-26"
-  },
-  {
    "symbol": "ETH",
    "name": "Ethereum",
-   "price": 2317.5572,
-   "changePct": -0.4,
-   "changePctWindow": 2.84,
+   "price": 2322.6807,
+   "changePct": -0.18,
+   "changePctWindow": 3.06,
    "currency": "USD",
    "observedAt": "2026-10-26"
   },
