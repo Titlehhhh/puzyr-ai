@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-25T23:15:02.413Z",
+ "generatedAt": "2026-10-26T01:12:27.641Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -19,10 +19,6 @@
    "symbol": "BUBBLE",
    "kind": "index",
    "points": [
-    [
-     "2026-04-29",
-     1131.49
-    ],
     [
      "2026-04-30",
      1138.83
@@ -523,10 +519,6 @@
    "kind": "equity",
    "points": [
     [
-     "2026-04-29",
-     209.25
-    ],
-    [
      "2026-04-30",
      199.57
     ],
@@ -1026,10 +1018,6 @@
    "kind": "equity",
    "points": [
     [
-     "2026-04-29",
-     7135.9502
-    ],
-    [
      "2026-04-30",
      7209.0098
     ],
@@ -1528,10 +1516,6 @@
    "symbol": "BTC",
    "kind": "crypto",
    "points": [
-    [
-     "2026-04-29",
-     76331.8644
-    ],
     [
      "2026-04-30",
      75784.9574
@@ -2092,6 +2076,24 @@
    "observedAt": "2026-10-23"
   },
   {
+   "symbol": "BTC",
+   "name": "Bitcoin",
+   "price": 79982.1732,
+   "changePct": -0.08,
+   "changePctWindow": 5.54,
+   "currency": "USD",
+   "observedAt": "2026-10-26"
+  },
+  {
+   "symbol": "ETH",
+   "name": "Ethereum",
+   "price": 2319.2613,
+   "changePct": -0.33,
+   "changePctWindow": 2.91,
+   "currency": "USD",
+   "observedAt": "2026-10-26"
+  },
+  {
    "symbol": "AVGO",
    "name": "Broadcom Inc",
    "price": 321.68,
@@ -2119,15 +2121,6 @@
    "observedAt": "2026-10-23"
   },
   {
-   "symbol": "BTC",
-   "name": "Bitcoin",
-   "price": 80325.9063,
-   "changePct": -0.6,
-   "changePctWindow": 5.23,
-   "currency": "USD",
-   "observedAt": "2026-10-25"
-  },
-  {
    "symbol": "CRM",
    "name": "Salesforce Inc",
    "price": 248.57,
@@ -2135,15 +2128,6 @@
    "changePctWindow": 29.9,
    "currency": "USD",
    "observedAt": "2026-10-23"
-  },
-  {
-   "symbol": "ETH",
-   "name": "Ethereum",
-   "price": 2335.7761,
-   "changePct": -0.88,
-   "changePctWindow": 2.03,
-   "currency": "USD",
-   "observedAt": "2026-10-25"
   },
   {
    "symbol": "AMZN",
