@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-27T02:04:02.576Z",
+ "generatedAt": "2026-10-27T07:49:36.487Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -2103,15 +2103,6 @@
    "observedAt": "2026-10-26"
   },
   {
-   "symbol": "ETH",
-   "name": "Ethereum",
-   "price": 2319.1869,
-   "changePct": -0.06,
-   "changePctWindow": 2.76,
-   "currency": "USD",
-   "observedAt": "2026-10-27"
-  },
-  {
    "symbol": "ORCL",
    "name": "Oracle Corp",
    "price": 126.06,
@@ -2121,15 +2112,6 @@
    "observedAt": "2026-10-26"
   },
   {
-   "symbol": "BTC",
-   "name": "Bitcoin",
-   "price": 79941.5563,
-   "changePct": -0.11,
-   "changePctWindow": 4.78,
-   "currency": "USD",
-   "observedAt": "2026-10-27"
-  },
-  {
    "symbol": "CRM",
    "name": "Salesforce Inc",
    "price": 247.61,
@@ -2137,6 +2119,24 @@
    "changePctWindow": 27.61,
    "currency": "USD",
    "observedAt": "2026-10-26"
+  },
+  {
+   "symbol": "BTC",
+   "name": "Bitcoin",
+   "price": 79641.3149,
+   "changePct": -0.48,
+   "changePctWindow": 4.38,
+   "currency": "USD",
+   "observedAt": "2026-10-27"
+  },
+  {
+   "symbol": "ETH",
+   "name": "Ethereum",
+   "price": 2307.1381,
+   "changePct": -0.58,
+   "changePctWindow": 2.22,
+   "currency": "USD",
+   "observedAt": "2026-10-27"
   },
   {
    "symbol": "SMCI",
