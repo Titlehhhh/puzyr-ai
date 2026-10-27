@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-26T23:10:08.344Z",
+ "generatedAt": "2026-10-27T02:04:02.576Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -19,10 +19,6 @@
    "symbol": "BUBBLE",
    "kind": "index",
    "points": [
-    [
-     "2026-04-30",
-     1111.41
-    ],
     [
      "2026-05-01",
      1127.82
@@ -523,10 +519,6 @@
    "kind": "equity",
    "points": [
     [
-     "2026-04-30",
-     199.57
-    ],
-    [
      "2026-05-01",
      198.45
     ],
@@ -1025,10 +1017,6 @@
    "symbol": "^GSPC",
    "kind": "equity",
    "points": [
-    [
-     "2026-04-30",
-     7209.0098
-    ],
     [
      "2026-05-01",
      7230.1201
@@ -1529,10 +1517,6 @@
    "kind": "crypto",
    "points": [
     [
-     "2026-04-30",
-     75784.9574
-    ],
-    [
      "2026-05-01",
      76296.7965
     ],
@@ -2022,7 +2006,7 @@
     ],
     [
      "2026-10-26",
-     79714.3785
+     80048.8479
     ]
    ]
   }
@@ -2119,6 +2103,15 @@
    "observedAt": "2026-10-26"
   },
   {
+   "symbol": "ETH",
+   "name": "Ethereum",
+   "price": 2319.1869,
+   "changePct": -0.06,
+   "changePctWindow": 2.76,
+   "currency": "USD",
+   "observedAt": "2026-10-27"
+  },
+  {
    "symbol": "ORCL",
    "name": "Oracle Corp",
    "price": 126.06,
@@ -2126,6 +2119,15 @@
    "changePctWindow": -19.5,
    "currency": "USD",
    "observedAt": "2026-10-26"
+  },
+  {
+   "symbol": "BTC",
+   "name": "Bitcoin",
+   "price": 79941.5563,
+   "changePct": -0.11,
+   "changePctWindow": 4.78,
+   "currency": "USD",
+   "observedAt": "2026-10-27"
   },
   {
    "symbol": "CRM",
@@ -2137,29 +2139,11 @@
    "observedAt": "2026-10-26"
   },
   {
-   "symbol": "BTC",
-   "name": "Bitcoin",
-   "price": 79714.3785,
-   "changePct": -0.42,
-   "changePctWindow": 5.18,
-   "currency": "USD",
-   "observedAt": "2026-10-26"
-  },
-  {
    "symbol": "SMCI",
    "name": "Super Micro Computer",
    "price": 32.69,
    "changePct": -0.76,
    "changePctWindow": -2.51,
-   "currency": "USD",
-   "observedAt": "2026-10-26"
-  },
-  {
-   "symbol": "ETH",
-   "name": "Ethereum",
-   "price": 2304.5169,
-   "changePct": -0.96,
-   "changePctWindow": 2.26,
    "currency": "USD",
    "observedAt": "2026-10-26"
   },
