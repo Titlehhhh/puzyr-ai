@@ -784,6 +784,8 @@
     tick();
     setInterval(tick, 1000);
     setInterval(renderStamp, 60000);
+    // Котировки обновляем сами: раз в 5 минут и при возврате на вкладку
+    setInterval(loadMarket, 5 * 60 * 1000);
 
     $('#soundBtn').addEventListener('click', function () {
       soundOn = !soundOn;
@@ -851,8 +853,10 @@
     }
 
     document.addEventListener('visibilitychange', function () {
-      if (!document.hidden) { tick(); drawChart(); }
+      if (!document.hidden) { tick(); loadMarket(); drawChart(); }
     });
+
+    window.addEventListener('focus', function () { loadMarket(); });
 
     var unlock = function () { audioReady(); document.removeEventListener('pointerdown', unlock); };
     document.addEventListener('pointerdown', unlock);
