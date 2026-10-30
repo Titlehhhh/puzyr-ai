@@ -19,7 +19,7 @@ const OUT = resolve(ROOT, 'data/market.json');
 
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36';
 
-/** Акции AI-сегмента: тикер, название для журнала наблюдений. */
+/** Акции AI-сегмента + самые большие падения: тикер, название для журнала наблюдений. */
 const STOCKS = [
   ['NVDA', 'NVIDIA Corp'],
   ['MSFT', 'Microsoft Corp'],
@@ -35,6 +35,21 @@ const STOCKS = [
   ['SMCI', 'Super Micro Computer'],
   ['CRM', 'Salesforce Inc'],
   ['SNOW', 'Snowflake Inc'],
+  // Топ падения (по твоему списку)
+  ['APP', 'AppLovin Corp'],
+  ['COIN', 'Coinbase Global'],
+  ['CRWV', 'CoreWeave'],
+  ['WDC', 'Western Digital'],
+  ['INTC', 'Intel Corp'],
+  ['SNDK', 'SanDisk'],
+  ['CRCL', 'Circle Internet Group'],
+  ['NOW', 'ServiceNow'],
+  ['HOOD', 'Robinhood Markets'],
+  ['STX', 'Seagate Technology'],
+  ['MRVL', 'Marvell Technology'],
+  ['ADBE', 'Adobe Inc'],
+  ['MU', 'Micron Technology'],
+  ['IBM', 'International Business Machines'],
 ];
 
 /** Индексы для сравнения. */

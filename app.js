@@ -217,7 +217,22 @@
     SNOW: 'Хранит данные о том, что данные никто не хранит',
     BTC: 'Крипта на месте, крипта никуда не денется',
     ETH: 'Тот же график, вид сбоку, вдвое дороже',
-    '^GSPC': 'Рынок в целом. Скучно и стабильно, мы это уважаем'
+    '^GSPC': 'Рынок в целом. Скучно и стабильно, мы это уважаем',
+    // Топ падения
+    APP: 'Мобильная реклама лопнула раньше, чем успели заметить',
+    COIN: 'Криптобиржа, которая сама стала пузырём',
+    CRWV: 'GPU аренда — новый сабприм, только железо дороже',
+    WDC: 'Жесткие диски в мире SSD? Классика жанра',
+    INTC: 'Пропустил поезд, теперь гонится пешком',
+    SNDK: 'Флешки не спасли от того, что облако съело мир',
+    CRCL: 'Стейблкоин, который стабилен, пока не упал',
+    NOW: 'ITSM на стероидах, но клиенты уходят',
+    HOOD: 'Робин Гуд, который грабит бедных за коммиссию',
+    STX: 'Ещё один HDD динозавр в таровых ямах',
+    MRVL: 'Чипы для датацентров, когда датацентры пусты',
+    ADBE: 'Генеративный ИИ съедает их обед, а они продают подписку',
+    MU: 'Цикличность памяти: сейчас внизу, завтра — кто знает',
+    IBM: 'Консалтинг в обёртке "ИИ", внутри — мейнфреймы 70-х'
   };
   var NOTES_EN = {
     NVDA: 'Carries the whole index and refuses to share',
@@ -236,7 +251,22 @@
     SNOW: 'Stores data about how nobody stores data',
     BTC: 'Crypto stays put, crypto is not going anywhere',
     ETH: 'Same chart, side view, twice the price',
-    '^GSPC': 'The market as a whole. Boring and steady, we respect that'
+    '^GSPC': 'The market as a whole. Boring and steady, we respect that',
+    // Top losers
+    APP: 'Mobile ads popped before anyone noticed',
+    COIN: 'Crypto exchange that became the bubble itself',
+    CRWV: 'GPU rental — new subprime, but hardware costs more',
+    WDC: 'Hard drives in an SSD world? Classic',
+    INTC: 'Missed the train, now chasing on foot',
+    SNDK: 'Flash drives couldn\'t save them from the cloud eating the world',
+    CRCL: 'Stablecoin that\'s stable until it isn\'t',
+    NOW: 'ITSM on steroids, but customers are leaving',
+    HOOD: 'Robin Hood robbing the poor for fees',
+    STX: 'Another HDD dinosaur in tar pits',
+    MRVL: 'Datacenter chips when datacenters are empty',
+    ADBE: 'GenAI eating their lunch while they sell subscriptions',
+    MU: 'Memory cyclicality: at the bottom now, tomorrow — who knows',
+    IBM: 'Consulting wrapped in "AI", mainframes from the 70s inside'
   };
 
   /* ---------------- Состояние приложения ---------------- */
