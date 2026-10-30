@@ -748,7 +748,8 @@
         drawChart();
         if (burstFired) renderSlipStats();
       })
-      .catch(function () {
+      .catch(function (err) {
+        console.error('loadMarket error:', err);
         renderLog();
         $('#plotEmpty').hidden = false;
         renderStamp();
