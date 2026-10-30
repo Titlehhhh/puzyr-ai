@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-29T23:18:26.799Z",
+ "generatedAt": "2026-10-30T02:57:35.392Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -2038,7 +2038,7 @@
     ],
     [
      "2026-10-29",
-     78743.5843
+     81274.3741
     ]
    ]
   }
@@ -2090,6 +2090,15 @@
    "observedAt": "2026-10-29"
   },
   {
+   "symbol": "BTC",
+   "name": "Bitcoin",
+   "price": 77195.4545,
+   "changePct": -0.83,
+   "changePctWindow": -1.68,
+   "currency": "USD",
+   "observedAt": "2026-10-30"
+  },
+  {
    "symbol": "TSM",
    "name": "TSMC",
    "price": 431.81,
@@ -2106,6 +2115,15 @@
    "changePctWindow": 4.18,
    "currency": "USD",
    "observedAt": "2026-10-29"
+  },
+  {
+   "symbol": "ETH",
+   "name": "Ethereum",
+   "price": 2205.4133,
+   "changePct": -1.96,
+   "changePctWindow": -5.02,
+   "currency": "USD",
+   "observedAt": "2026-10-30"
   },
   {
    "symbol": "AMD",
@@ -2135,29 +2153,11 @@
    "observedAt": "2026-10-29"
   },
   {
-   "symbol": "BTC",
-   "name": "Bitcoin",
-   "price": 78743.5843,
-   "changePct": -3.11,
-   "changePctWindow": 0.08,
-   "currency": "USD",
-   "observedAt": "2026-10-29"
-  },
-  {
    "symbol": "ORCL",
    "name": "Oracle Corp",
    "price": 139.56,
    "changePct": -3.45,
    "changePctWindow": -10.81,
-   "currency": "USD",
-   "observedAt": "2026-10-29"
-  },
-  {
-   "symbol": "ETH",
-   "name": "Ethereum",
-   "price": 2266.9652,
-   "changePct": -3.84,
-   "changePctWindow": -2.18,
    "currency": "USD",
    "observedAt": "2026-10-29"
   },
