@@ -185,6 +185,28 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="app.js?v=6"></script>
+<script src="app.js?v=7"></script>
+<script>
+(function () {
+  function broken() {
+    var el = document.getElementById("chartName");
+    var name = (el && el.textContent) || "";
+    var row = document.querySelector("#logBody tr td.note-cell");
+    var note = (row && row.textContent) || "";
+    var txt = name + " | " + note + " | " + document.title;
+    if (/[\u00d0\u00d1\u00c2\u00c3\ufffd]/.test(txt)) return true;
+    if (/\u0432\u0402/.test(txt)) return true;
+    if (/\u0420[\s\u00a0][\u0412\u0421\u041f\u0420\u0432]/.test(txt)) return true;
+    if (name && !/^\u0418\u043d\u0434\u0435\u043a\u0441/.test(name) && !/bubble/i.test(name)) return true;
+    return false;
+  }
+  function heal() {
+    if (!broken()) return;
+    if (/[?&]nocache=/.test(location.search)) return;
+    location.replace(location.pathname + "?nocache=" + Date.now());
+  }
+  window.addEventListener("load", function () { setTimeout(heal, 1500); });
+})();
+</script>
 </body>
 </html>
