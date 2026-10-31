@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-31T06:21:06.234Z",
+ "generatedAt": "2026-10-31T13:04:33.227Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -2056,18 +2056,18 @@
   {
    "symbol": "BTC",
    "name": "Bitcoin",
-   "price": 77188.543,
-   "changePct": -0.04,
-   "changePctWindow": -3.3,
+   "price": 77445.1071,
+   "changePct": 0.29,
+   "changePctWindow": -2.98,
    "currency": "USD",
    "observedAt": "2026-10-31"
   },
   {
    "symbol": "ETH",
    "name": "Ethereum",
-   "price": 2240.9558,
-   "changePct": -0.07,
-   "changePctWindow": -4.48,
+   "price": 2248.7483,
+   "changePct": 0.28,
+   "changePctWindow": -4.15,
    "currency": "USD",
    "observedAt": "2026-10-31"
   },
