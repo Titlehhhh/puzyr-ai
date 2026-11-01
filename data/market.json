@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-31T23:45:25.228Z",
+ "generatedAt": "2026-11-01T02:37:10.771Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -19,10 +19,6 @@
    "symbol": "BUBBLE",
    "kind": "index",
    "points": [
-    [
-     "2026-05-05",
-     1336.61
-    ],
     [
      "2026-05-06",
      1388.05
@@ -527,10 +523,6 @@
    "kind": "equity",
    "points": [
     [
-     "2026-05-05",
-     196.5
-    ],
-    [
      "2026-05-06",
      207.83
     ],
@@ -1034,10 +1026,6 @@
    "kind": "equity",
    "points": [
     [
-     "2026-05-05",
-     7259.2202
-    ],
-    [
      "2026-05-06",
      7365.1201
     ],
@@ -1540,10 +1528,6 @@
    "symbol": "BTC",
    "kind": "crypto",
    "points": [
-    [
-     "2026-05-05",
-     79825.8751
-    ],
     [
      "2026-05-06",
      80913.9614
@@ -2056,20 +2040,20 @@
   {
    "symbol": "ETH",
    "name": "Ethereum",
-   "price": 2252.9019,
-   "changePct": 0.46,
-   "changePctWindow": -3.98,
+   "price": 2263.6003,
+   "changePct": 0.42,
+   "changePctWindow": -4.11,
    "currency": "USD",
-   "observedAt": "2026-10-31"
+   "observedAt": "2026-11-01"
   },
   {
    "symbol": "BTC",
    "name": "Bitcoin",
-   "price": 77453.2956,
-   "changePct": 0.3,
-   "changePctWindow": -2.97,
+   "price": 77633.6482,
+   "changePct": 0.21,
+   "changePctWindow": -4.05,
    "currency": "USD",
-   "observedAt": "2026-10-31"
+   "observedAt": "2026-11-01"
   },
   {
    "symbol": "IBM",
