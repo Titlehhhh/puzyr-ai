@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-02T23:52:32.908Z",
+ "generatedAt": "2026-11-03T06:44:23.541Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -19,10 +19,6 @@
    "symbol": "BUBBLE",
    "kind": "index",
    "points": [
-    [
-     "2026-05-07",
-     1373.99
-    ],
     [
      "2026-05-08",
      1420.13
@@ -523,10 +519,6 @@
    "kind": "equity",
    "points": [
     [
-     "2026-05-07",
-     211.5
-    ],
-    [
      "2026-05-08",
      215.2
     ],
@@ -1025,10 +1017,6 @@
    "symbol": "^GSPC",
    "kind": "equity",
    "points": [
-    [
-     "2026-05-07",
-     7337.1099
-    ],
     [
      "2026-05-08",
      7398.9302
@@ -1529,10 +1517,6 @@
    "kind": "crypto",
    "points": [
     [
-     "2026-05-07",
-     81436.8594
-    ],
-    [
      "2026-05-08",
      80024.9077
     ],
@@ -2022,7 +2006,7 @@
     ],
     [
      "2026-11-02",
-     76726.5803
+     78293.8391
     ]
    ]
   }
@@ -2065,6 +2049,24 @@
    "observedAt": "2026-11-02"
   },
   {
+   "symbol": "ETH",
+   "name": "Ethereum",
+   "price": 2248.2376,
+   "changePct": -0.09,
+   "changePctWindow": -1.88,
+   "currency": "USD",
+   "observedAt": "2026-11-03"
+  },
+  {
+   "symbol": "BTC",
+   "name": "Bitcoin",
+   "price": 76602.4937,
+   "changePct": -0.14,
+   "changePctWindow": -4.28,
+   "currency": "USD",
+   "observedAt": "2026-11-03"
+  },
+  {
    "symbol": "GOOGL",
    "name": "Alphabet Inc",
    "price": 278.99,
@@ -2088,15 +2090,6 @@
    "price": 72.08,
    "changePct": -0.63,
    "changePctWindow": 16.98,
-   "currency": "USD",
-   "observedAt": "2026-11-02"
-  },
-  {
-   "symbol": "ETH",
-   "name": "Ethereum",
-   "price": 2250.4733,
-   "changePct": -1.03,
-   "changePctWindow": -4.28,
    "currency": "USD",
    "observedAt": "2026-11-02"
   },
@@ -2151,15 +2144,6 @@
    "price": 398.63,
    "changePct": -1.85,
    "changePctWindow": 9.45,
-   "currency": "USD",
-   "observedAt": "2026-11-02"
-  },
-  {
-   "symbol": "BTC",
-   "name": "Bitcoin",
-   "price": 76726.5803,
-   "changePct": -2,
-   "changePctWindow": -5.78,
    "currency": "USD",
    "observedAt": "2026-11-02"
   },
