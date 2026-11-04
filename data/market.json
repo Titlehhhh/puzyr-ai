@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-04T00:54:18.137Z",
+ "generatedAt": "2026-11-04T07:29:17.290Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -2202,6 +2202,24 @@
    "observedAt": "2026-11-03"
   },
   {
+   "symbol": "ETH",
+   "name": "Ethereum",
+   "price": 2302.3043,
+   "changePct": 1.26,
+   "changePctWindow": -0.22,
+   "currency": "USD",
+   "observedAt": "2026-11-04"
+  },
+  {
+   "symbol": "BTC",
+   "name": "Bitcoin",
+   "price": 78225.4324,
+   "changePct": 1.09,
+   "changePctWindow": -2.46,
+   "currency": "USD",
+   "observedAt": "2026-11-04"
+  },
+  {
    "symbol": "INTC",
    "name": "Intel Corp",
    "price": 60.55,
@@ -2236,24 +2254,6 @@
    "changePctWindow": 117.44,
    "currency": "USD",
    "observedAt": "2026-11-03"
-  },
-  {
-   "symbol": "ETH",
-   "name": "Ethereum",
-   "price": 2265.6179,
-   "changePct": -0.35,
-   "changePctWindow": -1.81,
-   "currency": "USD",
-   "observedAt": "2026-11-04"
-  },
-  {
-   "symbol": "BTC",
-   "name": "Bitcoin",
-   "price": 76949.9757,
-   "changePct": -0.56,
-   "changePctWindow": -4.05,
-   "currency": "USD",
-   "observedAt": "2026-11-04"
   },
   {
    "symbol": "IBM",
