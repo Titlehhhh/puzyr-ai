@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-04T15:46:10.345Z",
+ "generatedAt": "2026-11-04T21:32:38.008Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -513,7 +513,7 @@
     ],
     [
      "2026-11-04",
-     1234.11
+     1225.59
     ]
    ]
   },
@@ -1016,7 +1016,7 @@
     ],
     [
      "2026-11-04",
-     203.475
+     200.13
     ]
    ]
   },
@@ -1519,7 +1519,7 @@
     ],
     [
      "2026-11-04",
-     7685.4502
+     7688.6201
     ]
    ]
   },
@@ -2022,7 +2022,7 @@
     ],
     [
      "2026-11-04",
-     80272.3189
+     80056.2584
     ]
    ]
   }
@@ -2031,279 +2031,279 @@
   {
    "symbol": "APP",
    "name": "AppLovin Corp",
-   "price": 267.52,
-   "changePct": 8.97,
-   "changePctWindow": -35.07,
-   "currency": "USD",
-   "observedAt": "2026-11-04"
-  },
-  {
-   "symbol": "AMZN",
-   "name": "Amazon.com Inc",
-   "price": 267.84,
-   "changePct": 6.84,
-   "changePctWindow": 30.74,
-   "currency": "USD",
-   "observedAt": "2026-11-04"
-  },
-  {
-   "symbol": "ETH",
-   "name": "Ethereum",
-   "price": 2425.0428,
-   "changePct": 6.66,
-   "changePctWindow": 5.1,
+   "price": 271.75,
+   "changePct": 10.69,
+   "changePctWindow": -34.04,
    "currency": "USD",
    "observedAt": "2026-11-04"
   },
   {
    "symbol": "MSFT",
    "name": "Microsoft Corp",
-   "price": 554.05,
-   "changePct": 6.35,
-   "changePctWindow": 39.05,
+   "price": 555.8,
+   "changePct": 6.68,
+   "changePctWindow": 39.49,
    "currency": "USD",
    "observedAt": "2026-11-04"
   },
   {
-   "symbol": "GOOGL",
-   "name": "Alphabet Inc",
-   "price": 292.584,
-   "changePct": 4.48,
-   "changePctWindow": -3.39,
+   "symbol": "ETH",
+   "name": "Ethereum",
+   "price": 2417.874,
+   "changePct": 6.34,
+   "changePctWindow": 4.78,
    "currency": "USD",
    "observedAt": "2026-11-04"
   },
   {
-   "symbol": "CRM",
-   "name": "Salesforce Inc",
-   "price": 231.885,
-   "changePct": 4.36,
-   "changePctWindow": 25.15,
-   "currency": "USD",
-   "observedAt": "2026-11-04"
-  },
-  {
-   "symbol": "BTC",
-   "name": "Bitcoin",
-   "price": 80272.3189,
-   "changePct": 3.73,
-   "changePctWindow": 0.09,
-   "currency": "USD",
-   "observedAt": "2026-11-04"
-  },
-  {
-   "symbol": "ADBE",
-   "name": "Adobe Inc",
-   "price": 255.155,
-   "changePct": 3.66,
-   "changePctWindow": -1.56,
-   "currency": "USD",
-   "observedAt": "2026-11-04"
-  },
-  {
-   "symbol": "IBM",
-   "name": "International Business Machines",
-   "price": 257.6248,
-   "changePct": 3.03,
-   "changePctWindow": 0.52,
+   "symbol": "AMZN",
+   "name": "Amazon.com Inc",
+   "price": 266.03,
+   "changePct": 6.12,
+   "changePctWindow": 29.86,
    "currency": "USD",
    "observedAt": "2026-11-04"
   },
   {
    "symbol": "COIN",
    "name": "Coinbase Global",
-   "price": 149.81,
-   "changePct": 3,
-   "changePctWindow": -9.72,
+   "price": 151.5,
+   "changePct": 4.16,
+   "changePctWindow": -8.7,
    "currency": "USD",
    "observedAt": "2026-11-04"
   },
   {
-   "symbol": "NOW",
-   "name": "ServiceNow",
-   "price": 111.38,
-   "changePct": 2.03,
-   "changePctWindow": 3.73,
+   "symbol": "BTC",
+   "name": "Bitcoin",
+   "price": 80056.2584,
+   "changePct": 3.45,
+   "changePctWindow": -0.18,
    "currency": "USD",
    "observedAt": "2026-11-04"
   },
   {
-   "symbol": "META",
-   "name": "Meta Platforms",
-   "price": 632.64,
-   "changePct": 1.87,
-   "changePctWindow": -1.88,
+   "symbol": "GOOGL",
+   "name": "Alphabet Inc",
+   "price": 288.93,
+   "changePct": 3.18,
+   "changePctWindow": -4.6,
    "currency": "USD",
    "observedAt": "2026-11-04"
   },
   {
-   "symbol": "^GSPC",
-   "name": "S&P 500",
-   "price": 7685.4502,
-   "changePct": 1.54,
-   "changePctWindow": 12,
+   "symbol": "CRM",
+   "name": "Salesforce Inc",
+   "price": 227.11,
+   "changePct": 2.21,
+   "changePctWindow": 22.57,
    "currency": "USD",
    "observedAt": "2026-11-04"
   },
   {
    "symbol": "HOOD",
    "name": "Robinhood Markets",
-   "price": 86.5,
-   "changePct": 0.96,
-   "changePctWindow": 14.34,
+   "price": 87.41,
+   "changePct": 2.02,
+   "changePctWindow": 15.55,
    "currency": "USD",
    "observedAt": "2026-11-04"
   },
   {
-   "symbol": "AMD",
-   "name": "Advanced Micro Devices",
-   "price": 485.22,
-   "changePct": 0.27,
-   "changePctWindow": 138.59,
+   "symbol": "IBM",
+   "name": "International Business Machines",
+   "price": 254.32,
+   "changePct": 1.71,
+   "changePctWindow": -0.76,
    "currency": "USD",
    "observedAt": "2026-11-04"
   },
   {
-   "symbol": "ORCL",
-   "name": "Oracle Corp",
-   "price": 126.53,
-   "changePct": 0.27,
-   "changePctWindow": -19.17,
+   "symbol": "^GSPC",
+   "name": "S&P 500",
+   "price": 7688.6201,
+   "changePct": 1.58,
+   "changePctWindow": 12.05,
    "currency": "USD",
    "observedAt": "2026-11-04"
   },
   {
-   "symbol": "PLTR",
-   "name": "Palantir Technologies",
-   "price": 174.73,
-   "changePct": -0.38,
-   "changePctWindow": 29.54,
+   "symbol": "META",
+   "name": "Meta Platforms",
+   "price": 630,
+   "changePct": 1.44,
+   "changePctWindow": -2.29,
    "currency": "USD",
    "observedAt": "2026-11-04"
   },
   {
    "symbol": "CRCL",
    "name": "Circle Internet Group",
-   "price": 74.8361,
-   "changePct": -0.51,
-   "changePctWindow": 20.86,
+   "price": 76.12,
+   "changePct": 1.2,
+   "changePctWindow": 22.93,
    "currency": "USD",
    "observedAt": "2026-11-04"
   },
   {
-   "symbol": "TSM",
-   "name": "TSMC",
-   "price": 400.22,
-   "changePct": -1.13,
-   "changePctWindow": 11.05,
+   "symbol": "AMD",
+   "name": "Advanced Micro Devices",
+   "price": 488.78,
+   "changePct": 1.01,
+   "changePctWindow": 140.34,
    "currency": "USD",
    "observedAt": "2026-11-04"
   },
   {
-   "symbol": "AVGO",
-   "name": "Broadcom Inc",
-   "price": 326.97,
-   "changePct": -1.55,
-   "changePctWindow": -2.1,
+   "symbol": "ADBE",
+   "name": "Adobe Inc",
+   "price": 248.48,
+   "changePct": 0.95,
+   "changePctWindow": -4.14,
    "currency": "USD",
    "observedAt": "2026-11-04"
   },
   {
-   "symbol": "NVDA",
-   "name": "NVIDIA Corp",
-   "price": 203.475,
-   "changePct": -1.56,
-   "changePctWindow": 8.29,
-   "currency": "USD",
-   "observedAt": "2026-11-04"
-  },
-  {
-   "symbol": "SMCI",
-   "name": "Super Micro Computer",
-   "price": 30.84,
-   "changePct": -1.75,
-   "changePctWindow": -4.1,
+   "symbol": "NOW",
+   "name": "ServiceNow",
+   "price": 108.81,
+   "changePct": -0.32,
+   "changePctWindow": 1.34,
    "currency": "USD",
    "observedAt": "2026-11-04"
   },
   {
    "symbol": "SNOW",
    "name": "Snowflake Inc",
-   "price": 287.69,
-   "changePct": -2.49,
-   "changePctWindow": 60.54,
+   "price": 290.6,
+   "changePct": -1.5,
+   "changePctWindow": 62.17,
    "currency": "USD",
    "observedAt": "2026-11-04"
   },
   {
-   "symbol": "ARM",
-   "name": "Arm Holdings",
-   "price": 195.14,
-   "changePct": -3.63,
-   "changePctWindow": 53.74,
+   "symbol": "ORCL",
+   "name": "Oracle Corp",
+   "price": 123.73,
+   "changePct": -1.95,
+   "changePctWindow": -20.96,
+   "currency": "USD",
+   "observedAt": "2026-11-04"
+  },
+  {
+   "symbol": "AVGO",
+   "name": "Broadcom Inc",
+   "price": 325.48,
+   "changePct": -2,
+   "changePctWindow": -2.55,
+   "currency": "USD",
+   "observedAt": "2026-11-04"
+  },
+  {
+   "symbol": "PLTR",
+   "name": "Palantir Technologies",
+   "price": 171.7,
+   "changePct": -2.11,
+   "changePctWindow": 27.29,
+   "currency": "USD",
+   "observedAt": "2026-11-04"
+  },
+  {
+   "symbol": "TSM",
+   "name": "TSMC",
+   "price": 395.75,
+   "changePct": -2.24,
+   "changePctWindow": 9.81,
+   "currency": "USD",
+   "observedAt": "2026-11-04"
+  },
+  {
+   "symbol": "NVDA",
+   "name": "NVIDIA Corp",
+   "price": 200.13,
+   "changePct": -3.17,
+   "changePctWindow": 6.51,
    "currency": "USD",
    "observedAt": "2026-11-04"
   },
   {
    "symbol": "INTC",
    "name": "Intel Corp",
-   "price": 57.835,
-   "changePct": -4.48,
-   "changePctWindow": 29.62,
+   "price": 58.27,
+   "changePct": -3.77,
+   "changePctWindow": 30.59,
    "currency": "USD",
    "observedAt": "2026-11-04"
   },
   {
-   "symbol": "MU",
-   "name": "Micron Technology",
-   "price": 812.45,
-   "changePct": -4.99,
-   "changePctWindow": 94.67,
+   "symbol": "ARM",
+   "name": "Arm Holdings",
+   "price": 191.8,
+   "changePct": -5.28,
+   "changePctWindow": 51.11,
+   "currency": "USD",
+   "observedAt": "2026-11-04"
+  },
+  {
+   "symbol": "SMCI",
+   "name": "Super Micro Computer",
+   "price": 29.6,
+   "changePct": -5.7,
+   "changePctWindow": -7.96,
    "currency": "USD",
    "observedAt": "2026-11-04"
   },
   {
    "symbol": "WDC",
    "name": "Western Digital",
-   "price": 328.915,
-   "changePct": -5.31,
-   "changePctWindow": 15.54,
+   "price": 323.83,
+   "changePct": -6.77,
+   "changePctWindow": 13.76,
    "currency": "USD",
    "observedAt": "2026-11-04"
   },
   {
-   "symbol": "STX",
-   "name": "Seagate Technology",
-   "price": 565.815,
-   "changePct": -6.69,
-   "changePctWindow": 38.35,
-   "currency": "USD",
-   "observedAt": "2026-11-04"
-  },
-  {
-   "symbol": "SNDK",
-   "name": "SanDisk",
-   "price": 1044.9,
-   "changePct": -7.25,
-   "changePctWindow": 68.24,
+   "symbol": "MU",
+   "name": "Micron Technology",
+   "price": 795.23,
+   "changePct": -7,
+   "changePctWindow": 90.54,
    "currency": "USD",
    "observedAt": "2026-11-04"
   },
   {
    "symbol": "MRVL",
    "name": "Marvell Technology",
-   "price": 158.845,
-   "changePct": -7.63,
-   "changePctWindow": 99.53,
+   "price": 159.8,
+   "changePct": -7.08,
+   "changePctWindow": 100.73,
+   "currency": "USD",
+   "observedAt": "2026-11-04"
+  },
+  {
+   "symbol": "SNDK",
+   "name": "SanDisk",
+   "price": 1037.4,
+   "changePct": -7.91,
+   "changePctWindow": 67.03,
+   "currency": "USD",
+   "observedAt": "2026-11-04"
+  },
+  {
+   "symbol": "STX",
+   "name": "Seagate Technology",
+   "price": 557.06,
+   "changePct": -8.13,
+   "changePctWindow": 36.21,
    "currency": "USD",
    "observedAt": "2026-11-04"
   },
   {
    "symbol": "CRWV",
    "name": "CoreWeave",
-   "price": 48.975,
-   "changePct": -8.87,
-   "changePctWindow": -49.58,
+   "price": 48.42,
+   "changePct": -9.9,
+   "changePctWindow": -50.15,
    "currency": "USD",
    "observedAt": "2026-11-04"
   }
