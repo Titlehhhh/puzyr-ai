@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-06T11:30:21.190Z",
+ "generatedAt": "2026-11-06T18:28:38.175Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -21,503 +21,507 @@
    "points": [
     [
      "2026-05-11",
-     1424.28
+     1462.34
     ],
     [
      "2026-05-12",
-     1380.13
+     1417.44
     ],
     [
      "2026-05-13",
-     1390.64
+     1427.58
     ],
     [
      "2026-05-14",
-     1401.99
+     1439.74
     ],
     [
      "2026-05-15",
-     1364.8
+     1402.01
     ],
     [
      "2026-05-18",
-     1345.48
+     1382.71
     ],
     [
      "2026-05-19",
-     1345.64
+     1382.71
     ],
     [
      "2026-05-20",
-     1388.74
+     1426.68
     ],
     [
      "2026-05-21",
-     1427.4
+     1466.04
     ],
     [
      "2026-05-22",
-     1431.06
+     1470.04
     ],
     [
      "2026-05-26",
-     1476.08
+     1515.71
     ],
     [
      "2026-05-27",
-     1474.53
+     1514.55
     ],
     [
      "2026-05-28",
-     1535.1
+     1578.06
     ],
     [
      "2026-05-29",
-     1586.53
+     1632.21
     ],
     [
      "2026-06-01",
-     1644.37
+     1691.59
     ],
     [
      "2026-06-02",
-     1660.25
+     1707.59
     ],
     [
      "2026-06-03",
-     1644.29
+     1689.54
     ],
     [
      "2026-06-04",
-     1626.55
+     1671.83
     ],
     [
      "2026-06-05",
-     1483
+     1525.26
     ],
     [
      "2026-06-08",
-     1533.36
+     1576.43
     ],
     [
      "2026-06-09",
-     1487.03
+     1528.55
     ],
     [
      "2026-06-10",
-     1431.79
+     1471.65
     ],
     [
      "2026-06-11",
-     1504.08
+     1544.57
     ],
     [
      "2026-06-12",
-     1532.62
+     1572.98
     ],
     [
      "2026-06-15",
-     1625.78
+     1667.9
     ],
     [
      "2026-06-16",
-     1576.24
+     1617.46
     ],
     [
      "2026-06-17",
-     1584.48
+     1625.29
     ],
     [
      "2026-06-18",
-     1648.16
+     1689.17
     ],
     [
      "2026-06-22",
-     1645.25
+     1686.06
     ],
     [
      "2026-06-23",
-     1551.02
+     1591.16
     ],
     [
      "2026-06-24",
-     1521.32
+     1560.65
     ],
     [
      "2026-06-25",
-     1548.59
+     1586.9
     ],
     [
      "2026-06-26",
-     1510.46
+     1549.98
     ],
     [
      "2026-06-29",
-     1548.87
+     1589.41
     ],
     [
      "2026-06-30",
-     1585.38
+     1625.98
     ],
     [
      "2026-07-01",
-     1529.77
+     1571.23
     ],
     [
      "2026-07-02",
-     1464.28
+     1505.4
     ],
     [
      "2026-07-06",
-     1502.52
+     1544.7
     ],
     [
      "2026-07-07",
-     1445.8
+     1487.27
     ],
     [
      "2026-07-08",
-     1459.5
+     1500.62
     ],
     [
      "2026-07-09",
-     1499.42
+     1540.92
     ],
     [
      "2026-07-10",
-     1497.01
+     1537.92
     ],
     [
      "2026-07-13",
-     1435.73
+     1475.97
     ],
     [
      "2026-07-14",
-     1441.56
+     1480.5
     ],
     [
      "2026-07-15",
-     1407.88
+     1446.64
     ],
     [
      "2026-07-16",
-     1336.74
+     1374.53
     ],
     [
      "2026-07-17",
-     1325.65
+     1362.99
     ],
     [
      "2026-07-20",
-     1345.28
+     1382.98
     ],
     [
      "2026-07-21",
-     1420.09
+     1458.71
     ],
     [
      "2026-07-22",
-     1410.87
-    ],
-    [
-     "2026-07-23",
-     1390.32
-    ],
-    [
-     "2026-07-24",
-     1335.27
-    ],
-    [
-     "2026-07-27",
-     1328.19
-    ],
-    [
-     "2026-07-28",
-     1276.47
-    ],
-    [
-     "2026-07-29",
-     1237.61
-    ],
-    [
-     "2026-07-30",
-     1328.46
-    ],
-    [
-     "2026-07-31",
-     1329.68
-    ],
-    [
-     "2026-08-03",
-     1359.91
-    ],
-    [
-     "2026-08-04",
-     1446.29
-    ],
-    [
-     "2026-08-05",
-     1420.43
-    ],
-    [
-     "2026-08-06",
-     1398.17
-    ],
-    [
-     "2026-08-07",
-     1417.08
-    ],
-    [
-     "2026-08-10",
-     1405.68
-    ],
-    [
-     "2026-08-11",
-     1408.93
-    ],
-    [
-     "2026-08-12",
-     1440.09
-    ],
-    [
-     "2026-08-13",
-     1485.56
-    ],
-    [
-     "2026-08-14",
-     1488.59
-    ],
-    [
-     "2026-08-17",
-     1499.53
-    ],
-    [
-     "2026-08-18",
-     1433.52
-    ],
-    [
-     "2026-08-19",
-     1435.68
-    ],
-    [
-     "2026-08-20",
-     1451.29
-    ],
-    [
-     "2026-08-21",
-     1458.11
-    ],
-    [
-     "2026-08-24",
-     1416.64
-    ],
-    [
-     "2026-08-25",
-     1445.12
-    ],
-    [
-     "2026-08-26",
-     1451.53
-    ],
-    [
-     "2026-08-27",
-     1485.81
-    ],
-    [
-     "2026-08-28",
-     1455.42
-    ],
-    [
-     "2026-08-31",
-     1466.78
-    ],
-    [
-     "2026-09-01",
-     1437.45
-    ],
-    [
-     "2026-09-02",
-     1433.45
-    ],
-    [
-     "2026-09-03",
-     1483.5
-    ],
-    [
-     "2026-09-04",
-     1513.82
-    ],
-    [
-     "2026-09-08",
-     1525.11
-    ],
-    [
-     "2026-09-09",
-     1526.08
-    ],
-    [
-     "2026-09-10",
-     1484.99
-    ],
-    [
-     "2026-09-11",
-     1498.01
-    ],
-    [
-     "2026-09-14",
-     1470.69
-    ],
-    [
-     "2026-09-15",
-     1446.67
-    ],
-    [
-     "2026-09-16",
      1448.85
     ],
     [
+     "2026-07-23",
+     1427.59
+    ],
+    [
+     "2026-07-24",
+     1372.23
+    ],
+    [
+     "2026-07-27",
+     1366.08
+    ],
+    [
+     "2026-07-28",
+     1314.16
+    ],
+    [
+     "2026-07-29",
+     1274.83
+    ],
+    [
+     "2026-07-30",
+     1366.58
+    ],
+    [
+     "2026-07-31",
+     1367.82
+    ],
+    [
+     "2026-08-03",
+     1398.8
+    ],
+    [
+     "2026-08-04",
+     1487.1
+    ],
+    [
+     "2026-08-05",
+     1460.86
+    ],
+    [
+     "2026-08-06",
+     1437.69
+    ],
+    [
+     "2026-08-07",
+     1457.76
+    ],
+    [
+     "2026-08-10",
+     1446.31
+    ],
+    [
+     "2026-08-11",
+     1449.34
+    ],
+    [
+     "2026-08-12",
+     1480.57
+    ],
+    [
+     "2026-08-13",
+     1526.95
+    ],
+    [
+     "2026-08-14",
+     1529.36
+    ],
+    [
+     "2026-08-17",
+     1539.86
+    ],
+    [
+     "2026-08-18",
+     1473.17
+    ],
+    [
+     "2026-08-19",
+     1476.2
+    ],
+    [
+     "2026-08-20",
+     1492.03
+    ],
+    [
+     "2026-08-21",
+     1499.76
+    ],
+    [
+     "2026-08-24",
+     1457.34
+    ],
+    [
+     "2026-08-25",
+     1486.75
+    ],
+    [
+     "2026-08-26",
+     1492.96
+    ],
+    [
+     "2026-08-27",
+     1528.76
+    ],
+    [
+     "2026-08-28",
+     1497.62
+    ],
+    [
+     "2026-08-31",
+     1509.12
+    ],
+    [
+     "2026-09-01",
+     1478.82
+    ],
+    [
+     "2026-09-02",
+     1474.5
+    ],
+    [
+     "2026-09-03",
+     1527.12
+    ],
+    [
+     "2026-09-04",
+     1556.94
+    ],
+    [
+     "2026-09-08",
+     1567.76
+    ],
+    [
+     "2026-09-09",
+     1568.63
+    ],
+    [
+     "2026-09-10",
+     1526.81
+    ],
+    [
+     "2026-09-11",
+     1540.6
+    ],
+    [
+     "2026-09-14",
+     1513.71
+    ],
+    [
+     "2026-09-15",
+     1488.69
+    ],
+    [
+     "2026-09-16",
+     1490.52
+    ],
+    [
      "2026-09-17",
-     1500.89
+     1543.73
     ],
     [
      "2026-09-18",
-     1534.99
+     1577.9
     ],
     [
      "2026-09-21",
-     1601.54
+     1646.15
     ],
     [
      "2026-09-22",
-     1625.03
+     1669.59
     ],
     [
      "2026-09-23",
-     1611.89
+     1656.3
     ],
     [
      "2026-09-24",
-     1602.81
+     1646.98
     ],
     [
      "2026-09-25",
-     1599.74
+     1643.74
     ],
     [
      "2026-09-28",
-     1555.11
+     1597.97
     ],
     [
      "2026-09-29",
-     1564.5
+     1607.46
     ],
     [
      "2026-09-30",
-     1570.41
+     1613.39
     ],
     [
      "2026-10-01",
-     1587.18
+     1630.51
     ],
     [
      "2026-10-02",
-     1578.78
+     1621.98
     ],
     [
      "2026-10-05",
-     1585.7
+     1629.16
     ],
     [
      "2026-10-06",
-     1581.27
+     1624.7
     ],
     [
      "2026-10-07",
-     1575.94
+     1619.09
     ],
     [
      "2026-10-08",
-     1534.03
+     1576.93
     ],
     [
      "2026-10-09",
-     1542.71
+     1586.48
     ],
     [
      "2026-10-12",
-     1511.12
+     1554.39
     ],
     [
      "2026-10-13",
-     1513.58
+     1557.02
     ],
     [
      "2026-10-14",
-     1440.04
+     1481.56
     ],
     [
      "2026-10-15",
-     1451.81
+     1494.16
     ],
     [
      "2026-10-16",
-     1374.6
+     1414.82
     ],
     [
      "2026-10-19",
-     1402.11
+     1442.86
     ],
     [
      "2026-10-20",
-     1410.93
+     1452.2
     ],
     [
      "2026-10-21",
-     1439.08
+     1481.3
     ],
     [
      "2026-10-22",
-     1369.83
+     1410.91
     ],
     [
      "2026-10-23",
-     1370.86
+     1412.09
     ],
     [
      "2026-10-26",
-     1386.4
+     1427.77
     ],
     [
      "2026-10-27",
-     1416.82
+     1458.58
     ],
     [
      "2026-10-28",
-     1447.27
+     1489.36
     ],
     [
      "2026-10-29",
-     1386.18
+     1426.93
     ],
     [
      "2026-10-30",
-     1277.37
+     1315.79
     ],
     [
      "2026-11-02",
-     1218.25
+     1255.26
     ],
     [
      "2026-11-03",
-     1245.16
+     1282.78
     ],
     [
      "2026-11-04",
-     1222.95
+     1260.84
     ],
     [
      "2026-11-05",
-     1105.05
+     1141.11
+    ],
+    [
+     "2026-11-06",
+     1160.54
     ]
    ]
   },
@@ -1025,6 +1029,10 @@
     [
      "2026-11-05",
      181.6
+    ],
+    [
+     "2026-11-06",
+     186.15
     ]
    ]
   },
@@ -1532,6 +1540,10 @@
     [
      "2026-11-05",
      7353.73
+    ],
+    [
+     "2026-11-06",
+     7391.8301
     ]
    ]
   },
@@ -2039,6 +2051,10 @@
     [
      "2026-11-05",
      80442.7121
+    ],
+    [
+     "2026-11-06",
+     75724.516
     ]
    ]
   }
@@ -2047,281 +2063,281 @@
   {
    "symbol": "APP",
    "name": "AppLovin Corp",
-   "price": 356.1,
-   "changePct": 31.04,
-   "changePctWindow": -14.95,
+   "price": 392.315,
+   "changePct": 10.17,
+   "changePctWindow": 3.07,
    "currency": "USD",
-   "observedAt": "2026-11-05"
+   "observedAt": "2026-11-06"
   },
   {
-   "symbol": "ETH",
-   "name": "Ethereum",
-   "price": 2237.507,
-   "changePct": 0.08,
-   "changePctWindow": -5.59,
+   "symbol": "AMD",
+   "name": "Advanced Micro Devices",
+   "price": 438.2065,
+   "changePct": 8.36,
+   "changePctWindow": 122.89,
+   "currency": "USD",
+   "observedAt": "2026-11-06"
+  },
+  {
+   "symbol": "INTC",
+   "name": "Intel Corp",
+   "price": 55.955,
+   "changePct": 7.09,
+   "changePctWindow": 28.25,
+   "currency": "USD",
+   "observedAt": "2026-11-06"
+  },
+  {
+   "symbol": "TSM",
+   "name": "TSMC",
+   "price": 372.355,
+   "changePct": 5.45,
+   "changePctWindow": 0.63,
+   "currency": "USD",
+   "observedAt": "2026-11-06"
+  },
+  {
+   "symbol": "MU",
+   "name": "Micron Technology",
+   "price": 682.0306,
+   "changePct": 3.91,
+   "changePctWindow": 62.01,
+   "currency": "USD",
+   "observedAt": "2026-11-06"
+  },
+  {
+   "symbol": "SMCI",
+   "name": "Super Micro Computer",
+   "price": 28.115,
+   "changePct": 3.82,
+   "changePctWindow": -8.45,
+   "currency": "USD",
+   "observedAt": "2026-11-06"
+  },
+  {
+   "symbol": "PLTR",
+   "name": "Palantir Technologies",
+   "price": 160.119,
+   "changePct": 3.31,
+   "changePctWindow": 22.6,
+   "currency": "USD",
+   "observedAt": "2026-11-06"
+  },
+  {
+   "symbol": "ARM",
+   "name": "Arm Holdings",
+   "price": 171.7,
+   "changePct": 2.99,
+   "changePctWindow": 38.71,
+   "currency": "USD",
+   "observedAt": "2026-11-06"
+  },
+  {
+   "symbol": "MRVL",
+   "name": "Marvell Technology",
+   "price": 137.12,
+   "changePct": 2.67,
+   "changePctWindow": 76.27,
+   "currency": "USD",
+   "observedAt": "2026-11-06"
+  },
+  {
+   "symbol": "NVDA",
+   "name": "NVIDIA Corp",
+   "price": 186.15,
+   "changePct": 2.51,
+   "changePctWindow": -2.82,
+   "currency": "USD",
+   "observedAt": "2026-11-06"
+  },
+  {
+   "symbol": "SNOW",
+   "name": "Snowflake Inc",
+   "price": 276.03,
+   "changePct": 2.41,
+   "changePctWindow": 75.15,
+   "currency": "USD",
+   "observedAt": "2026-11-06"
+  },
+  {
+   "symbol": "META",
+   "name": "Meta Platforms",
+   "price": 617.469,
+   "changePct": 2.05,
+   "changePctWindow": -3.1,
+   "currency": "USD",
+   "observedAt": "2026-11-06"
+  },
+  {
+   "symbol": "SNDK",
+   "name": "SanDisk",
+   "price": 822.7385,
+   "changePct": 2.02,
+   "changePctWindow": 23.44,
+   "currency": "USD",
+   "observedAt": "2026-11-06"
+  },
+  {
+   "symbol": "CRWV",
+   "name": "CoreWeave",
+   "price": 44.48,
+   "changePct": 1.88,
+   "changePctWindow": -51.03,
+   "currency": "USD",
+   "observedAt": "2026-11-06"
+  },
+  {
+   "symbol": "HOOD",
+   "name": "Robinhood Markets",
+   "price": 79.32,
+   "changePct": 1.19,
+   "changePctWindow": 10.5,
+   "currency": "USD",
+   "observedAt": "2026-11-06"
+  },
+  {
+   "symbol": "GOOGL",
+   "name": "Alphabet Inc",
+   "price": 285.52,
+   "changePct": 1.04,
+   "changePctWindow": -8.34,
+   "currency": "USD",
+   "observedAt": "2026-11-06"
+  },
+  {
+   "symbol": "AMZN",
+   "name": "Amazon.com Inc",
+   "price": 262.08,
+   "changePct": 0.72,
+   "changePctWindow": 27.68,
+   "currency": "USD",
+   "observedAt": "2026-11-06"
+  },
+  {
+   "symbol": "^GSPC",
+   "name": "S&P 500",
+   "price": 7391.8301,
+   "changePct": 0.52,
+   "changePctWindow": 8.1,
    "currency": "USD",
    "observedAt": "2026-11-06"
   },
   {
    "symbol": "BTC",
    "name": "Bitcoin",
-   "price": 76019.421,
-   "changePct": 0.02,
-   "changePctWindow": -7.31,
+   "price": 75724.516,
+   "changePct": -0.37,
+   "changePctWindow": -7.67,
+   "currency": "USD",
+   "observedAt": "2026-11-06"
+  },
+  {
+   "symbol": "NOW",
+   "name": "ServiceNow",
+   "price": 101.96,
+   "changePct": -0.39,
+   "changePctWindow": 1.15,
+   "currency": "USD",
+   "observedAt": "2026-11-06"
+  },
+  {
+   "symbol": "AVGO",
+   "name": "Broadcom Inc",
+   "price": 290.31,
+   "changePct": -0.42,
+   "changePctWindow": -12.12,
+   "currency": "USD",
+   "observedAt": "2026-11-06"
+  },
+  {
+   "symbol": "ETH",
+   "name": "Ethereum",
+   "price": 2224.119,
+   "changePct": -0.52,
+   "changePctWindow": -6.15,
+   "currency": "USD",
+   "observedAt": "2026-11-06"
+  },
+  {
+   "symbol": "MSFT",
+   "name": "Microsoft Corp",
+   "price": 532.91,
+   "changePct": -0.56,
+   "changePctWindow": 38.61,
+   "currency": "USD",
+   "observedAt": "2026-11-06"
+  },
+  {
+   "symbol": "IBM",
+   "name": "International Business Machines",
+   "price": 244.4899,
+   "changePct": -1.06,
+   "changePctWindow": 9.46,
+   "currency": "USD",
+   "observedAt": "2026-11-06"
+  },
+  {
+   "symbol": "ORCL",
+   "name": "Oracle Corp",
+   "price": 113.415,
+   "changePct": -1.52,
+   "changePctWindow": -19.74,
    "currency": "USD",
    "observedAt": "2026-11-06"
   },
   {
    "symbol": "ADBE",
    "name": "Adobe Inc",
-   "price": 246.44,
-   "changePct": -0.82,
-   "changePctWindow": -4.71,
+   "price": 240.86,
+   "changePct": -2.26,
+   "changePctWindow": -2.36,
    "currency": "USD",
-   "observedAt": "2026-11-05"
-  },
-  {
-   "symbol": "CRM",
-   "name": "Salesforce Inc",
-   "price": 222.41,
-   "changePct": -2.07,
-   "changePctWindow": 20.12,
-   "currency": "USD",
-   "observedAt": "2026-11-05"
-  },
-  {
-   "symbol": "AMZN",
-   "name": "Amazon.com Inc",
-   "price": 260.21,
-   "changePct": -2.19,
-   "changePctWindow": 23.84,
-   "currency": "USD",
-   "observedAt": "2026-11-05"
-  },
-  {
-   "symbol": "GOOGL",
-   "name": "Alphabet Inc",
-   "price": 282.57,
-   "changePct": -2.2,
-   "changePctWindow": -10.29,
-   "currency": "USD",
-   "observedAt": "2026-11-05"
-  },
-  {
-   "symbol": "IBM",
-   "name": "International Business Machines",
-   "price": 247.11,
-   "changePct": -2.84,
-   "changePctWindow": -3.91,
-   "currency": "USD",
-   "observedAt": "2026-11-05"
-  },
-  {
-   "symbol": "MSFT",
-   "name": "Microsoft Corp",
-   "price": 535.93,
-   "changePct": -3.58,
-   "changePctWindow": 34.92,
-   "currency": "USD",
-   "observedAt": "2026-11-05"
-  },
-  {
-   "symbol": "META",
-   "name": "Meta Platforms",
-   "price": 605.08,
-   "changePct": -3.96,
-   "changePctWindow": -7.71,
-   "currency": "USD",
-   "observedAt": "2026-11-05"
-  },
-  {
-   "symbol": "^GSPC",
-   "name": "S&P 500",
-   "price": 7353.73,
-   "changePct": -4.36,
-   "changePctWindow": 6.43,
-   "currency": "USD",
-   "observedAt": "2026-11-05"
-  },
-  {
-   "symbol": "NOW",
-   "name": "ServiceNow",
-   "price": 102.36,
-   "changePct": -5.93,
-   "changePctWindow": -1.83,
-   "currency": "USD",
-   "observedAt": "2026-11-05"
-  },
-  {
-   "symbol": "ORCL",
-   "name": "Oracle Corp",
-   "price": 115.16,
-   "changePct": -6.93,
-   "changePctWindow": -22.23,
-   "currency": "USD",
-   "observedAt": "2026-11-05"
-  },
-  {
-   "symbol": "SNOW",
-   "name": "Snowflake Inc",
-   "price": 269.54,
-   "changePct": -7.25,
-   "changePctWindow": 56.26,
-   "currency": "USD",
-   "observedAt": "2026-11-05"
-  },
-  {
-   "symbol": "SMCI",
-   "name": "Super Micro Computer",
-   "price": 27.08,
-   "changePct": -8.51,
-   "changePctWindow": -16.47,
-   "currency": "USD",
-   "observedAt": "2026-11-05"
-  },
-  {
-   "symbol": "CRCL",
-   "name": "Circle Internet Group",
-   "price": 69.48,
-   "changePct": -8.72,
-   "changePctWindow": 10.25,
-   "currency": "USD",
-   "observedAt": "2026-11-05"
-  },
-  {
-   "symbol": "NVDA",
-   "name": "NVIDIA Corp",
-   "price": 181.6,
-   "changePct": -9.26,
-   "changePctWindow": -4.33,
-   "currency": "USD",
-   "observedAt": "2026-11-05"
-  },
-  {
-   "symbol": "COIN",
-   "name": "Coinbase Global",
-   "price": 136.82,
-   "changePct": -9.69,
-   "changePctWindow": -20.15,
-   "currency": "USD",
-   "observedAt": "2026-11-05"
-  },
-  {
-   "symbol": "PLTR",
-   "name": "Palantir Technologies",
-   "price": 154.99,
-   "changePct": -9.73,
-   "changePctWindow": 14.6,
-   "currency": "USD",
-   "observedAt": "2026-11-05"
-  },
-  {
-   "symbol": "CRWV",
-   "name": "CoreWeave",
-   "price": 43.66,
-   "changePct": -9.83,
-   "changePctWindow": -51.08,
-   "currency": "USD",
-   "observedAt": "2026-11-05"
-  },
-  {
-   "symbol": "HOOD",
-   "name": "Robinhood Markets",
-   "price": 78.39,
-   "changePct": -10.32,
-   "changePctWindow": 3,
-   "currency": "USD",
-   "observedAt": "2026-11-05"
-  },
-  {
-   "symbol": "INTC",
-   "name": "Intel Corp",
-   "price": 52.25,
-   "changePct": -10.33,
-   "changePctWindow": 18.45,
-   "currency": "USD",
-   "observedAt": "2026-11-05"
-  },
-  {
-   "symbol": "AVGO",
-   "name": "Broadcom Inc",
-   "price": 291.53,
-   "changePct": -10.43,
-   "changePctWindow": -12.36,
-   "currency": "USD",
-   "observedAt": "2026-11-05"
-  },
-  {
-   "symbol": "TSM",
-   "name": "TSMC",
-   "price": 353.1,
-   "changePct": -10.78,
-   "changePctWindow": -4.71,
-   "currency": "USD",
-   "observedAt": "2026-11-05"
-  },
-  {
-   "symbol": "ARM",
-   "name": "Arm Holdings",
-   "price": 166.72,
-   "changePct": -13.08,
-   "changePctWindow": 32.76,
-   "currency": "USD",
-   "observedAt": "2026-11-05"
-  },
-  {
-   "symbol": "STX",
-   "name": "Seagate Technology",
-   "price": 466.53,
-   "changePct": -16.25,
-   "changePctWindow": 13.48,
-   "currency": "USD",
-   "observedAt": "2026-11-05"
-  },
-  {
-   "symbol": "MRVL",
-   "name": "Marvell Technology",
-   "price": 133.55,
-   "changePct": -16.43,
-   "changePctWindow": 68.03,
-   "currency": "USD",
-   "observedAt": "2026-11-05"
-  },
-  {
-   "symbol": "AMD",
-   "name": "Advanced Micro Devices",
-   "price": 404.4,
-   "changePct": -17.26,
-   "changePctWindow": 102.05,
-   "currency": "USD",
-   "observedAt": "2026-11-05"
+   "observedAt": "2026-11-06"
   },
   {
    "symbol": "WDC",
    "name": "Western Digital",
-   "price": 267.63,
-   "changePct": -17.35,
-   "changePctWindow": -6.27,
+   "price": 261.1801,
+   "changePct": -2.41,
+   "changePctWindow": -6.86,
    "currency": "USD",
-   "observedAt": "2026-11-05"
+   "observedAt": "2026-11-06"
   },
   {
-   "symbol": "MU",
-   "name": "Micron Technology",
-   "price": 656.39,
-   "changePct": -17.46,
-   "changePctWindow": 53.3,
+   "symbol": "STX",
+   "name": "Seagate Technology",
+   "price": 453.89,
+   "changePct": -2.71,
+   "changePctWindow": 11.41,
    "currency": "USD",
-   "observedAt": "2026-11-05"
+   "observedAt": "2026-11-06"
   },
   {
-   "symbol": "SNDK",
-   "name": "SanDisk",
-   "price": 806.43,
-   "changePct": -22.26,
-   "changePctWindow": 24.07,
+   "symbol": "COIN",
+   "name": "Coinbase Global",
+   "price": 132.67,
+   "changePct": -3.03,
+   "changePctWindow": -17.21,
    "currency": "USD",
-   "observedAt": "2026-11-05"
+   "observedAt": "2026-11-06"
+  },
+  {
+   "symbol": "CRM",
+   "name": "Salesforce Inc",
+   "price": 215.12,
+   "changePct": -3.28,
+   "changePctWindow": 20.75,
+   "currency": "USD",
+   "observedAt": "2026-11-06"
+  },
+  {
+   "symbol": "CRCL",
+   "name": "Circle Internet Group",
+   "price": 66.65,
+   "changePct": -4.07,
+   "changePctWindow": 8.96,
+   "currency": "USD",
+   "observedAt": "2026-11-06"
   }
  ]
 }
