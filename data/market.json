@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-06T23:31:08.502Z",
+ "generatedAt": "2026-11-07T03:13:38.436Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -19,10 +19,6 @@
    "symbol": "BUBBLE",
    "kind": "index",
    "points": [
-    [
-     "2026-05-11",
-     1462.34
-    ],
     [
      "2026-05-12",
      1417.44
@@ -531,10 +527,6 @@
    "kind": "equity",
    "points": [
     [
-     "2026-05-11",
-     219.44
-    ],
-    [
      "2026-05-12",
      220.78
     ],
@@ -1041,10 +1033,6 @@
    "symbol": "^GSPC",
    "kind": "equity",
    "points": [
-    [
-     "2026-05-11",
-     7412.8398
-    ],
     [
      "2026-05-12",
      7400.96
@@ -1553,10 +1541,6 @@
    "kind": "crypto",
    "points": [
     [
-     "2026-05-11",
-     82018.3711
-    ],
-    [
      "2026-05-12",
      81627.566
     ],
@@ -2054,7 +2038,7 @@
     ],
     [
      "2026-11-06",
-     75853.8737
+     76005.5092
     ]
    ]
   }
@@ -2223,29 +2207,29 @@
    "observedAt": "2026-11-06"
   },
   {
+   "symbol": "ETH",
+   "name": "Ethereum",
+   "price": 2247.2203,
+   "changePct": 0.49,
+   "changePctWindow": -3.91,
+   "currency": "USD",
+   "observedAt": "2026-11-07"
+  },
+  {
+   "symbol": "BTC",
+   "name": "Bitcoin",
+   "price": 76022.2418,
+   "changePct": 0.33,
+   "changePctWindow": -6.87,
+   "currency": "USD",
+   "observedAt": "2026-11-07"
+  },
+  {
    "symbol": "^GSPC",
    "name": "S&P 500",
    "price": 7376.8599,
    "changePct": 0.31,
    "changePctWindow": 7.88,
-   "currency": "USD",
-   "observedAt": "2026-11-06"
-  },
-  {
-   "symbol": "ETH",
-   "name": "Ethereum",
-   "price": 2235.9324,
-   "changePct": 0.01,
-   "changePctWindow": -5.66,
-   "currency": "USD",
-   "observedAt": "2026-11-06"
-  },
-  {
-   "symbol": "BTC",
-   "name": "Bitcoin",
-   "price": 75853.8737,
-   "changePct": -0.2,
-   "changePctWindow": -7.52,
    "currency": "USD",
    "observedAt": "2026-11-06"
   },
