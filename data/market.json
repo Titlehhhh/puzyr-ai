@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-08T22:29:09.640Z",
+ "generatedAt": "2026-11-09T01:58:38.573Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -19,10 +19,6 @@
    "symbol": "BUBBLE",
    "kind": "index",
    "points": [
-    [
-     "2026-05-13",
-     1427.58
-    ],
     [
      "2026-05-14",
      1439.74
@@ -523,10 +519,6 @@
    "kind": "equity",
    "points": [
     [
-     "2026-05-13",
-     225.83
-    ],
-    [
      "2026-05-14",
      235.74
     ],
@@ -1026,10 +1018,6 @@
    "kind": "equity",
    "points": [
     [
-     "2026-05-13",
-     7444.25
-    ],
-    [
      "2026-05-14",
      7501.2402
     ],
@@ -1528,10 +1516,6 @@
    "symbol": "BTC",
    "kind": "crypto",
    "points": [
-    [
-     "2026-05-13",
-     80482.1438
-    ],
     [
      "2026-05-14",
      79288.8421
@@ -2155,6 +2139,15 @@
    "observedAt": "2026-11-06"
   },
   {
+   "symbol": "ETH",
+   "name": "Ethereum",
+   "price": 2143.2426,
+   "changePct": 0.89,
+   "changePctWindow": -5.1,
+   "currency": "USD",
+   "observedAt": "2026-11-09"
+  },
+  {
    "symbol": "META",
    "name": "Meta Platforms",
    "price": 610.15,
@@ -2189,6 +2182,15 @@
    "changePctWindow": -11.09,
    "currency": "USD",
    "observedAt": "2026-11-06"
+  },
+  {
+   "symbol": "BTC",
+   "name": "Bitcoin",
+   "price": 75144.9214,
+   "changePct": 0.54,
+   "changePctWindow": -5.23,
+   "currency": "USD",
+   "observedAt": "2026-11-09"
   },
   {
    "symbol": "^GSPC",
@@ -2263,15 +2265,6 @@
    "observedAt": "2026-11-06"
   },
   {
-   "symbol": "BTC",
-   "name": "Bitcoin",
-   "price": 74457.9008,
-   "changePct": -1.74,
-   "changePctWindow": -7.49,
-   "currency": "USD",
-   "observedAt": "2026-11-08"
-  },
-  {
    "symbol": "CRCL",
    "name": "Circle Internet Group",
    "price": 67.88,
@@ -2297,15 +2290,6 @@
    "changePctWindow": 19.92,
    "currency": "USD",
    "observedAt": "2026-11-06"
-  },
-  {
-   "symbol": "ETH",
-   "name": "Ethereum",
-   "price": 2125.5528,
-   "changePct": -4.98,
-   "changePctWindow": -6.6,
-   "currency": "USD",
-   "observedAt": "2026-11-08"
   }
  ]
 }
