@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-11T03:01:49.245Z",
+ "generatedAt": "2026-11-11T10:53:50.190Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -2060,9 +2060,18 @@
   {
    "symbol": "ETH",
    "name": "Ethereum",
-   "price": 2056.567,
-   "changePct": 0.3,
-   "changePctWindow": -7.53,
+   "price": 2059.3204,
+   "changePct": 0.44,
+   "changePctWindow": -7.4,
+   "currency": "USD",
+   "observedAt": "2026-11-11"
+  },
+  {
+   "symbol": "BTC",
+   "name": "Bitcoin",
+   "price": 74026.0251,
+   "changePct": 0.41,
+   "changePctWindow": -6.38,
    "currency": "USD",
    "observedAt": "2026-11-11"
   },
@@ -2092,15 +2101,6 @@
    "changePctWindow": -0.6,
    "currency": "USD",
    "observedAt": "2026-11-10"
-  },
-  {
-   "symbol": "BTC",
-   "name": "Bitcoin",
-   "price": 73568.8778,
-   "changePct": -0.21,
-   "changePctWindow": -6.96,
-   "currency": "USD",
-   "observedAt": "2026-11-11"
   },
   {
    "symbol": "PLTR",
