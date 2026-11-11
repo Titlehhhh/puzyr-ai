@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-10T23:26:45.148Z",
+ "generatedAt": "2026-11-11T03:01:49.245Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -19,10 +19,6 @@
    "symbol": "BUBBLE",
    "kind": "index",
    "points": [
-    [
-     "2026-05-15",
-     1325.78
-    ],
     [
      "2026-05-18",
      1307.24
@@ -523,10 +519,6 @@
    "kind": "equity",
    "points": [
     [
-     "2026-05-15",
-     225.32
-    ],
-    [
      "2026-05-18",
      222.32
     ],
@@ -1025,10 +1017,6 @@
    "symbol": "^GSPC",
    "kind": "equity",
    "points": [
-    [
-     "2026-05-15",
-     7408.5
-    ],
     [
      "2026-05-18",
      7403.0498
@@ -1529,10 +1517,6 @@
    "kind": "crypto",
    "points": [
     [
-     "2026-05-15",
-     81059.116
-    ],
-    [
      "2026-05-18",
      77428.5187
     ],
@@ -2022,7 +2006,7 @@
     ],
     [
      "2026-11-10",
-     73628.2043
+     75266.7673
     ]
    ]
   }
@@ -2074,6 +2058,15 @@
    "observedAt": "2026-11-10"
   },
   {
+   "symbol": "ETH",
+   "name": "Ethereum",
+   "price": 2056.567,
+   "changePct": 0.3,
+   "changePctWindow": -7.53,
+   "currency": "USD",
+   "observedAt": "2026-11-11"
+  },
+  {
    "symbol": "META",
    "name": "Meta Platforms",
    "price": 641.39,
@@ -2099,6 +2092,15 @@
    "changePctWindow": -0.6,
    "currency": "USD",
    "observedAt": "2026-11-10"
+  },
+  {
+   "symbol": "BTC",
+   "name": "Bitcoin",
+   "price": 73568.8778,
+   "changePct": -0.21,
+   "changePctWindow": -6.96,
+   "currency": "USD",
+   "observedAt": "2026-11-11"
   },
   {
    "symbol": "PLTR",
@@ -2200,15 +2202,6 @@
    "observedAt": "2026-11-10"
   },
   {
-   "symbol": "BTC",
-   "name": "Bitcoin",
-   "price": 73628.2043,
-   "changePct": -2.18,
-   "changePctWindow": -9.17,
-   "currency": "USD",
-   "observedAt": "2026-11-10"
-  },
-  {
    "symbol": "MSFT",
    "name": "Microsoft Corp",
    "price": 533.16,
@@ -2286,15 +2279,6 @@
    "price": 64.98,
    "changePct": -3.82,
    "changePctWindow": -21.84,
-   "currency": "USD",
-   "observedAt": "2026-11-10"
-  },
-  {
-   "symbol": "ETH",
-   "name": "Ethereum",
-   "price": 2049.085,
-   "changePct": -3.9,
-   "changePctWindow": -10.23,
    "currency": "USD",
    "observedAt": "2026-11-10"
   },
