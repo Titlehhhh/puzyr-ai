@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-12T00:59:57.311Z",
+ "generatedAt": "2026-11-12T08:18:44.698Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -2265,18 +2265,18 @@
   {
    "symbol": "ETH",
    "name": "Ethereum",
-   "price": 2060.0649,
-   "changePct": 0.23,
-   "changePctWindow": -5.51,
+   "price": 2047.5827,
+   "changePct": -0.38,
+   "changePctWindow": -6.08,
    "currency": "USD",
    "observedAt": "2026-11-12"
   },
   {
    "symbol": "BTC",
    "name": "Bitcoin",
-   "price": 74018.7417,
-   "changePct": 0.06,
-   "changePctWindow": -5.27,
+   "price": 73529.2505,
+   "changePct": -0.6,
+   "changePctWindow": -5.89,
    "currency": "USD",
    "observedAt": "2026-11-12"
   },
@@ -2301,7 +2301,7 @@
   {
    "symbol": "MSFT",
    "name": "Microsoft Corp",
-   "price": 521.125,
+   "price": 521.13,
    "changePct": -2.26,
    "changePctWindow": 29.72,
    "currency": "USD",
