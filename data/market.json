@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-12T22:43:12.663Z",
+ "generatedAt": "2026-11-13T02:55:08.047Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -2038,7 +2038,7 @@
     ],
     [
      "2026-11-12",
-     71417.4197
+     73974.3924
     ]
    ]
   }
@@ -2198,6 +2198,24 @@
    "observedAt": "2026-11-12"
   },
   {
+   "symbol": "ETH",
+   "name": "Ethereum",
+   "price": 1981.1831,
+   "changePct": -1.79,
+   "changePctWindow": -7.02,
+   "currency": "USD",
+   "observedAt": "2026-11-13"
+  },
+  {
+   "symbol": "BTC",
+   "name": "Bitcoin",
+   "price": 70031.8621,
+   "changePct": -1.88,
+   "changePctWindow": -9.55,
+   "currency": "USD",
+   "observedAt": "2026-11-13"
+  },
+  {
    "symbol": "TSM",
    "name": "TSMC",
    "price": 405.49,
@@ -2225,15 +2243,6 @@
    "observedAt": "2026-11-12"
   },
   {
-   "symbol": "ETH",
-   "name": "Ethereum",
-   "price": 2012.0408,
-   "changePct": -2.11,
-   "changePctWindow": -7.71,
-   "currency": "USD",
-   "observedAt": "2026-11-12"
-  },
-  {
    "symbol": "MRVL",
    "name": "Marvell Technology",
    "price": 164.45,
@@ -2248,15 +2257,6 @@
    "price": 393.68,
    "changePct": -2.74,
    "changePctWindow": -9.45,
-   "currency": "USD",
-   "observedAt": "2026-11-12"
-  },
-  {
-   "symbol": "BTC",
-   "name": "Bitcoin",
-   "price": 71417.4197,
-   "changePct": -3.46,
-   "changePctWindow": -8.59,
    "currency": "USD",
    "observedAt": "2026-11-12"
   },
