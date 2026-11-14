@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-14T19:09:42.881Z",
+ "generatedAt": "2026-11-14T22:58:10.201Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -2234,15 +2234,6 @@
    "observedAt": "2026-11-13"
   },
   {
-   "symbol": "BTC",
-   "name": "Bitcoin",
-   "price": 65634.4126,
-   "changePct": -3.92,
-   "changePctWindow": -14.72,
-   "currency": "USD",
-   "observedAt": "2026-11-14"
-  },
-  {
    "symbol": "HOOD",
    "name": "Robinhood Markets",
    "price": 77.86,
@@ -2288,15 +2279,6 @@
    "observedAt": "2026-11-13"
   },
   {
-   "symbol": "ETH",
-   "name": "Ethereum",
-   "price": 1832.9824,
-   "changePct": -5.14,
-   "changePctWindow": -13.9,
-   "currency": "USD",
-   "observedAt": "2026-11-14"
-  },
-  {
    "symbol": "SNDK",
    "name": "SanDisk",
    "price": 885.01,
@@ -2315,6 +2297,15 @@
    "observedAt": "2026-11-13"
   },
   {
+   "symbol": "BTC",
+   "name": "Bitcoin",
+   "price": 63442.1754,
+   "changePct": -7.13,
+   "changePctWindow": -17.56,
+   "currency": "USD",
+   "observedAt": "2026-11-14"
+  },
+  {
    "symbol": "AMD",
    "name": "Advanced Micro Devices",
    "price": 534.06,
@@ -2322,6 +2313,15 @@
    "changePctWindow": 168.89,
    "currency": "USD",
    "observedAt": "2026-11-13"
+  },
+  {
+   "symbol": "ETH",
+   "name": "Ethereum",
+   "price": 1745.8969,
+   "changePct": -9.65,
+   "changePctWindow": -17.99,
+   "currency": "USD",
+   "observedAt": "2026-11-14"
   }
  ]
 }
