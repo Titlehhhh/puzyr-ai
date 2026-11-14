@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-14T13:47:46.626Z",
+ "generatedAt": "2026-11-14T19:09:42.881Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -2171,15 +2171,6 @@
    "observedAt": "2026-11-13"
   },
   {
-   "symbol": "ETH",
-   "name": "Ethereum",
-   "price": 1893.4252,
-   "changePct": -2.01,
-   "changePctWindow": -11.06,
-   "currency": "USD",
-   "observedAt": "2026-11-14"
-  },
-  {
    "symbol": "PLTR",
    "name": "Palantir Technologies",
    "price": 167.99,
@@ -2187,15 +2178,6 @@
    "changePctWindow": 15.72,
    "currency": "USD",
    "observedAt": "2026-11-13"
-  },
-  {
-   "symbol": "BTC",
-   "name": "Bitcoin",
-   "price": 66852.0821,
-   "changePct": -2.14,
-   "changePctWindow": -13.13,
-   "currency": "USD",
-   "observedAt": "2026-11-14"
   },
   {
    "symbol": "COIN",
@@ -2252,6 +2234,15 @@
    "observedAt": "2026-11-13"
   },
   {
+   "symbol": "BTC",
+   "name": "Bitcoin",
+   "price": 65634.4126,
+   "changePct": -3.92,
+   "changePctWindow": -14.72,
+   "currency": "USD",
+   "observedAt": "2026-11-14"
+  },
+  {
    "symbol": "HOOD",
    "name": "Robinhood Markets",
    "price": 77.86,
@@ -2295,6 +2286,15 @@
    "changePctWindow": 9.47,
    "currency": "USD",
    "observedAt": "2026-11-13"
+  },
+  {
+   "symbol": "ETH",
+   "name": "Ethereum",
+   "price": 1832.9824,
+   "changePct": -5.14,
+   "changePctWindow": -13.9,
+   "currency": "USD",
+   "observedAt": "2026-11-14"
   },
   {
    "symbol": "SNDK",
