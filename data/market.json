@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-13T23:52:49.233Z",
+ "generatedAt": "2026-11-14T06:18:08.624Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -19,10 +19,6 @@
    "symbol": "BUBBLE",
    "kind": "index",
    "points": [
-    [
-     "2026-05-18",
-     1338.33
-    ],
     [
      "2026-05-19",
      1338.31
@@ -521,7 +517,7 @@
     ],
     [
      "2026-11-13",
-     1192.93
+     1192.94
     ]
    ]
   },
@@ -530,10 +526,6 @@
    "symbol": "NVDA",
    "kind": "equity",
    "points": [
-    [
-     "2026-05-18",
-     222.32
-    ],
     [
      "2026-05-19",
      220.61
@@ -1042,10 +1034,6 @@
    "kind": "equity",
    "points": [
     [
-     "2026-05-18",
-     7403.0498
-    ],
-    [
      "2026-05-19",
      7353.6099
     ],
@@ -1553,10 +1541,6 @@
    "kind": "crypto",
    "points": [
     [
-     "2026-05-18",
-     77428.5187
-    ],
-    [
      "2026-05-19",
      76959.4057
     ],
@@ -2054,7 +2038,7 @@
     ],
     [
      "2026-11-13",
-     68096.5811
+     71371.9818
     ]
    ]
   }
@@ -2144,9 +2128,9 @@
   {
    "symbol": "SMCI",
    "name": "Super Micro Computer",
-   "price": 26.865,
-   "changePct": -0.46,
-   "changePctWindow": -15.6,
+   "price": 26.87,
+   "changePct": -0.44,
+   "changePctWindow": -15.58,
    "currency": "USD",
    "observedAt": "2026-11-13"
   },
@@ -2167,6 +2151,24 @@
    "changePctWindow": -16.01,
    "currency": "USD",
    "observedAt": "2026-11-13"
+  },
+  {
+   "symbol": "ETH",
+   "name": "Ethereum",
+   "price": 1903.4176,
+   "changePct": -1.49,
+   "changePctWindow": -10.59,
+   "currency": "USD",
+   "observedAt": "2026-11-14"
+  },
+  {
+   "symbol": "BTC",
+   "name": "Bitcoin",
+   "price": 67227.2782,
+   "changePct": -1.59,
+   "changePctWindow": -12.65,
+   "currency": "USD",
+   "observedAt": "2026-11-14"
   },
   {
    "symbol": "TSM",
@@ -2198,7 +2200,7 @@
   {
    "symbol": "COIN",
    "name": "Coinbase Global",
-   "price": 127.645,
+   "price": 127.65,
    "changePct": -2.31,
    "changePctWindow": -31.09,
    "currency": "USD",
@@ -2259,29 +2261,11 @@
    "observedAt": "2026-11-13"
   },
   {
-   "symbol": "BTC",
-   "name": "Bitcoin",
-   "price": 68096.5811,
-   "changePct": -4.59,
-   "changePctWindow": -12.05,
-   "currency": "USD",
-   "observedAt": "2026-11-13"
-  },
-  {
    "symbol": "ARM",
    "name": "Arm Holdings",
    "price": 190.53,
    "changePct": -4.63,
    "changePctWindow": 53.2,
-   "currency": "USD",
-   "observedAt": "2026-11-13"
-  },
-  {
-   "symbol": "ETH",
-   "name": "Ethereum",
-   "price": 1923.4798,
-   "changePct": -4.65,
-   "changePctWindow": -9.73,
    "currency": "USD",
    "observedAt": "2026-11-13"
   },
