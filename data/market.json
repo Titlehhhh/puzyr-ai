@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-14T06:18:08.624Z",
+ "generatedAt": "2026-11-14T13:47:46.626Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -2153,24 +2153,6 @@
    "observedAt": "2026-11-13"
   },
   {
-   "symbol": "ETH",
-   "name": "Ethereum",
-   "price": 1903.4176,
-   "changePct": -1.49,
-   "changePctWindow": -10.59,
-   "currency": "USD",
-   "observedAt": "2026-11-14"
-  },
-  {
-   "symbol": "BTC",
-   "name": "Bitcoin",
-   "price": 67227.2782,
-   "changePct": -1.59,
-   "changePctWindow": -12.65,
-   "currency": "USD",
-   "observedAt": "2026-11-14"
-  },
-  {
    "symbol": "TSM",
    "name": "TSMC",
    "price": 398.73,
@@ -2189,6 +2171,15 @@
    "observedAt": "2026-11-13"
   },
   {
+   "symbol": "ETH",
+   "name": "Ethereum",
+   "price": 1893.4252,
+   "changePct": -2.01,
+   "changePctWindow": -11.06,
+   "currency": "USD",
+   "observedAt": "2026-11-14"
+  },
+  {
    "symbol": "PLTR",
    "name": "Palantir Technologies",
    "price": 167.99,
@@ -2196,6 +2187,15 @@
    "changePctWindow": 15.72,
    "currency": "USD",
    "observedAt": "2026-11-13"
+  },
+  {
+   "symbol": "BTC",
+   "name": "Bitcoin",
+   "price": 66852.0821,
+   "changePct": -2.14,
+   "changePctWindow": -13.13,
+   "currency": "USD",
+   "observedAt": "2026-11-14"
   },
   {
    "symbol": "COIN",
