@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-15T02:39:01.024Z",
+ "generatedAt": "2026-11-15T09:55:27.397Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -2038,6 +2038,15 @@
    "observedAt": "2026-11-13"
   },
   {
+   "symbol": "ETH",
+   "name": "Ethereum",
+   "price": 1825.5409,
+   "changePct": 3.23,
+   "changePctWindow": -13.45,
+   "currency": "USD",
+   "observedAt": "2026-11-15"
+  },
+  {
    "symbol": "META",
    "name": "Meta Platforms",
    "price": 641.69,
@@ -2047,11 +2056,11 @@
    "observedAt": "2026-11-13"
   },
   {
-   "symbol": "ETH",
-   "name": "Ethereum",
-   "price": 1807.6919,
-   "changePct": 2.22,
-   "changePctWindow": -14.3,
+   "symbol": "BTC",
+   "name": "Bitcoin",
+   "price": 65345.3405,
+   "changePct": 1.91,
+   "changePctWindow": -14.87,
    "currency": "USD",
    "observedAt": "2026-11-15"
   },
@@ -2072,15 +2081,6 @@
    "changePctWindow": -6.55,
    "currency": "USD",
    "observedAt": "2026-11-13"
-  },
-  {
-   "symbol": "BTC",
-   "name": "Bitcoin",
-   "price": 64799.5555,
-   "changePct": 1.06,
-   "changePctWindow": -15.58,
-   "currency": "USD",
-   "observedAt": "2026-11-15"
   },
   {
    "symbol": "IBM",
