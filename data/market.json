@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-14T22:58:10.201Z",
+ "generatedAt": "2026-11-15T02:39:01.024Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -19,10 +19,6 @@
    "symbol": "BUBBLE",
    "kind": "index",
    "points": [
-    [
-     "2026-05-19",
-     1338.31
-    ],
     [
      "2026-05-20",
      1381.59
@@ -527,10 +523,6 @@
    "kind": "equity",
    "points": [
     [
-     "2026-05-19",
-     220.61
-    ],
-    [
      "2026-05-20",
      223.47
     ],
@@ -1034,10 +1026,6 @@
    "kind": "equity",
    "points": [
     [
-     "2026-05-19",
-     7353.6099
-    ],
-    [
      "2026-05-20",
      7432.9702
     ],
@@ -1540,10 +1528,6 @@
    "symbol": "BTC",
    "kind": "crypto",
    "points": [
-    [
-     "2026-05-19",
-     76959.4057
-    ],
     [
      "2026-05-20",
      76758.7316
@@ -2063,6 +2047,15 @@
    "observedAt": "2026-11-13"
   },
   {
+   "symbol": "ETH",
+   "name": "Ethereum",
+   "price": 1807.6919,
+   "changePct": 2.22,
+   "changePctWindow": -14.3,
+   "currency": "USD",
+   "observedAt": "2026-11-15"
+  },
+  {
    "symbol": "ADBE",
    "name": "Adobe Inc",
    "price": 243.08,
@@ -2079,6 +2072,15 @@
    "changePctWindow": -6.55,
    "currency": "USD",
    "observedAt": "2026-11-13"
+  },
+  {
+   "symbol": "BTC",
+   "name": "Bitcoin",
+   "price": 64799.5555,
+   "changePct": 1.06,
+   "changePctWindow": -15.58,
+   "currency": "USD",
+   "observedAt": "2026-11-15"
   },
   {
    "symbol": "IBM",
@@ -2297,15 +2299,6 @@
    "observedAt": "2026-11-13"
   },
   {
-   "symbol": "BTC",
-   "name": "Bitcoin",
-   "price": 63442.1754,
-   "changePct": -7.13,
-   "changePctWindow": -17.56,
-   "currency": "USD",
-   "observedAt": "2026-11-14"
-  },
-  {
    "symbol": "AMD",
    "name": "Advanced Micro Devices",
    "price": 534.06,
@@ -2313,15 +2306,6 @@
    "changePctWindow": 168.89,
    "currency": "USD",
    "observedAt": "2026-11-13"
-  },
-  {
-   "symbol": "ETH",
-   "name": "Ethereum",
-   "price": 1745.8969,
-   "changePct": -9.65,
-   "changePctWindow": -17.99,
-   "currency": "USD",
-   "observedAt": "2026-11-14"
   }
  ]
 }
