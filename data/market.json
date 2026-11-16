@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-15T21:46:20.547Z",
+ "generatedAt": "2026-11-16T01:26:02.702Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -19,10 +19,6 @@
    "symbol": "BUBBLE",
    "kind": "index",
    "points": [
-    [
-     "2026-05-20",
-     1381.59
-    ],
     [
      "2026-05-21",
      1421.48
@@ -523,10 +519,6 @@
    "kind": "equity",
    "points": [
     [
-     "2026-05-20",
-     223.47
-    ],
-    [
      "2026-05-21",
      219.51
     ],
@@ -1026,10 +1018,6 @@
    "kind": "equity",
    "points": [
     [
-     "2026-05-20",
-     7432.9702
-    ],
-    [
      "2026-05-21",
      7445.7202
     ],
@@ -1528,10 +1516,6 @@
    "symbol": "BTC",
    "kind": "crypto",
    "points": [
-    [
-     "2026-05-20",
-     76758.7316
-    ],
     [
      "2026-05-21",
      77470.3961
@@ -2047,15 +2031,6 @@
    "observedAt": "2026-11-13"
   },
   {
-   "symbol": "ETH",
-   "name": "Ethereum",
-   "price": 1817.8246,
-   "changePct": 2.79,
-   "changePctWindow": -13.82,
-   "currency": "USD",
-   "observedAt": "2026-11-15"
-  },
-  {
    "symbol": "ADBE",
    "name": "Adobe Inc",
    "price": 243.08,
@@ -2072,15 +2047,6 @@
    "changePctWindow": -6.55,
    "currency": "USD",
    "observedAt": "2026-11-13"
-  },
-  {
-   "symbol": "BTC",
-   "name": "Bitcoin",
-   "price": 64984.708,
-   "changePct": 1.35,
-   "changePctWindow": -15.34,
-   "currency": "USD",
-   "observedAt": "2026-11-15"
   },
   {
    "symbol": "IBM",
@@ -2137,6 +2103,15 @@
    "observedAt": "2026-11-13"
   },
   {
+   "symbol": "BTC",
+   "name": "Bitcoin",
+   "price": 64684.4071,
+   "changePct": -0.95,
+   "changePctWindow": -16.5,
+   "currency": "USD",
+   "observedAt": "2026-11-16"
+  },
+  {
    "symbol": "GOOGL",
    "name": "Alphabet Inc",
    "price": 295.77,
@@ -2153,6 +2128,15 @@
    "changePctWindow": -16.01,
    "currency": "USD",
    "observedAt": "2026-11-13"
+  },
+  {
+   "symbol": "ETH",
+   "name": "Ethereum",
+   "price": 1807.1807,
+   "changePct": -1.49,
+   "changePctWindow": -15.05,
+   "currency": "USD",
+   "observedAt": "2026-11-16"
   },
   {
    "symbol": "TSM",
