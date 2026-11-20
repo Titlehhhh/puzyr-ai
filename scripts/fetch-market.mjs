@@ -21,6 +21,7 @@ const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/
 
 /** Акции AI-сегмента + самые большие падения: тикер, название для журнала наблюдений. */
 const STOCKS = [
+  ['ANT', 'Anthropic, PBC'],
   ['NVDA', 'NVIDIA Corp'],
   ['MSFT', 'Microsoft Corp'],
   ['GOOGL', 'Alphabet Inc'],
@@ -65,6 +66,25 @@ const CRYPTO = [
 
 /** Горизонт истории в днях. */
 const RANGE_DAYS = 180;
+
+/**
+ * Новые бумаги не входят в сводный индекс: у них слишком короткая история,
+ * и общая сетка дат обнулила бы весь индекс до дня их листинга.
+ */
+const INDEX_EXCLUDE = new Set(['ANT']);
+
+/**
+ * Реальные события, которые отмечаются на графике. Это факты, а не подписи-шутки.
+ * price используется только как опорная точка, если биржа ещё не отдала историю:
+ * 83 — документированная цена размещения ANT (18.11.2026).
+ */
+const EVENTS = {
+  ant: {
+    date: '2026-11-18',
+    price: 83,
+    label: { ru: 'IPO · $83', en: 'IPO · $83' }
+  }
+};
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -167,7 +187,11 @@ async function main() {
       series[key] = { label: name, symbol, kind: 'equity', points };
       if (points.length) {
         const last = points[points.length - 1][1];
-        const prev = points.length > 1 ? points[points.length - 2][1] : last;
+        // Для бумаги с одним днём истории (свежий листинг) берём предыдущее
+        // закрытие из меты Yahoo — у ANT это цена размещения $83.
+        const prev = points.length > 1
+          ? points[points.length - 2][1]
+          : (Number(meta.chartPreviousClose) || last);
         quotes.push({
           symbol,
           name,
@@ -208,12 +232,21 @@ async function main() {
   }
 
   const basket = STOCKS.map(([s]) => s.replace(/^\^/, '').toLowerCase())
+    .filter((k) => !INDEX_EXCLUDE.has(k.toUpperCase()))
     .filter((k) => series[k] && series[k].points.length > 10)
     .map((k) => series[k]);
 
   const indexPoints = buildIndex(basket);
   if (indexPoints) {
     series.bubble = { label: 'Индекс пузыря', symbol: 'BUBBLE', kind: 'index', points: indexPoints };
+  }
+
+  // Опора графика ANT: цена размещения. Ставим её только если биржа ещё не
+  // отдала историю с этого дня, чтобы не задваивать дату.
+  const ipo = EVENTS.ant;
+  if (series.ant && ipo && !series.ant.points.some(([d]) => d === ipo.date)) {
+    series.ant.points.unshift([ipo.date, ipo.price]);
+    series.ant.points.sort((a, b) => (a[0] < b[0] ? -1 : 1));
   }
 
   const chartKeys = ['bubble', 'nvda', 'gspc', 'bitcoin'].filter((k) => series[k]);
@@ -229,6 +262,15 @@ async function main() {
     };
   }
 
+  // ANT идёт отдельной серией: общей истории с остальными у неё нет,
+  // и общая сетка дат обрезала бы её до одного дня.
+  if (series.ant && series.ant.points.length) charts.ant = series.ant;
+
+  const events = {};
+  for (const [key, ev] of Object.entries(EVENTS)) {
+    if (charts[key]) events[key] = { date: ev.date, label: ev.label };
+  }
+
   const payload = {
     generatedAt: new Date().toISOString(),
     sources: [
@@ -237,6 +279,7 @@ async function main() {
     ],
     failures,
     series: charts,
+    events,
     quotes: quotes.sort((a, b) => b.changePct - a.changePct),
   };
 

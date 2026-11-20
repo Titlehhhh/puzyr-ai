@@ -62,8 +62,9 @@
       minutes: 'минута',
       seconds: 'секунда',
       lessMinute: 'меньше минуты',
-      tabs: { bubble: 'Индекс', nvda: 'NVIDIA', gspc: 'S&P 500', bitcoin: 'Bitcoin' },
-      seriesNames: { bubble: 'Индекс пузыря', nvda: 'NVIDIA', gspc: 'S&P 500', bitcoin: 'Bitcoin' },
+      tabs: { bubble: 'Индекс', nvda: 'NVIDIA', gspc: 'S&P 500', bitcoin: 'Bitcoin', ant: 'ANT' },
+      seriesNames: { bubble: 'Индекс пузыря', nvda: 'NVIDIA', gspc: 'S&P 500', bitcoin: 'Bitcoin', ant: 'Anthropic (ANT)' },
+      ipoWindow: 'с момента IPO',
       states: {
         calm: 'Устойчив',
         growth: 'Наполняется',
@@ -145,8 +146,9 @@
       minutes: 'minute',
       seconds: 'second',
       lessMinute: 'less than a minute',
-      tabs: { bubble: 'Index', nvda: 'NVIDIA', gspc: 'S&P 500', bitcoin: 'Bitcoin' },
-      seriesNames: { bubble: 'Bubble index', nvda: 'NVIDIA', gspc: 'S&P 500', bitcoin: 'Bitcoin' },
+      tabs: { bubble: 'Index', nvda: 'NVIDIA', gspc: 'S&P 500', bitcoin: 'Bitcoin', ant: 'ANT' },
+      seriesNames: { bubble: 'Bubble index', nvda: 'NVIDIA', gspc: 'S&P 500', bitcoin: 'Bitcoin', ant: 'Anthropic (ANT)' },
+      ipoWindow: 'since IPO',
       states: {
         calm: 'Steady', growth: 'Filling', warm: 'Above norm', nervous: 'Unstable',
         panic: 'Critical', critical: 'Emergency', final: 'Final', burst: 'Burst'
@@ -201,6 +203,7 @@
 
   /* Заметки наблюдателя к каждому тикеру. Это шутка, а не факт о компании. */
   var NOTES = {
+    ANT: 'Вышла на биржу и устроила крупнейшее IPO в истории',
     NVDA: 'Держит на себе весь индекс и не собирается делиться',
     MSFT: 'Капитализация перестала помещаться в голове',
     GOOGL: 'Первым сдулся, первым же и отскочил',
@@ -235,6 +238,7 @@
     IBM: 'Консалтинг в обёртке "ИИ", внутри — мейнфреймы 70-х'
   };
   var NOTES_EN = {
+    ANT: 'Went public with the largest IPO on record',
     NVDA: 'Carries the whole index and refuses to share',
     MSFT: 'Market cap stopped fitting in a human head',
     GOOGL: 'Deflated first and bounced first',
@@ -486,7 +490,7 @@
     var labels = '';
     var count = Math.min(5, points.length);
     for (var k = 0; k < count; k += 1) {
-      var idx = Math.round((k / (count - 1)) * (points.length - 1));
+      var idx = count === 1 ? 0 : Math.round((k / (count - 1)) * (points.length - 1));
       var lx = x(idx);
       var anchor = k === 0 ? 'start' : (k === count - 1 ? 'end' : 'middle');
       labels += '<text x="' + lx.toFixed(1) + '" y="' + (h - 5) + '" fill="#8A93A0" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="' + anchor + '">' + fmtDate(points[idx][0]) + '</text>';
@@ -494,6 +498,33 @@
 
     var lastX = x(points.length - 1), lastY = y(points[points.length - 1][1]);
     var rising = points[points.length - 1][1] >= points[0][1];
+
+    // У короткой серии (свежий листинг) точек мало — показываем их все.
+    var dots = '';
+    if (points.length <= 12) {
+      for (var d = 0; d < points.length; d += 1) {
+        dots += '<circle cx="' + x(d).toFixed(1) + '" cy="' + y(points[d][1]).toFixed(1) + '" r="2.4" fill="#E7E3D7"/>';
+      }
+    }
+
+    // Отметка реального события (например, IPO) — вертикаль и подпись на графике.
+    var eventMark = '';
+    var event = market.events && market.events[chartKey];
+    if (event) {
+      var evIdx = -1;
+      for (var e = 0; e < points.length; e += 1) {
+        if (points[e][0] >= event.date) { evIdx = e; break; }
+      }
+      if (evIdx >= 0) {
+        var evX = x(evIdx);
+        var evText = (event.label && (event.label[lang] || event.label.ru)) || event.date;
+        var evColor = '#D9A441';
+        eventMark =
+          '<line x1="' + evX.toFixed(1) + '" y1="' + padT + '" x2="' + evX.toFixed(1) + '" y2="' + (padT + plotH) + '" stroke="' + evColor + '" stroke-width="1" stroke-dasharray="3 4" opacity=".6"/>' +
+          '<circle cx="' + evX.toFixed(1) + '" cy="' + (padT + 3) + '" r="2.4" fill="' + evColor + '"/>' +
+          '<text x="' + (evX + 7).toFixed(1) + '" y="' + (padT + 10) + '" fill="' + evColor + '" font-family="Jost, sans-serif" font-size="10" letter-spacing=".08em">' + esc(evText) + '</text>';
+      }
+    }
 
     var drumTop = 'M ' + padL + ' ' + (padT - 4) + ' Q ' + (w / 2) + ' ' + (padT - 14) + ' ' + (w - padR) + ' ' + (padT - 4);
     var drumBottom = 'M ' + padL + ' ' + (h - padB + 10) + ' Q ' + (w / 2) + ' ' + (h - padB + 18) + ' ' + (w - padR) + ' ' + (h - padB + 10);
@@ -510,8 +541,10 @@
       grid +
       '<path d="' + area + '" fill="rgba(231,227,215,.05)"/>' +
       '<path d="' + line + '" fill="none" stroke="#E7E3D7" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>' +
+      dots +
       '<circle cx="' + lastX.toFixed(1) + '" cy="' + lastY.toFixed(1) + '" r="3.6" fill="' + (rising ? '#4FA97A' : '#E0432A') + '"/>' +
       '<rect x="' + padL + '" y="' + (padT - 4) + '" width="' + plotW + '" height="' + (plotH + 4) + '" fill="url(#fade)"/>' +
+      eventMark +
       labels;
 
     var name = (I18N[lang].seriesNames && I18N[lang].seriesNames[chartKey]) ||
@@ -527,11 +560,21 @@
 
     var win = $('#chartWindow');
     if (win) {
-      var days = Math.round((new Date(points[points.length - 1][0]) - new Date(points[0][0])) / 86400000);
-      win.textContent = lang === 'ru'
-        ? (days >= 170 ? 'за полгода' : 'за ' + days + ' ' + plural(days, 'день', 'дня', 'дней'))
-        : (days >= 170 ? 'over 6 months' : 'over ' + days + ' ' + pluralEn(days, 'day'));
+      if (event) {
+        win.textContent = t('ipoWindow');
+      } else {
+        var days = Math.round((new Date(points[points.length - 1][0]) - new Date(points[0][0])) / 86400000);
+        win.textContent = lang === 'ru'
+          ? (days >= 170 ? 'за полгода' : 'за ' + days + ' ' + plural(days, 'день', 'дня', 'дней'))
+          : (days >= 170 ? 'over 6 months' : 'over ' + days + ' ' + pluralEn(days, 'day'));
+      }
     }
+  }
+
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
   }
 
   function fmtNumber(n) {

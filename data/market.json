@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-20T07:10:46.959Z",
+ "generatedAt": "2026-11-20T11:33:01.128Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -2041,9 +2041,42 @@
      62996.6802
     ]
    ]
+  },
+  "ant": {
+   "label": "Anthropic, PBC",
+   "symbol": "ANT",
+   "kind": "equity",
+   "points": [
+    [
+     "2026-11-18",
+     83
+    ],
+    [
+     "2026-11-19",
+     97.17
+    ]
+   ]
+  }
+ },
+ "events": {
+  "ant": {
+   "date": "2026-11-18",
+   "label": {
+    "ru": "IPO · $83",
+    "en": "IPO · $83"
+   }
   }
  },
  "quotes": [
+  {
+   "symbol": "ANT",
+   "name": "Anthropic, PBC",
+   "price": 97.17,
+   "changePct": 17.07,
+   "changePctWindow": 0,
+   "currency": "USD",
+   "observedAt": "2026-11-19"
+  },
   {
    "symbol": "WDC",
    "name": "Western Digital",
@@ -2074,18 +2107,18 @@
   {
    "symbol": "BTC",
    "name": "Bitcoin",
-   "price": 61884.0108,
-   "changePct": -0.06,
-   "changePctWindow": -19.65,
+   "price": 61766.1042,
+   "changePct": -0.25,
+   "changePctWindow": -19.8,
    "currency": "USD",
    "observedAt": "2026-11-20"
   },
   {
    "symbol": "ETH",
    "name": "Ethereum",
-   "price": 1745.4596,
-   "changePct": -0.58,
-   "changePctWindow": -16.79,
+   "price": 1750.9053,
+   "changePct": -0.27,
+   "changePctWindow": -16.53,
    "currency": "USD",
    "observedAt": "2026-11-20"
   },
