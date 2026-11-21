@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-20T22:39:51.130Z",
+ "generatedAt": "2026-11-21T03:28:54.100Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -518,10 +518,6 @@
     [
      "2026-11-19",
      1061.42
-    ],
-    [
-     "2026-11-20",
-     966.78
     ]
    ]
   },
@@ -1029,10 +1025,6 @@
     [
      "2026-11-19",
      145.98
-    ],
-    [
-     "2026-11-20",
-     125.53
     ]
    ]
   },
@@ -1540,10 +1532,6 @@
     [
      "2026-11-19",
      7175.8301
-    ],
-    [
-     "2026-11-20",
-     6910.3901
     ]
    ]
   },
@@ -2051,10 +2039,6 @@
     [
      "2026-11-19",
      62996.6802
-    ],
-    [
-     "2026-11-20",
-     59019.5757
     ]
    ]
   },
@@ -2098,6 +2082,24 @@
    "observedAt": "2026-11-20"
   },
   {
+   "symbol": "ETH",
+   "name": "Ethereum",
+   "price": 1610.1823,
+   "changePct": -0.58,
+   "changePctWindow": -23.71,
+   "currency": "USD",
+   "observedAt": "2026-11-21"
+  },
+  {
+   "symbol": "BTC",
+   "name": "Bitcoin",
+   "price": 58292.6398,
+   "changePct": -0.89,
+   "changePctWindow": -24.55,
+   "currency": "USD",
+   "observedAt": "2026-11-21"
+  },
+  {
    "symbol": "NOW",
    "name": "ServiceNow",
    "price": 87.61,
@@ -2134,6 +2136,15 @@
    "observedAt": "2026-11-20"
   },
   {
+   "symbol": "SNDK",
+   "name": "SanDisk",
+   "price": 94.395,
+   "changePct": -2.71,
+   "changePctWindow": 28.27,
+   "currency": "USD",
+   "observedAt": "2026-11-19"
+  },
+  {
    "symbol": "MSFT",
    "name": "Microsoft Corp",
    "price": 484.52,
@@ -2157,15 +2168,6 @@
    "price": 246.82,
    "changePct": -4.1,
    "changePctWindow": 15.61,
-   "currency": "USD",
-   "observedAt": "2026-11-20"
-  },
-  {
-   "symbol": "BTC",
-   "name": "Bitcoin",
-   "price": 59019.5757,
-   "changePct": -4.69,
-   "changePctWindow": -23.37,
    "currency": "USD",
    "observedAt": "2026-11-20"
   },
@@ -2202,15 +2204,6 @@
    "price": 143.49,
    "changePct": -6.63,
    "changePctWindow": -8.27,
-   "currency": "USD",
-   "observedAt": "2026-11-20"
-  },
-  {
-   "symbol": "ETH",
-   "name": "Ethereum",
-   "price": 1620.7299,
-   "changePct": -7.68,
-   "changePctWindow": -22.74,
    "currency": "USD",
    "observedAt": "2026-11-20"
   },
@@ -2364,15 +2357,6 @@
    "price": 152.2,
    "changePct": -14.09,
    "changePctWindow": 29.39,
-   "currency": "USD",
-   "observedAt": "2026-11-20"
-  },
-  {
-   "symbol": "SNDK",
-   "name": "SanDisk",
-   "price": 79.24,
-   "changePct": -16.05,
-   "changePctWindow": 7.68,
    "currency": "USD",
    "observedAt": "2026-11-20"
   }
