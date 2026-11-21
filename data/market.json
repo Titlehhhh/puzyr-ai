@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-21T03:28:54.100Z",
+ "generatedAt": "2026-11-21T11:47:51.953Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -2073,6 +2073,15 @@
  },
  "quotes": [
   {
+   "symbol": "ETH",
+   "name": "Ethereum",
+   "price": 1651.9811,
+   "changePct": 2.01,
+   "changePctWindow": -21.73,
+   "currency": "USD",
+   "observedAt": "2026-11-21"
+  },
+  {
    "symbol": "IBM",
    "name": "International Business Machines",
    "price": 224.44,
@@ -2082,20 +2091,11 @@
    "observedAt": "2026-11-20"
   },
   {
-   "symbol": "ETH",
-   "name": "Ethereum",
-   "price": 1610.1823,
-   "changePct": -0.58,
-   "changePctWindow": -23.71,
-   "currency": "USD",
-   "observedAt": "2026-11-21"
-  },
-  {
    "symbol": "BTC",
    "name": "Bitcoin",
-   "price": 58292.6398,
-   "changePct": -0.89,
-   "changePctWindow": -24.55,
+   "price": 58088.3489,
+   "changePct": -1.24,
+   "changePctWindow": -24.81,
    "currency": "USD",
    "observedAt": "2026-11-21"
   },
