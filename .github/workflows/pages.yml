@@ -13,9 +13,11 @@ permissions:
   pages: write
   id-token: write
 
+# Официальный шаблон Pages: деплои выстраиваются в очередь, а не отменяют
+# друг друга. Отмена на середине оставляет артефакт без деплоя.
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   deploy:
@@ -38,6 +40,11 @@ jobs:
       - uses: actions/upload-pages-artifact@v5
         with:
           path: _site
+
+      # Артефакт финализируется на доли секунды позже, чем его начинает искать
+      # deploy-pages, и тот иногда получает "Found 0 artifact(s)".
+      - name: Дать артефакту дойти до API
+        run: sleep 10
 
       - id: deployment
         uses: actions/deploy-pages@v5
