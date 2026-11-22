@@ -8,9 +8,15 @@ on:
 permissions:
   contents: write
 
+# Два прогона одновременно коммитят один файл и второй push падает.
+concurrency:
+  group: market-data
+  cancel-in-progress: false
+
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
 
@@ -30,5 +36,6 @@ jobs:
           else
             git add data/market.json
             git commit -m "chore: обновление котировок"
+            git pull --rebase origin main
             git push
           fi

@@ -27,6 +27,8 @@
       hpa: 'гПа',
       untilBreak: 'до разрыва мембраны',
       chartTitle: 'Барограф: индекс пузыря',
+      chartPanel: 'График',
+      tabsLabel: 'Выбор графика',
       noData: 'Данные ещё не загрузились',
       stamp: 'данные не загружены',
       journalTitle: 'Журнал наблюдений',
@@ -111,6 +113,8 @@
       hpa: 'hPa',
       untilBreak: 'until the membrane bursts',
       chartTitle: 'Barograph: bubble index',
+      chartPanel: 'Chart',
+      tabsLabel: 'Chart selection',
       noData: 'No data loaded yet',
       stamp: 'no data loaded',
       journalTitle: 'Observer log',
@@ -140,7 +144,7 @@
       statsIndex: 'Index at rupture',
       statsNotes: 'Log entries',
       days: 'day',
-      months: 'months',
+      months: 'month',
       years: 'year',
       hours: 'hour',
       minutes: 'minute',
@@ -337,6 +341,8 @@
   /* ---------------- Состояние прибора ---------------- */
 
   function stateFor(ms) {
+    // Разрыв наступает ровно в дедлайн, а не через сутки после него.
+    if (ms <= 0) return 'burst';
     var days = ms / 86400000;
     for (var i = 0; i < STATES.length; i += 1) {
       if (days <= STATES[i].max) return STATES[i].id;
@@ -445,13 +451,27 @@
     return s && s.points ? s.points : [];
   }
 
+  function seriesName(key) {
+    return (I18N[lang].seriesNames && I18N[lang].seriesNames[key]) ||
+      (market && market.series && market.series[key] && market.series[key].label) || '';
+  }
+
   function drawChart() {
     var svg = $('#chart');
     if (!svg) return;
-    var points = seriesPoints(chartKey);
+    // Битые точки (null, строки, невалидные даты) не должны превращаться в NaN в SVG.
+    var points = seriesPoints(chartKey).filter(function (p) {
+      return p && typeof p[0] === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(p[0]) &&
+        typeof p[1] === 'number' && isFinite(p[1]);
+    });
     if (!points.length) {
       svg.innerHTML = '';
       $('#plotEmpty').hidden = false;
+      $('#chartName').textContent = seriesName(chartKey);
+      $('#chartValue').textContent = '—';
+      $('#chartDelta').textContent = '';
+      $('#chartDelta').className = 'mono delta';
+      $('#chartWindow').textContent = '';
       return;
     }
     $('#plotEmpty').hidden = true;
@@ -512,19 +532,28 @@
     // Отметка реального события (например, IPO) — вертикаль и подпись на графике.
     var eventMark = '';
     var event = market.events && market.events[chartKey];
-    if (event) {
+    var eventDate = event && event.date;
+    var eventLabel = event && (typeof event.label === 'string'
+      ? event.label
+      : (event.label && (event.label[lang] || event.label.ru))) || '';
+    var hasEvent = false;
+    if (eventDate) {
       var evIdx = -1;
       for (var e = 0; e < points.length; e += 1) {
-        if (points[e][0] >= event.date) { evIdx = e; break; }
+        if (points[e][0] >= eventDate) { evIdx = e; break; }
       }
       if (evIdx >= 0) {
+        hasEvent = true;
         var evX = x(evIdx);
-        var evText = (event.label && (event.label[lang] || event.label.ru)) || event.date;
+        var evText = eventLabel || eventDate;
+        // Подпись уходит вправо, но у правого края разворачивается влево.
+        var evTextW = evText.length * 6.4;
+        var evFlip = evX + 7 + evTextW > w - padR;
         var evColor = '#D9A441';
         eventMark =
           '<line x1="' + evX.toFixed(1) + '" y1="' + padT + '" x2="' + evX.toFixed(1) + '" y2="' + (padT + plotH) + '" stroke="' + evColor + '" stroke-width="1" stroke-dasharray="3 4" opacity=".6"/>' +
           '<circle cx="' + evX.toFixed(1) + '" cy="' + (padT + 3) + '" r="2.4" fill="' + evColor + '"/>' +
-          '<text x="' + (evX + 7).toFixed(1) + '" y="' + (padT + 10) + '" fill="' + evColor + '" font-family="Jost, sans-serif" font-size="10" letter-spacing=".08em">' + esc(evText) + '</text>';
+          '<text x="' + (evFlip ? evX - 7 : evX + 7).toFixed(1) + '" y="' + (padT + 10) + '" text-anchor="' + (evFlip ? 'end' : 'start') + '" fill="' + evColor + '" font-family="Jost, sans-serif" font-size="11" letter-spacing=".08em">' + esc(evText) + '</text>';
       }
     }
 
@@ -549,20 +578,29 @@
       eventMark +
       labels;
 
-    var name = (I18N[lang].seriesNames && I18N[lang].seriesNames[chartKey]) ||
-      (market.series[chartKey] && market.series[chartKey].label) || '';
+    var name = seriesName(chartKey);
     var value = points[points.length - 1][1];
     var first = points[0][1];
     var change = first ? ((value / first) - 1) * 100 : 0;
+    svg.setAttribute('aria-label', (name ? name + ' — ' : '') + t('chartTitle'));
     $('#chartName').textContent = name;
     $('#chartValue').textContent = fmtNumber(value);
     var delta = $('#chartDelta');
+    var win = $('#chartWindow');
+
+    if (points.length < 2) {
+      // Одна точка — это не измерение динамики: не выдумываем «+0% за 0 дней».
+      delta.textContent = '';
+      delta.className = 'mono delta';
+      if (win) win.textContent = '';
+      return;
+    }
+
     delta.textContent = (change >= 0 ? '+' : '−') + fmtNumber(Math.abs(change)) + '%';
     delta.className = 'mono delta ' + (change >= 0 ? 'up' : 'down');
 
-    var win = $('#chartWindow');
     if (win) {
-      if (event) {
+      if (hasEvent) {
         win.textContent = t('ipoWindow');
       } else {
         var days = Math.round((new Date(points[points.length - 1][0]) - new Date(points[0][0])) / 86400000);
@@ -638,10 +676,10 @@
       var cls = change > 0 ? 'up' : (change < 0 ? 'down' : '');
       var note = notes[q.symbol] || (lang === 'ru' ? 'Наблюдений нет, но тикер в списке' : 'No note, but the ticker is on the list');
       return '<tr>' +
-        '<td class="ticker-cell">' + q.symbol + '</td>' +
+        '<td class="ticker-cell">' + esc(q.symbol) + '</td>' +
         '<td class="price-cell mono">' + fmtNumber(q.price) + '</td>' +
         '<td class="mono ' + cls + '">' + (change > 0 ? '+' : (change < 0 ? '−' : '')) + fmtNumber(Math.abs(change)) + '%</td>' +
-        '<td class="note-cell">' + note + '</td>' +
+        '<td class="note-cell">' + esc(note) + '</td>' +
         '</tr>';
     });
     body.innerHTML = rows.join('');
@@ -664,10 +702,21 @@
     var wrap = $('#tabs');
     if (!wrap || !market || !market.series) return;
     var keys = Object.keys(market.series);
+    if (!keys.length) { wrap.innerHTML = ''; return; }
+    if (keys.indexOf(chartKey) === -1) chartKey = keys[0];
+    // Перерисовка каждые 5 минут не должна выбивать фокус у клавиатурного пользователя.
+    var focused = document.activeElement && document.activeElement.closest
+      ? document.activeElement.closest('#tabs [data-key]') : null;
+    var focusedKey = focused && focused.getAttribute('data-key');
     wrap.innerHTML = keys.map(function (key) {
       var label = (I18N[lang].tabs && I18N[lang].tabs[key]) || (market.series[key].label || key);
-      return '<button class="tab" type="button" role="tab" data-key="' + key + '" aria-selected="' + (key === chartKey) + '">' + label + '</button>';
+      var selected = key === chartKey;
+      return '<button class="tab" type="button" role="tab" id="tab-' + esc(key) + '" aria-controls="plot" data-key="' + esc(key) + '" aria-selected="' + selected + '" tabindex="' + (selected ? '0' : '-1') + '">' + esc(label) + '</button>';
     }).join('');
+    if (focusedKey) {
+      var again = wrap.querySelector('[data-key="' + focusedKey.replace(/"/g, '\\"') + '"]');
+      if (again) again.focus();
+    }
   }
 
   /* ---------------- Основной тик ---------------- */
@@ -756,9 +805,35 @@
     $('#langBtn').textContent = lang === 'ru' ? 'EN' : 'RU';
     $('#targetDate').textContent = fmtDateLong(target);
     $('#deadlineValue').textContent = fmtShortDate(target);
+    syncSoundLabel();
+    var tabsWrap = $('#tabs');
+    if (tabsWrap) tabsWrap.setAttribute('aria-label', t('tabsLabel'));
+    var plotWrap = $('#plot');
+    if (plotWrap) plotWrap.setAttribute('aria-label', t('chartPanel'));
     if (market) { renderTabs(); renderLog(); }
     renderStamp();
     tick();
+    drawChart();
+  }
+
+  function syncSoundLabel() {
+    var btn = $('#soundBtn');
+    if (!btn) return;
+    btn.setAttribute('aria-pressed', soundOn ? 'true' : 'false');
+    btn.textContent = soundOn
+      ? (lang === 'ru' ? 'Звук' : 'Sound')
+      : (lang === 'ru' ? 'Звук выкл' : 'Muted');
+  }
+
+  /** Выбор вкладки графика: без перерисовки DOM, чтобы не терять фокус. */
+  function selectTab(key, focus) {
+    chartKey = key;
+    $$('#tabs .tab').forEach(function (tab) {
+      var on = tab.getAttribute('data-key') === key;
+      tab.setAttribute('aria-selected', on ? 'true' : 'false');
+      tab.setAttribute('tabindex', on ? '0' : '-1');
+      if (on && focus) tab.focus();
+    });
     drawChart();
   }
 
@@ -783,10 +858,8 @@
       })
       .then(function (data) {
         market = data;
-        if (!market.series[chartKey]) {
-          var first = Object.keys(market.series)[0];
-          if (first) chartKey = first;
-        }
+        var keys = (market && market.series) ? Object.keys(market.series) : [];
+        if (keys.indexOf(chartKey) === -1 && keys.length) chartKey = keys[0];
         renderTabs();
         renderLog();
         renderStamp();
@@ -796,7 +869,9 @@
       .catch(function (err) {
         console.error('loadMarket error:', err);
         renderLog();
-        $('#plotEmpty').hidden = false;
+        // Не накрываем уже нарисованный график: показываем пустоту только
+        // если данных не было вовсе.
+        if (!market) $('#plotEmpty').hidden = false;
         renderStamp();
       });
   }
@@ -849,11 +924,24 @@
     $('#tabs').addEventListener('click', function (e) {
       var btn = e.target.closest('[data-key]');
       if (!btn) return;
-      chartKey = btn.getAttribute('data-key');
-      $$('#tabs .tab').forEach(function (t) {
-        t.setAttribute('aria-selected', t.getAttribute('data-key') === chartKey ? 'true' : 'false');
-      });
-      drawChart();
+      selectTab(btn.getAttribute('data-key'), false);
+    });
+
+    // ARIA tabs: стрелки двигают выбор, Home/End прыгают к краям.
+    $('#tabs').addEventListener('keydown', function (e) {
+      var keys = ['ArrowLeft', 'ArrowRight', 'Home', 'End'];
+      if (keys.indexOf(e.key) === -1) return;
+      var tabs = $$('#tabs .tab');
+      if (!tabs.length) return;
+      var current = tabs.indexOf(document.activeElement);
+      if (current === -1) current = tabs.indexOf($('#tabs .tab[aria-selected="true"]'));
+      var next = current;
+      if (e.key === 'Home') next = 0;
+      else if (e.key === 'End') next = tabs.length - 1;
+      else if (e.key === 'ArrowRight') next = (current + 1) % tabs.length;
+      else next = (current - 1 + tabs.length) % tabs.length;
+      e.preventDefault();
+      selectTab(tabs[next].getAttribute('data-key'), true);
     });
 
     $('#slipReplay').addEventListener('click', function () {
@@ -881,6 +969,8 @@
     var bubbleWrap = $('#bubble');
     if (bubbleWrap) {
       bubbleWrap.addEventListener('click', function () {
+        // После разрыва пузырь не надувается обратно.
+        if (burstFired || stateFor(target.getTime() - Date.now()) === 'burst') return;
         bubbleWrap.style.setProperty('--bubble-scale', '0.66');
         setTimeout(function () {
           var remaining = target.getTime() - Date.now();

@@ -29,7 +29,7 @@
       <span data-i18n="deadline">До разрыва</span>
       <b id="deadlineValue" class="mono">31.03.2028 23:59</b>
     </p>
-    <button class="tool" id="soundBtn" type="button" aria-pressed="true" data-i18n="sound">Звук</button>
+    <button class="tool" id="soundBtn" type="button" aria-pressed="true">Звук</button>
     <button class="tool" id="langBtn" type="button">EN</button>
   </div>
 </header>
@@ -81,7 +81,7 @@
     <div class="gauge">
       <p class="gauge-label" data-i18n="pressure">Давление в пузыре</p>
       <p class="gauge-value"><b id="pressureValue" class="mono">1 013</b> <span class="mono" data-i18n="hpa">гПа</span></p>
-      <p class="gauge-state" id="stateChip" data-state="calm" data-i18n="stateCalm">Устойчив</p>
+      <p class="gauge-state" id="stateChip" data-state="calm">Устойчив</p>
     </div>
 
     <p class="state-line" id="stateLine">Пузырь держит форму. Давление в норме, наблюдатель на месте.</p>
@@ -126,9 +126,9 @@
     <div class="barograph">
       <div class="barograph-head">
         <h2 class="panel-title" data-i18n="chartTitle">Барограф: индекс пузыря</h2>
-        <div class="tabs" id="tabs" role="tablist"></div>
+        <div class="tabs" id="tabs" role="tablist" aria-label="Выбор графика"></div>
       </div>
-      <div class="plot" id="plot">
+      <div class="plot" id="plot" role="tabpanel" aria-label="График">
         <svg id="chart" role="img" aria-label="График индекса пузыря"></svg>
         <p class="plot-empty" id="plotEmpty" hidden data-i18n="noData">Данные ещё не загрузились</p>
       </div>
@@ -185,7 +185,7 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="app.js?v=9"></script>
+<script src="app.js?v=11"></script>
 <script>
 (function () {
   function broken() {
@@ -197,7 +197,6 @@
     if (/[\u00d0\u00d1\u00c2\u00c3\ufffd]/.test(txt)) return true;
     if (/\u0432\u0402/.test(txt)) return true;
     if (/\u0420[\s\u00a0][\u0412\u0421\u041f\u0420\u0432]/.test(txt)) return true;
-    if (name && !/^\u0418\u043d\u0434\u0435\u043a\u0441/.test(name) && !/bubble/i.test(name)) return true;
     return false;
   }
   function heal() {
