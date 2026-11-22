@@ -28,6 +28,7 @@ const STOCKS = [
   ['AMZN', 'Amazon.com Inc'],
   ['META', 'Meta Platforms'],
   ['AMD', 'Advanced Micro Devices'],
+  ['NBIS', 'Nebius Group'],
   ['AVGO', 'Broadcom Inc'],
   ['PLTR', 'Palantir Technologies'],
   ['TSM', 'TSMC'],
@@ -249,7 +250,7 @@ async function main() {
     series.ant.points.sort((a, b) => (a[0] < b[0] ? -1 : 1));
   }
 
-  const chartKeys = ['bubble', 'nvda', 'gspc', 'bitcoin'].filter((k) => series[k]);
+  const chartKeys = ['bubble', 'nvda', 'amd', 'gspc', 'bitcoin', 'nbis'].filter((k) => series[k]);
   const sharedDates = toSharedGrid(chartKeys.map((k) => series[k]));
   const charts = {};
   for (const key of chartKeys) {
