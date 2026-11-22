@@ -480,7 +480,7 @@
     var h = svg.clientHeight || 224;
     svg.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
 
-    var padL = 44, padR = 10, padT = 12, padB = 22;
+    var padR = 10, padT = 12, padB = 22;
     var values = points.map(function (p) { return p[1]; });
     var min = Math.min.apply(null, values);
     var max = Math.max.apply(null, values);
@@ -488,6 +488,12 @@
     var span = max - min;
     min -= span * 0.12;
     max += span * 0.12;
+
+    // Левое поле по самой длинной подписи оси: иначе 1 200 000 упирается в край.
+    var axisValues = [];
+    for (var a = 0; a <= 4; a += 1) axisValues.push(max - (a / 4) * (max - min));
+    var axisLen = axisValues.reduce(function (m, v) { return Math.max(m, fmtAxis(v).length); }, 0);
+    var padL = Math.min(76, Math.max(44, axisLen * 7 + 14));
 
     var plotW = w - padL - padR;
     var plotH = h - padT - padB;
