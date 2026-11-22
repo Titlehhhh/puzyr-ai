@@ -173,23 +173,33 @@ function buildIndex(seriesList) {
   if (!usable.length) return null;
 
   const maps = usable.map((s) => new Map(s.points));
-  const dates = [...maps[0].keys()]
-    .filter((date) => maps.every((m) => m.has(date)))
+  const dates = [...new Set(usable.flatMap((s) => s.points.map((p) => p[0])))]
     .sort((a, b) => String(a).localeCompare(String(b)));
 
   if (dates.length < 10) return null;
 
-  const base = maps.map((m) => m.get(dates[0]));
-  if (base.some((v) => !v)) return null;
-
+  // Пропуск одного дня у одной бумаги не должен сдвигать индекс: держим
+  // последнюю известную цену (forward fill), как в обычном биржевом индексе.
+  const base = new Array(maps.length).fill(null);
+  const last = new Array(maps.length).fill(null);
   const points = [];
+
   for (const date of dates) {
+    let ready = true;
+    for (let i = 0; i < maps.length; i += 1) {
+      const v = maps[i].get(date);
+      if (v !== undefined) last[i] = v;
+      if (last[i] === null) ready = false;
+      if (base[i] === null && last[i] !== null) base[i] = last[i];
+    }
+    if (!ready) continue;
+
     let sum = 0;
-    for (let i = 0; i < maps.length; i += 1) sum += maps[i].get(date) / base[i];
+    for (let i = 0; i < maps.length; i += 1) sum += last[i] / base[i];
     points.push([date, Number(((sum / maps.length) * 1000).toFixed(2))]);
   }
 
-  return points;
+  return points.length >= 10 ? points : null;
 }
 
 /** Читает предыдущий market.json: нужен для устойчивости к частичным сбоям. */
