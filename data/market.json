@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-21T23:47:26.270Z",
+ "generatedAt": "2026-11-22T06:43:09.736Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -19,10 +19,6 @@
    "symbol": "BUBBLE",
    "kind": "index",
    "points": [
-    [
-     "2026-05-26",
-     1446.92
-    ],
     [
      "2026-05-27",
      1445.97
@@ -527,10 +523,6 @@
    "kind": "equity",
    "points": [
     [
-     "2026-05-26",
-     214.86
-    ],
-    [
      "2026-05-27",
      212.6
     ],
@@ -1034,10 +1026,6 @@
    "kind": "equity",
    "points": [
     [
-     "2026-05-26",
-     7519.1201
-    ],
-    [
      "2026-05-27",
      7520.3599
     ],
@@ -1540,10 +1528,6 @@
    "symbol": "BTC",
    "kind": "crypto",
    "points": [
-    [
-     "2026-05-26",
-     77258.3991
-    ],
     [
      "2026-05-27",
      75851.1041
@@ -2073,24 +2057,6 @@
  },
  "quotes": [
   {
-   "symbol": "ETH",
-   "name": "Ethereum",
-   "price": 1681.3671,
-   "changePct": 3.82,
-   "changePctWindow": -20.34,
-   "currency": "USD",
-   "observedAt": "2026-11-21"
-  },
-  {
-   "symbol": "BTC",
-   "name": "Bitcoin",
-   "price": 60138.3172,
-   "changePct": 2.24,
-   "changePctWindow": -22.16,
-   "currency": "USD",
-   "observedAt": "2026-11-21"
-  },
-  {
    "symbol": "IBM",
    "name": "International Business Machines",
    "price": 224.44,
@@ -2098,6 +2064,15 @@
    "changePctWindow": -11.4,
    "currency": "USD",
    "observedAt": "2026-11-20"
+  },
+  {
+   "symbol": "ETH",
+   "name": "Ethereum",
+   "price": 1660.6479,
+   "changePct": -1.32,
+   "changePctWindow": -19.87,
+   "currency": "USD",
+   "observedAt": "2026-11-22"
   },
   {
    "symbol": "NOW",
@@ -2116,6 +2091,15 @@
    "changePctWindow": -9.14,
    "currency": "USD",
    "observedAt": "2026-11-20"
+  },
+  {
+   "symbol": "BTC",
+   "name": "Bitcoin",
+   "price": 59102.8845,
+   "changePct": -1.69,
+   "changePctWindow": -22.08,
+   "currency": "USD",
+   "observedAt": "2026-11-22"
   },
   {
    "symbol": "ADBE",
