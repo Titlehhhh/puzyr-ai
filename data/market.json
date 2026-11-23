@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-23T01:40:20.010Z",
+ "generatedAt": "2026-11-23T09:47:15.119Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -2769,7 +2769,7 @@
     ],
     [
      "2026-11-23",
-     60977.2147
+     61418.9992
     ]
    ]
   },
@@ -3311,6 +3311,15 @@
  },
  "quotes": [
   {
+   "symbol": "BTC",
+   "name": "Bitcoin",
+   "price": 61418.9992,
+   "changePct": 0.4,
+   "changePctWindow": -17.38,
+   "currency": "USD",
+   "observedAt": "2026-11-23"
+  },
+  {
    "symbol": "IBM",
    "name": "International Business Machines",
    "price": 224.44,
@@ -3320,20 +3329,11 @@
    "observedAt": "2026-11-20"
   },
   {
-   "symbol": "BTC",
-   "name": "Bitcoin",
-   "price": 60977.2147,
-   "changePct": -0.32,
-   "changePctWindow": -17.97,
-   "currency": "USD",
-   "observedAt": "2026-11-23"
-  },
-  {
    "symbol": "ETH",
    "name": "Ethereum",
-   "price": 1712.7884,
-   "changePct": -0.51,
-   "changePctWindow": -15.31,
+   "price": 1722.1235,
+   "changePct": 0.03,
+   "changePctWindow": -14.85,
    "currency": "USD",
    "observedAt": "2026-11-23"
   },
