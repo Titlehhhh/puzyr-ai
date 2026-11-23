@@ -9,9 +9,11 @@
   var SPAN_DAYS = 1095;            // шкала давления растянута на три года
   var KEY = {
     sound: 'puzyr.sound.v1',
-    lang: 'puzyr.lang.v1',
-    visits: 'puzyr.visits.v1'
+    lang: 'puzyr.lang.v1'
   };
+
+  /* Глобальный счётчик заходов: GoatCounter, без cookie и без своего сервера. */
+  var OBSERVATIONS_URL = 'https://titlehhhh.goatcounter.com/counter/TOTAL.json';
 
   var $ = function (sel, root) { return (root || document).querySelector(sel); };
   var $$ = function (sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); };
@@ -34,7 +36,7 @@
       journalTitle: 'Журнал наблюдений',
       passport: 'Паспорт наблюдения',
       passStarted: 'Наблюдение начато',
-      passChecks: 'Отметок наблюдателя',
+      passChecks: 'Заходов на станцию',
       passDefault: 'Дедлайн разрыва',
       passSource: 'Источник котировок',
       disclaimer: 'комментарии наблюдателя, а не инвестиционный совет',
@@ -42,7 +44,7 @@
       colPrice: 'Цена',
       colChange: 'Изм.',
       colNote: 'Наблюдение',
-      sourceNote: 'Источник прогноза: гадание на кофейной гуще. Котировки: Yahoo Finance и CoinGecko, обновляются автоматически.',
+      sourceNote: 'Источник прогноза: гадание на кофейной гуще. Котировки: Yahoo Finance и CoinGecko, обновляются автоматически. Заходы: GoatCounter, без cookie.',
       localTime: 'по местному времени',
       burstTitle: 'Протокол разрыва',
       burstHeadline: 'ПУЗЫРЬ ЛОПНУЛ',
@@ -54,7 +56,7 @@
       hoursAgo: 'ч назад',
       daysAgo: 'дн назад',
       statsLife: 'Дней с разрыва',
-      statsChecks: 'Отметок наблюдателя',
+      statsChecks: 'Заходов на станцию',
       statsIndex: 'Индекс на разрыве',
       statsNotes: 'Записей в журнале',
       days: 'день',
@@ -120,7 +122,7 @@
       journalTitle: 'Observer log',
       passport: 'Observation passport',
       passStarted: 'Observation started',
-      passChecks: "Observer's marks",
+      passChecks: 'Visits to the station',
       passDefault: 'Rupture deadline',
       passSource: 'Quote source',
       disclaimer: 'observer notes, not investment advice',
@@ -128,7 +130,7 @@
       colPrice: 'Price',
       colChange: 'Chg.',
       colNote: 'Observation',
-      sourceNote: 'Forecast source: coffee grounds. Quotes: Yahoo Finance and CoinGecko, refreshed automatically.',
+      sourceNote: 'Forecast source: coffee grounds. Quotes: Yahoo Finance and CoinGecko, refreshed automatically. Visits: GoatCounter, no cookies.',
       localTime: 'local time',
       burstTitle: 'Rupture protocol',
       burstHeadline: 'THE BUBBLE BURST',
@@ -140,7 +142,7 @@
       hoursAgo: 'h ago',
       daysAgo: 'd ago',
       statsLife: 'Days since rupture',
-      statsChecks: "Observer's marks",
+      statsChecks: 'Visits to the station',
       statsIndex: 'Index at rupture',
       statsNotes: 'Log entries',
       days: 'day',
@@ -765,11 +767,10 @@
   function slipStats() {
     var points = seriesPoints('bubble');
     var indexValue = points.length ? points[points.length - 1][1] : null;
-    var visits = parseInt(localStorage.getItem(KEY.visits) || '1', 10);
     var since = Math.max(0, Math.round((Date.now() - target.getTime()) / 86400000));
     return [
       [t('statsLife'), since + ' ' + (lang === 'ru' ? plural(since, 'день', 'дня', 'дней') : pluralEn(since, 'day'))],
-      [t('statsChecks'), String(visits)],
+      [t('statsChecks'), observationsLabel()],
       [t('statsIndex'), indexValue === null ? '—' : fmtNumber(indexValue)],
       [t('statsNotes'), market && market.quotes ? String(market.quotes.length) : '—']
     ];
@@ -812,6 +813,7 @@
     $('#targetDate').textContent = fmtDateLong(target);
     $('#deadlineValue').textContent = fmtShortDate(target);
     syncSoundLabel();
+    paintObservations();
     var tabsWrap = $('#tabs');
     if (tabsWrap) tabsWrap.setAttribute('aria-label', t('tabsLabel'));
     var plotWrap = $('#plot');
@@ -856,6 +858,38 @@
 
   /* ---------------- Данные ---------------- */
 
+  /* Глобальные заходы. null — счётчик недоступен или ещё не включён. */
+  var observations = null;
+
+  function observationsLabel() {
+    return observations === null ? '—' : fmtNumber(observations);
+  }
+
+  function paintObservations() {
+    var el = $('#passChecks');
+    if (el) el.textContent = observationsLabel();
+    if (burstFired) renderSlipStats();
+  }
+
+  function loadObservations() {
+    return fetch(OBSERVATIONS_URL, { cache: 'no-store' })
+      .then(function (res) {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        return res.json();
+      })
+      .then(function (data) {
+        // GoatCounter отдаёт готовую строку с разделителями: "1 235".
+        var n = parseInt(String(data && data.count).replace(/[^\d]/g, ''), 10);
+        if (!isFinite(n)) throw new Error('bad count');
+        observations = n;
+        paintObservations();
+      })
+      .catch(function (err) {
+        console.warn('observations:', err.message);
+        paintObservations();
+      });
+  }
+
   function loadMarket() {
     return fetch('data/market.json', { cache: 'no-cache' })
       .then(function (res) {
@@ -888,9 +922,6 @@
     var stored = localStorage.getItem(KEY.lang);
     lang = (stored === 'ru' || stored === 'en') ? stored : 'ru';
 
-    var visits = parseInt(localStorage.getItem(KEY.visits) || '0', 10) + 1;
-    localStorage.setItem(KEY.visits, String(visits));
-
     var born = localStorage.getItem('puzyr.born.v1');
     if (!born) {
       born = new Date().toISOString();
@@ -898,14 +929,13 @@
     }
     var passStarted = $('#passStarted');
     if (passStarted) passStarted.textContent = fmtShortDate(new Date(born));
-    var passChecks = $('#passChecks');
-    if (passChecks) passChecks.textContent = String(visits);
 
     var soundBtn = $('#soundBtn');
     soundBtn.setAttribute('aria-pressed', soundOn ? 'true' : 'false');
     soundBtn.textContent = soundOn ? (lang === 'ru' ? 'Звук' : 'Sound') : (lang === 'ru' ? 'Звук выкл' : 'Muted');
 
     applyLang();
+    loadObservations();
     loadMarket();
     tick();
     setInterval(tick, 1000);
