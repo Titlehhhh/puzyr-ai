@@ -140,6 +140,66 @@ async function fetchYahoo(symbol) {
   return { points, meta: result.meta || {} };
 }
 
+/**
+ * Последняя сделка с учётом пре- и постмаркета. Дневная свеча Yahoo
+ * появляется только после открытия сессии, поэтому скачок на премаркете
+ * в неё не попадает и на сайте не виден. Интрадей-фид с includePrePost
+ * отдаёт эти бары (проверено: 23.11.2026 NVDA на премаркете).
+ */
+async function fetchYahooLive(symbol) {
+  const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?range=1d&interval=5m&includePrePost=true`;
+  const data = await getJSON(url, 2);
+  const result = data?.chart?.result?.[0];
+  if (!result) return null;
+  const stamps = result.timestamp || [];
+  const closes = result?.indicators?.quote?.[0]?.close || [];
+  for (let i = stamps.length - 1; i >= 0; i -= 1) {
+    const c = closes[i];
+    if (c === null || c === undefined || !Number.isFinite(Number(c))) continue;
+    const at = new Date(stamps[i] * 1000).toISOString();
+    return { price: Number(Number(c).toFixed(4)), at, session: sessionAt(at) };
+  }
+  return null;
+}
+
+/** Части даты и время в нью-йоркской зоне: биржа живёт по ET, а не по UTC. */
+const ET_PARTS = new Intl.DateTimeFormat('en-CA', {
+  timeZone: 'America/New_York',
+  year: 'numeric', month: '2-digit', day: '2-digit',
+  hour: '2-digit', minute: '2-digit', hourCycle: 'h23'
+});
+
+function etParts(iso) {
+  const out = {};
+  for (const part of ET_PARTS.formatToParts(new Date(iso))) out[part.type] = part.value;
+  const hour = Number(out.hour) % 24;
+  return { date: `${out.year}-${out.month}-${out.day}`, minutes: hour * 60 + Number(out.minute) };
+}
+
+function sessionAt(iso) {
+  const { minutes } = etParts(iso);
+  if (minutes < 9 * 60 + 30) return 'pre';
+  if (minutes < 16 * 60) return 'regular';
+  return 'post';
+}
+
+/**
+ * База для процента изменения цены из расширенной сессии: предыдущее
+ * регулярное закрытие. Для постмаркета — закрытие того же дня, иначе
+ * пятничное падение сложилось бы с вечерним движением дважды.
+ */
+function prevCloseFor(points, sessionDate, session) {
+  let before = null;
+  let sameDay = null;
+  for (const [date, value] of points) {
+    if (date < sessionDate) before = value;
+    else if (date === sessionDate) sameDay = value;
+    else break;
+  }
+  if (session === 'post' && sameDay !== null) return sameDay;
+  return before !== null ? before : sameDay;
+}
+
 /** Дневной ряд CoinGecko: [{t: 'YYYY-MM-DD', c: price}] */
 async function fetchCoinGecko(id) {
   const url = `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${RANGE_DAYS}&interval=daily`;
@@ -224,21 +284,46 @@ async function main() {
       const currency = meta.currency || 'USD';
       series[key] = { label: name, symbol, kind: 'equity', points };
       if (points.length) {
-        const last = points[points.length - 1][1];
+        const dailyLast = points[points.length - 1];
         // Дневное изменение. Для бумаги с одним днём истории (свежий листинг)
         // опираемся на цену размещения из EVENTS, иначе на chartPreviousClose.
         const event = EVENTS[key];
-        const prev = points.length > 1
+        let price = dailyLast[1];
+        let observedAt = dailyLast[0];
+        let session = 'close';
+        let prev = points.length > 1
           ? points[points.length - 2][1]
-          : (event && event.price) || Number(meta.chartPreviousClose) || last;
+          : (event && event.price) || Number(meta.chartPreviousClose) || price;
+
+        // Пре- и постмаркет важнее закрытия: именно там видны скачки вроде
+        // возвращения Хуанга 23.11.2026. Индексам расширенная сессия не нужна
+        // (у ^GSPC она дублирует закрытие и обнуляет дневное изменение).
+        // Сбой этого запроса не должен ломать основной ряд, поэтому ошибку
+        // глотаем и остаёмся на дневной свече.
+        const live = symbol.startsWith('^')
+          ? null
+          : await fetchYahooLive(symbol).catch(() => null);
+        if (live) {
+          const base = prevCloseFor(points, etParts(live.at).date, live.session);
+          if (base) {
+            price = live.price;
+            observedAt = live.at;
+            session = live.session;
+            prev = base;
+          }
+        }
+
         quotes.push({
           symbol,
           name,
-          price: last,
-          changePct: prev ? Number((((last / prev) - 1) * 100).toFixed(2)) : 0,
+          price,
+          changePct: prev ? Number((((price / prev) - 1) * 100).toFixed(2)) : 0,
           changePctWindow: pctChange(points),
           currency,
-          observedAt: points[points.length - 1][0],
+          kind: 'equity',
+          session,
+          observedAt,
+          prevClose: prev,
         });
       }
     } catch (err) {
@@ -261,7 +346,10 @@ async function main() {
           changePct: prev ? Number((((last / prev) - 1) * 100).toFixed(2)) : 0,
           changePctWindow: pctChange(points),
           currency: 'USD',
+          kind: 'crypto',
+          session: 'live',
           observedAt: points[points.length - 1][0],
+          prevClose: prev,
         });
       }
     } catch (err) {

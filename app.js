@@ -55,6 +55,13 @@
       minAgo: 'мин назад',
       hoursAgo: 'ч назад',
       daysAgo: 'дн назад',
+      atClose: 'по закрытию',
+      preMarket: 'премаркет',
+      postMarket: 'постмаркет',
+      preTag: 'пре',
+      postTag: 'пост',
+      closeTag: 'закр.',
+      liveTag: 'сейчас',
       statsLife: 'Дней с разрыва',
       statsChecks: 'Заходов на станцию',
       statsIndex: 'Индекс на разрыве',
@@ -141,6 +148,13 @@
       minAgo: 'min ago',
       hoursAgo: 'h ago',
       daysAgo: 'd ago',
+      atClose: 'at close',
+      preMarket: 'pre-market',
+      postMarket: 'after hours',
+      preTag: 'pre',
+      postTag: 'post',
+      closeTag: 'close',
+      liveTag: 'live',
       statsLife: 'Days since rupture',
       statsChecks: 'Visits to the station',
       statsIndex: 'Index at rupture',
@@ -671,6 +685,42 @@
 
   /* ---------------- Журнал ---------------- */
 
+  /* Биржа живёт по нью-йоркскому времени, поэтому дату котировки считаем в ET. */
+  var ET_DAY = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'America/New_York',
+    year: 'numeric', month: '2-digit', day: '2-digit'
+  });
+
+  function etDate(value) {
+    if (!value) return '';
+    if (/^\d{4}-\d{2}-\d{2}$/.test(value)) return value;
+    var d = new Date(value);
+    if (!isFinite(d.getTime())) return '';
+    var parts = ET_DAY.formatToParts(d);
+    var out = {};
+    for (var i = 0; i < parts.length; i += 1) out[parts[i].type] = parts[i].value;
+    return out.year + '-' + out.month + '-' + out.day;
+  }
+
+  function shortDay(value) {
+    var date = etDate(value);
+    return date ? date.slice(8, 10) + '.' + date.slice(5, 7) : '';
+  }
+
+  /* Когда снята котировка: дата и, если это расширенная сессия, её тип. */
+  function whenTag(q) {
+    if (q.session === 'live') {
+      return '<span class="log-when">' + esc(t('liveTag')) + '</span>';
+    }
+    var day = shortDay(q.observedAt);
+    if (!day) return '';
+    var tag = q.session === 'pre' ? t('preTag')
+      : q.session === 'post' ? t('postTag')
+      : (q.session === 'regular' ? '' : t('closeTag'));
+    var ext = (q.session === 'pre' || q.session === 'post') ? ' ext' : '';
+    return '<span class="log-when' + ext + '">' + esc(day + (tag ? ' · ' + tag : '')) + '</span>';
+  }
+
   function renderLog() {
     var body = $('#logBody');
     if (!body) return;
@@ -684,7 +734,7 @@
       var cls = change > 0 ? 'up' : (change < 0 ? 'down' : '');
       var note = notes[q.symbol] || (lang === 'ru' ? 'Наблюдений нет, но тикер в списке' : 'No note, but the ticker is on the list');
       return '<tr>' +
-        '<td class="ticker-cell">' + esc(q.symbol) + '</td>' +
+        '<td class="ticker-cell">' + esc(q.symbol) + whenTag(q) + '</td>' +
         '<td class="price-cell mono">' + fmtNumber(q.price) + '</td>' +
         '<td class="mono ' + cls + '">' + (change > 0 ? '+' : (change < 0 ? '−' : '')) + fmtNumber(Math.abs(change)) + '%</td>' +
         '<td class="note-cell">' + esc(note) + '</td>' +
@@ -693,15 +743,54 @@
     body.innerHTML = rows.join('');
   }
 
+  /* Самая свежая котировка акций: крипта торгуется круглосуточно и не должна
+     маскировать устаревшие бумаги. */
+  function newestStockQuote() {
+    if (!market || !market.quotes) return null;
+    var best = null;
+    for (var i = 0; i < market.quotes.length; i += 1) {
+      var q = market.quotes[i];
+      if (!q.observedAt || q.kind === 'crypto') continue;
+      var ts = Date.parse(q.observedAt);
+      if (!isFinite(ts)) continue;
+      if (!best || ts > best.ts) best = { ts: ts, q: q };
+    }
+    return best;
+  }
+
+  function agoLabel(ms) {
+    var mins = Math.floor(ms / 60000);
+    if (mins < 2) return t('fresh');
+    if (mins < 60) return mins + ' ' + t('minAgo');
+    if (mins < 1440) return Math.floor(mins / 60) + ' ' + t('hoursAgo');
+    return Math.floor(mins / 1440) + ' ' + t('daysAgo');
+  }
+
   function renderStamp() {
     var stamp = $('#dataStamp');
     if (!stamp) return;
-    if (!market || !market.generatedAt) { stamp.textContent = t('stamp'); return; }
-    var mins = Math.floor((Date.now() - new Date(market.generatedAt).getTime()) / 60000);
-    if (mins < 2) stamp.textContent = t('fresh');
-    else if (mins < 60) stamp.textContent = mins + ' ' + t('minAgo');
-    else if (mins < 1440) stamp.textContent = Math.floor(mins / 60) + ' ' + t('hoursAgo');
-    else stamp.textContent = Math.floor(mins / 1440) + ' ' + t('daysAgo');
+    if (!market || !market.quotes) { stamp.textContent = t('stamp'); return; }
+    var best = newestStockQuote();
+    if (!best) { stamp.textContent = t('stamp'); return; }
+    var q = best.q;
+    var day = shortDay(q.observedAt);
+    var isToday = etDate(q.observedAt) === etDate(new Date().toISOString());
+
+    // Не сегодняшняя регулярная сессия — это закрытие прошлого дня.
+    // Писать «только что» про пятничные цены нельзя.
+    if (q.session === 'close' || !q.session || (q.session === 'regular' && !isToday)) {
+      stamp.textContent = t('atClose') + ' ' + day;
+      return;
+    }
+    if (!isToday) {
+      stamp.textContent = (q.session === 'pre' ? t('preMarket') : t('postMarket')) + ' ' + day;
+      return;
+    }
+
+    var rel = agoLabel(Date.now() - best.ts);
+    if (q.session === 'pre') stamp.textContent = t('preMarket') + ' · ' + rel;
+    else if (q.session === 'post') stamp.textContent = t('postMarket') + ' · ' + rel;
+    else stamp.textContent = rel;
   }
 
   /* ---------------- Вкладки графика ---------------- */

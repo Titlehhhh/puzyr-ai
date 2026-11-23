@@ -478,6 +478,12 @@ body[data-state="burst"]    .bubble-cracks path { opacity: 1; stroke: var(--sign
 .log tbody tr:last-child td { border-bottom: none; }
 .log tbody tr:hover td { background: #12161C; }
 .log .ticker-cell { color: var(--ivory); letter-spacing: .06em; }
+.log .log-when {
+  display: block; margin-top: 3px;
+  font-size: 10px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--faint);
+}
+.log .log-when.ext { color: var(--amber); }
 .log .price-cell { color: var(--ivory); }
 .log .up { color: var(--up); }
 .log .down { color: var(--signal); }
