@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-26T02:50:44.157Z",
+ "generatedAt": "2026-11-26T12:26:48.059Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -2769,7 +2769,7 @@
     ],
     [
      "2026-11-26",
-     60998.0165
+     60543.3591
     ]
    ]
   },
@@ -3551,18 +3551,6 @@
    "prevClose": 300.86
   },
   {
-   "symbol": "BTC",
-   "name": "Bitcoin",
-   "price": 60998.0165,
-   "changePct": 1.03,
-   "changePctWindow": -17.37,
-   "currency": "USD",
-   "kind": "crypto",
-   "session": "live",
-   "observedAt": "2026-11-26",
-   "prevClose": 60374.1478
-  },
-  {
    "symbol": "AMZN",
    "name": "Amazon.com Inc",
    "price": 246.7652,
@@ -3585,18 +3573,6 @@
    "session": "post",
    "observedAt": "2026-11-26T00:59:11.000Z",
    "prevClose": 378.95
-  },
-  {
-   "symbol": "ETH",
-   "name": "Ethereum",
-   "price": 1703.7597,
-   "changePct": 0.78,
-   "changePctWindow": -15.72,
-   "currency": "USD",
-   "kind": "crypto",
-   "session": "live",
-   "observedAt": "2026-11-26",
-   "prevClose": 1690.5179
   },
   {
    "symbol": "INTC",
@@ -3635,6 +3611,18 @@
    "prevClose": 197.21
   },
   {
+   "symbol": "ETH",
+   "name": "Ethereum",
+   "price": 1699.4134,
+   "changePct": 0.53,
+   "changePctWindow": -15.94,
+   "currency": "USD",
+   "kind": "crypto",
+   "session": "live",
+   "observedAt": "2026-11-26",
+   "prevClose": 1690.5179
+  },
+  {
    "symbol": "MSFT",
    "name": "Microsoft Corp",
    "price": 492.1477,
@@ -3669,6 +3657,18 @@
    "session": "post",
    "observedAt": "2026-11-26T00:59:49.000Z",
    "prevClose": 92.16
+  },
+  {
+   "symbol": "BTC",
+   "name": "Bitcoin",
+   "price": 60543.3591,
+   "changePct": 0.28,
+   "changePctWindow": -17.99,
+   "currency": "USD",
+   "kind": "crypto",
+   "session": "live",
+   "observedAt": "2026-11-26",
+   "prevClose": 60374.1478
   },
   {
    "symbol": "IBM",
