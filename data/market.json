@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-26T21:55:46.048Z",
+ "generatedAt": "2026-11-27T04:14:10.863Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -2048,10 +2048,6 @@
    "kind": "crypto",
    "points": [
     [
-     "2026-05-31",
-     73820.3039
-    ],
-    [
      "2026-06-01",
      73598.6681
     ],
@@ -2768,8 +2764,12 @@
      60374.1478
     ],
     [
-     "2026-11-26",
-     60814.7363
+     "2026-11-27",
+     60510.3979
+    ],
+    [
+     "2026-11-27",
+     61406.07
     ]
    ]
   },
@@ -3407,6 +3407,18 @@
    "prevClose": 601.25
   },
   {
+   "symbol": "ETH",
+   "name": "Ethereum",
+   "price": 1727.3336,
+   "changePct": 2.33,
+   "changePctWindow": -13.85,
+   "currency": "USD",
+   "kind": "crypto",
+   "session": "live",
+   "observedAt": "2026-11-27",
+   "prevClose": 1687.9229
+  },
+  {
    "symbol": "WDC",
    "name": "Western Digital",
    "price": 278.17,
@@ -3491,6 +3503,18 @@
    "prevClose": 267.72
   },
   {
+   "symbol": "BTC",
+   "name": "Bitcoin",
+   "price": 61406.07,
+   "changePct": 1.48,
+   "changePctWindow": -16.57,
+   "currency": "USD",
+   "kind": "crypto",
+   "session": "live",
+   "observedAt": "2026-11-27",
+   "prevClose": 60510.3979
+  },
+  {
    "symbol": "TSM",
    "name": "TSMC",
    "price": 347.2,
@@ -3563,18 +3587,6 @@
    "prevClose": 244.43
   },
   {
-   "symbol": "ETH",
-   "name": "Ethereum",
-   "price": 1704.8257,
-   "changePct": 0.85,
-   "changePctWindow": -15.67,
-   "currency": "USD",
-   "kind": "crypto",
-   "session": "live",
-   "observedAt": "2026-11-26",
-   "prevClose": 1690.5179
-  },
-  {
    "symbol": "APP",
    "name": "AppLovin Corp",
    "price": 381.8873,
@@ -3585,18 +3597,6 @@
    "session": "post",
    "observedAt": "2026-11-26T00:59:11.000Z",
    "prevClose": 378.95
-  },
-  {
-   "symbol": "BTC",
-   "name": "Bitcoin",
-   "price": 60814.7363,
-   "changePct": 0.73,
-   "changePctWindow": -17.62,
-   "currency": "USD",
-   "kind": "crypto",
-   "session": "live",
-   "observedAt": "2026-11-26",
-   "prevClose": 60374.1478
   },
   {
    "symbol": "INTC",
