@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-28T04:15:22.889Z",
+ "generatedAt": "2026-11-28T13:01:18.539Z",
  "sources": [
   {
    "name": "Yahoo Finance",
@@ -2785,7 +2785,7 @@
     ],
     [
      "2026-11-28",
-     59985.1099
+     59189.9662
     ]
    ]
   },
@@ -3467,30 +3467,6 @@
    "prevClose": 107.13
   },
   {
-   "symbol": "BTC",
-   "name": "Bitcoin",
-   "price": 59985.1099,
-   "changePct": 0.19,
-   "changePctWindow": -15.89,
-   "currency": "USD",
-   "kind": "crypto",
-   "session": "live",
-   "observedAt": "2026-11-28",
-   "prevClose": 59871.6691
-  },
-  {
-   "symbol": "ETH",
-   "name": "Ethereum",
-   "price": 1664.2597,
-   "changePct": 0.19,
-   "changePctWindow": -16.94,
-   "currency": "USD",
-   "kind": "crypto",
-   "session": "live",
-   "observedAt": "2026-11-28",
-   "prevClose": 1661.109
-  },
-  {
    "symbol": "META",
    "name": "Meta Platforms",
    "price": 629.5,
@@ -3729,6 +3705,30 @@
    "session": "post",
    "observedAt": "2026-11-27T21:59:54.000Z",
    "prevClose": 44.15
+  },
+  {
+   "symbol": "ETH",
+   "name": "Ethereum",
+   "price": 1645.9202,
+   "changePct": -0.91,
+   "changePctWindow": -17.85,
+   "currency": "USD",
+   "kind": "crypto",
+   "session": "live",
+   "observedAt": "2026-11-28",
+   "prevClose": 1661.109
+  },
+  {
+   "symbol": "BTC",
+   "name": "Bitcoin",
+   "price": 59189.9662,
+   "changePct": -1.14,
+   "changePctWindow": -17.01,
+   "currency": "USD",
+   "kind": "crypto",
+   "session": "live",
+   "observedAt": "2026-11-28",
+   "prevClose": 59871.6691
   },
   {
    "symbol": "SNDK",
